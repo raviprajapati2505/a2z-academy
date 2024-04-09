@@ -1,1 +1,1 @@
-# a2z-academy
+# a2z-academys
