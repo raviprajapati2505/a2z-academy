@@ -1,0 +1,33 @@
+h3 a {
+    font-size: 20px;
+    font-family: 'Gilroy-Bold';
+    color: #221c71;
+}
+.desc_course_by_class{
+    display: inline-block !important;
+    width: 100% !important;
+    margin: 0px !important;
+    font-size: 14px !important;
+    color: #a0a0a0 !important;
+    font-family: 'Gilroy-SemiBold' !important;
+    margin-bottom: 5px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    min-height: 42px !important;
+}
+.modal-header {
+    padding: 0px 17px 0px 20px !important;
+    display: block !important;
+}
+.modal-header button.close {
+    border: none;
+    background: none;
+    font-size: 30px;
+    float: right !important;
+}
+.error{
+    color: red !important;
+}
