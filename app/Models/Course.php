@@ -35,6 +35,7 @@ class Course extends Model
         'short_description',
         'what_you_learn',
         'instructor_infromation',
+        'ceu_points'
     ];
 
     public function class(): BelongsTo

@@ -136,10 +136,20 @@
               </div>
 
               <div class="row">
+               <div class="col-sm">
+                  <div class="form-group">
+                    <label for="description">Course Materials</label>
+                    <input type="file" class="form-control" id="materials" name="materials[]" placeholder="" multiple>
+                  </div>
+                </div>
                 <div class="col-sm">
                   <div class="form-group">
-                    <label for="description">Course Description *</label>
-                    <textarea class="form-control" id="description" name="description" placeholder=""></textarea>
+                    <label for="">Select Subject *</label>
+                    <select class="js-example-basic-single form-control" name="course_subject" id="course_subject">
+                      @foreach($subjects as $subject)
+                      <option value="{{ $subject->id }}">{{ $subject->title }}</option>
+                      @endforeach
+                    </select>
                   </div>
                 </div>
               </div>
@@ -147,8 +157,14 @@
               <div class="row">
                 <div class="col-sm">
                   <div class="form-group">
-                    <label for="description">Course Materials</label>
-                    <input type="file" class="form-control" id="materials" name="materials[]" placeholder="" multiple>
+                    <label for="description">Course Description *</label>
+                    <textarea class="form-control" id="description" name="description" placeholder=""></textarea>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-group">
+                    <label for="name">CEU Points</label>
+                    <input type="text" class="form-control" id="ceu_points" name="ceu_points" placeholder="">
                   </div>
                 </div>
               </div>

@@ -138,6 +138,7 @@ class CourseController extends Controller
                 'short_description' => $request->short_description,
                 'what_you_learn' => $request->what_you_learn,
                 'instructor_infromation' => $request->instructor_infromation,
+                'ceu_points' => $request->ceu_points
             ];
 
             if ($request->hasFile('cover_image')) {

@@ -9,7 +9,7 @@
                 @include ('messages')
                 <div class="profset-title">
                     <h1>{{ $title }}</h1>
-                    <p>Welcome to A2Z Academy</p>
+                    <p>Welcome to Gord Academy</p>
                 </div>
                 <div class="addadmsupbtnright">
                     <a href="javascript:void(0)" id="create-class">

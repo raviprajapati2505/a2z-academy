@@ -74,10 +74,20 @@
                 </div>
                 <div class="col-sm">
                   <div class="form-group">
-                    <label for="status">This Account is</label>
-                    <select class="js-example-basic-single form-control" name="status" id="status">
-                      <option value="Enabled">Active</option>
-                      <option value="Disabled">Inactive</option>
+                    <label for="status">Select Role</label>
+                    <select class="js-example-basic-single form-control" name="role" id="role">
+                      <option value="Admin">Users Admin</option>
+                      <option value="Credentials">Credentials Admin</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  <div class="form-group">
+                    <label for="">Select Permission</label>
+                    <select class="js-example-basic-single form-control" name="permission">
+                      <option value="">Comming soon</option>
                     </select>
                   </div>
                 </div>

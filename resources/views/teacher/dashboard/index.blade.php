@@ -6,8 +6,8 @@
 
     <div class="col comtitledata-cover">
       <h1>Dashboard</h1>
-      <p>Welcome to A2Z Academy</p>
-      <img src="{{ asset('public/images/title-background-dashboard.png') }}" alt="Welcome to A2Z Academy">
+      <p>Welcome to Gord Academy</p>
+      <img src="{{ asset('public/images/title-background-dashboard.png') }}" alt="Welcome to Gord Academy">
     </div>
 
     <div class="row">

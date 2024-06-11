@@ -207,6 +207,11 @@ class User extends Authenticatable
         return $this->role == 'Student' ? true : false;
     }
 
+    public function isCredentials()
+    {
+        return $this->role == 'Credentials' ? true : false;
+    }
+
     public function scopeGenerateCode()
     {
 

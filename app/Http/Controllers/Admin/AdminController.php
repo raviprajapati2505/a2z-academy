@@ -118,7 +118,7 @@ class AdminController extends Controller
                     'phone' => $request->contact,
                     'password' => Hash::make($request->password),
                     'status' => $request->status,
-                    'role' => 'Admin'
+                    'role' => $request->role
                 ];
                 if ($request->admin_id && empty($request->password)) {
                     unset($data['password']);

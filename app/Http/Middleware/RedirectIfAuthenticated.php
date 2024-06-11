@@ -25,6 +25,8 @@ class RedirectIfAuthenticated
             if (Auth::guard($guard)->check()) {
                 if (Auth::user()->role == 'Superadmin' || Auth::user()->role == 'Admin') {
                     return redirect('/admin/manage_admin');
+                } else if (Auth::user()->role == 'Credentials') {
+                    return redirect('/admin/manage_course');
                 } else if (Auth::user()->role == 'Teacher') {
                     return redirect('/teacher/home');
                 } else {

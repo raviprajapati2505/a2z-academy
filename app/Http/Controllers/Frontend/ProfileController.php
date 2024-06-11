@@ -9,12 +9,20 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Helper\CommonHelper as Helper;
+use App\Models\StudentCourseHistory;
+use App\Models\TrackLecture;
+
 class ProfileController extends Controller
 {
     public function index()
     {
+        $track_lecture = TrackLecture::where('student_id', Auth::user()->id)->get();
+        $purchased_course = StudentCourseHistory::leftJoin('courses', 'courses.id', '=', 'student_course_history.course_id')
+            ->where('student_course_history.student_id', Auth::user()->id)
+            ->where('student_course_history.is_paid', '1')
+            ->get();
         $user = User::find(Auth::user()->id);
-        return view('frontend.profile.update_profile',compact('user'));
+        return view('frontend.profile.update_profile', compact('user', 'track_lecture', 'purchased_course'));
     }
 
     public function change_password()
@@ -79,14 +87,14 @@ class ProfileController extends Controller
             $user = User::where('id', Auth::user()->id)->first(); // change here id
             $user->password = Hash::make($request->password);
             $user->save();
-    
+
             if ($user) {
                 return back()->with('success', 'Password changed successfully');
             }
         } else {
             return back()
-            ->withInput()
-            ->withErrors(['msg' => 'Authenticate failed!! please enter correct old password']);
+                ->withInput()
+                ->withErrors(['msg' => 'Authenticate failed!! please enter correct old password']);
         }
     }
 }

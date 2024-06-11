@@ -275,9 +275,11 @@
             $('#price').val(data.data.price);
             $('#special_price').val(data.data.special_price);
             $('#language').val(data.data.language);
+            $('#ceu_points').val(data.data.ceu_points);
             $('#status').val(data.data.status).trigger('change');
             $('#course_class').val(data.data.class_id).trigger('change');
             $('#course_subject').val(data.data.subject_id).trigger('change');
+            
             //$('#teacher').val(data.data.teacher_id).trigger('change');
             $("input[name=is_paid][value=" + data.data.is_paid + "]").prop('checked', true);
             if (data.data.cover_image) {

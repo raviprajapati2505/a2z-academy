@@ -255,6 +255,7 @@
             $('#email').val(data.data.email);
             $('#contact').val(data.data.phone);
             $('#status').val(data.data.status).trigger('change');
+            $('#role').val(data.data.role).trigger('change');
         })
     });
 
