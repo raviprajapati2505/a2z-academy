@@ -66,9 +66,10 @@
               <div class="row">
                 <div class="col-sm">
                   <div class="form-group">
-                    <label for="">Select Permission</label>
-                    <select class="js-example-basic-single form-control" name="permission">
-                      <option value="">Comming soon</option>
+                    <label for="status">This Account is</label>
+                    <select class="js-example-basic-single form-control" name="status" id="status">
+                      <option value="Enabled">Active</option>
+                      <option value="Disabled">Inactive</option>
                     </select>
                   </div>
                 </div>

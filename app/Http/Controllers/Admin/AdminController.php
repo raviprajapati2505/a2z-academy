@@ -30,7 +30,7 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $query = User::where('role', 'Admin');
+            $query = User::whereIn('role', ['Admin', 'Credentials']);
             $name = (!empty($_GET["search_name"])) ? ($_GET["search_name"]) : ('');
             if ($name) {
                 $query->where('name', 'LIKE', '%' . $name . '%');
