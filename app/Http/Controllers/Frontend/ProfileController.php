@@ -54,8 +54,8 @@ class ProfileController extends Controller
         $user->dob = $request->dob;
         $user->marital_status = $request->marital_status;
         $user->phone = $request->contact;
-        $user->religion = $request->religion;
-        $user->nationality = $request->nationality;
+        //$user->religion = $request->religion;
+        //$user->nationality = $request->nationality;
         $user->present_address = $request->present_address;
         $user->permananat_address = $request->permanant_address;
         $user->country_code = $request->country_code;

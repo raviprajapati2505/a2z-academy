@@ -26,7 +26,7 @@
 
     <div class="container">
         <div class="signupboxformcover">
-            <img src="{{ asset('public/images/logo-color.png')}}" alt="Logo" class="logoforsignup">
+            <!-- <img src="{{ asset('public/images/logo-color.png')}}" alt="Logo" class="logoforsignup"> -->
             @yield('content')
         </div>
     </div>

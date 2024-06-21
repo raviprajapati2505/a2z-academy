@@ -63,7 +63,7 @@
                         @endif
                         @endforeach
                         <button type="button" class="btn btn-primary">
-                        CEU Points Earned <span class="badge badge-light"><?= $total_ceu_points ?></span>
+                            CEU Points Earned <span class="badge badge-light"><?= $total_ceu_points ?></span>
                             <span class="sr-only"></span>
                         </button>
                         <!-- <div class="saveprofdata">
@@ -95,27 +95,18 @@
                             </div>
                             <div class="col-sm">
                                 <div class="form-group formdatamiancov">
+                                    <label for="">Middle Name</label>
+                                    <input type="" class="form-control" name="father_name" id="father_name" placeholder="" value="{{ $user->father_name }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="form-group formdatamiancov">
                                     <label for="">Last Name *</label>
                                     <input type="" class="form-control" name="lastname" id="lastname" placeholder="" value="{{ $user->lastname }}">
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm">
-                                <div class="form-group formdatamiancov">
-                                    <label for="">Father Name</label>
-                                    <input type="" class="form-control" name="father_name" id="father_name" placeholder="" value="{{ $user->father_name }}">
-                                </div>
-                            </div>
-                            <div class="col-sm">
-                                <div class="form-group formdatamiancov">
-                                    <label for="">Mother Name</label>
-                                    <input type="" class="form-control" name="mother_name" id="mother_name" placeholder="" value="{{ $user->mother_name }}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="col-sm">
                                 <div class="form-group formdatamiancov">
                                     <label for="gender">Gender</label>
@@ -125,14 +116,20 @@
                                     </select>
                                 </div>
                             </div>
+                            <!-- <div class="col-sm">
+                                <div class="form-group formdatamiancov">
+                                    <label for="">Mother Name</label>
+                                    <input type="" class="form-control" name="mother_name" id="mother_name" placeholder="" value="{{ $user->mother_name }}">
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="row">
                             <div class="col-sm">
                                 <div class="form-group formdatamiancov">
                                     <label for="price">DOB</label>
                                     <input type="text" name="dob" id="dob" class="form-control datepicker" placeholder="" value="{{ $user->dob }}">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-sm">
                                 <div class="form-group formdatamiancov">
                                     <label for="">Marital Status</label>
@@ -144,6 +141,8 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-sm">
                                 <div class="form-group formdatamiancov">
                                     <label for="">Contact *</label>
@@ -153,28 +152,29 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm">
-                                <div class="form-group formdatamiancov">
-                                    <label for="">Religion</label>
-                                    <input type="" class="form-control" id="religion" name="religion" placeholder="" value="{{ $user->religion }}">
-                                </div>
-                            </div>
-                            <div class="col-sm">
-                                <div class="form-group formdatamiancov">
-                                    <label for="">Nationality</label>
-                                    <input type="" class="form-control" id="nationality" name="nationality" placeholder="" value="{{ $user->nationality  }}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="col-sm">
                                 <div class="form-group formdatamiancov">
                                     <label for="">Present Address</label>
                                     <input type="" class="form-control" id="present_address" name="present_address" placeholder="" value="{{ $user->present_address  }}">
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
+                            <!-- <div class="col-sm">
+                                <div class="form-group formdatamiancov">
+                                    <label for="">Religion</label>
+                                    <input type="" class="form-control" id="religion" name="religion" placeholder="" value="{{ $user->religion }}">
+                                </div>
+                            </div> -->
+                            <!-- <div class="col-sm">
+                                <div class="form-group formdatamiancov">
+                                    <label for="">Nationality</label>
+                                    <input type="" class="form-control" id="nationality" name="nationality" placeholder="" value="{{ $user->nationality  }}">
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="row">
+
                             <div class="col-sm">
                                 <div class="form-group formdatamiancov">
                                     <label for="">Permanent Address</label>
