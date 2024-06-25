@@ -365,4 +365,21 @@
         });
     });
 </script>
+<script>
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+    });
+
+    // Disable certain key combinations
+    document.addEventListener('keydown', function(event) {
+        // Prevent Ctrl+U (view source), Ctrl+Shift+I (dev tools), F12 (dev tools), Ctrl+Shift+J (dev tools)
+        if ((event.ctrlKey && event.key === 'u') ||
+            (event.ctrlKey && event.shiftKey && event.key === 'I') ||
+            (event.key === 'F12') ||
+            (event.ctrlKey && event.shiftKey && event.key === 'J')) {
+            event.preventDefault();
+        }
+    });
+</script>
 @endsection

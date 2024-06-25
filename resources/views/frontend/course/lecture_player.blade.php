@@ -70,7 +70,7 @@
                         </div> -->
                     </div>
                     <div class="holestunen-main">
-                         <!--<div class="holestunen-iner">
+                        <!--<div class="holestunen-iner">
                             <img src="{{ asset('public/frontend/svg/holestunen-icon-1.svg') }}" alt="">
                             <?php
                             $total_course_duration = 0;
@@ -97,7 +97,7 @@
                         <h3>{{ $lecture->description }}</h6>
                     </div>
                     <div class="priceandbtnrightleft">
-                        <h3><a href="{{ url('/course_detail')}}<?= '/'.$course->id ?>"><span>Back to course</span></a></h3>
+                        <h3><a href="{{ url('/course_detail')}}<?= '/' . $course->id ?>"><span>Back to course</span></a></h3>
                         <!-- <h3>
                             <?php if ($course->is_paid == 1) {
                                 if ($course->special_price) {
@@ -383,6 +383,23 @@
                     $('#saveBtn').html('Save');
                 }
             });
+        }
+    });
+</script>
+<script>
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+    });
+
+    // Disable certain key combinations
+    document.addEventListener('keydown', function(event) {
+        // Prevent Ctrl+U (view source), Ctrl+Shift+I (dev tools), F12 (dev tools), Ctrl+Shift+J (dev tools)
+        if ((event.ctrlKey && event.key === 'u') ||
+            (event.ctrlKey && event.shiftKey && event.key === 'I') ||
+            (event.key === 'F12') ||
+            (event.ctrlKey && event.shiftKey && event.key === 'J')) {
+            event.preventDefault();
         }
     });
 </script>
