@@ -141,12 +141,12 @@
             "status": {
                 required: true,
             },
-            "video": {
-                required: function(element) {
-                    return $('#curriculam_lecture_id').val() == '';
-                },
-                extension: "mov|mp4|mkv|flv|avi"
-            }
+            // "video": {
+            //     required: function(element) {
+            //         return $('#curriculam_lecture_id').val() == '';
+            //     },
+            //     extension: "mov|mp4|mkv|flv|avi"
+            // }
         },
         messages: {},
         submitHandler: function() {

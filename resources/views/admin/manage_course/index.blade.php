@@ -172,12 +172,12 @@
                 },
                 extension: "jpg|jpeg|png"
             },
-            "video": {
-                required: function(element) {
-                    return $('#course_id').val() == '';
-                },
-                extension: "mov|mp4|mkv|flv|avi"
-            }
+            // "video": {
+            //     required: function(element) {
+            //         return $('#course_id').val() == '';
+            //     },
+            //     extension: "mov|mp4|mkv|flv|avi"
+            // }
         },
         messages: {
             "cover_image": {
