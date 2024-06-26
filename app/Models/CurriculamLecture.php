@@ -25,7 +25,8 @@ class CurriculamLecture extends Model
         'teacher_id',
         'course_id',
         'course_curriculam_id',
-        'duration_in_seconds'
+        'duration_in_seconds',
+        'link'
     ];
 
     public function course_curriculam(): BelongsTo

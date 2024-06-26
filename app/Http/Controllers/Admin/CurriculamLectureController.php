@@ -98,7 +98,8 @@ class CurriculamLectureController extends Controller
 				'duration_in_hour' => $request->duration_in_hour,
 				'teacher_id' => $request->teacher,
 				'course_id' => $course_curriculam->course_id,
-				'course_curriculam_id' => $request->course_curriculam_id
+				'course_curriculam_id' => $request->course_curriculam_id,
+        'link' => $request->link
 			];
 
 			if ($request->hasFile('video')) {

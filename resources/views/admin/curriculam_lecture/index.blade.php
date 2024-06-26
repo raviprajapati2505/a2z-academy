@@ -211,6 +211,7 @@
             $('#status').val(data.data.status);
             $('#duration_in_hour').val(data.data.duration_in_hour);
             $('#display_order').val(data.data.display_order);
+            $('#link').val(data.data.link);
             $('#description').val(data.data.description);
             $('#teacher').val(data.data.teacher_id).trigger('change');
             $("input[name=is_free][value=" + data.data.is_free + "]").prop('checked', true);

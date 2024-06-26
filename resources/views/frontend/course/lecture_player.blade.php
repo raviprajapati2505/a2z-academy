@@ -18,6 +18,10 @@
         <div class="classdetails-left">
             <div class="classdetails-covlr">
                 <div class="class-mainvideo">
+
+                  @if($lecture->link)
+                    <iframe src="{{ $lecture->link }}" title="{{ $lecture->title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    @else
                     <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="780" height="400" poster="{{ asset('public/images/my-courses-img9.jpg') }}" data-setup='{ "controls": true, "preload": "auto","liveui": true }'>
                         <source src="<?= url('/') . '/public/' . $lecture->video ?>" type="video/mp4" />
                         <source src="<?= url('/') . '/public/' . $lecture->video ?>" type="video/webm" />
@@ -27,6 +31,7 @@
                             <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
                         </p>
                     </video>
+                    @endif
                 </div>
                 <div class="classvideodeta-main">
                     <div class="classvideo-details">
