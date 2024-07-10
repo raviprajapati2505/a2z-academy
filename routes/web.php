@@ -42,6 +42,7 @@ use App\Http\Controllers\Teacher\NoteController;
 use App\Http\Controllers\Frontend\MainController;
 use App\Http\Controllers\Frontend\PaymentController;
 use App\Http\Controllers\Frontend\ProfileController as SProfileController;
+use App\Http\Controllers\Frontend\EventController as SEventController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
@@ -92,6 +93,7 @@ Route::middleware(['auth', '2fa', 'student'])->group(function () {
     Route::post('track_lecture', [CoursesController::class, 'track_lecture'])->name('track_lecture');
     Route::post('download_certificate', [CertificateController::class, 'download_certificate'])->name('download_certificate');
     Route::get('/meeting', [ClassesController::class, 'meeting']);
+    Route::get('/events', [SEventController::class, 'events']);
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -144,7 +146,7 @@ Route::middleware(['auth', '2fa', 'teacher'])->prefix('teacher')->group(function
 
     Route::get('meeting', [LiveClassController::class, 'meeting']);
 });
-
+Route::get('readnotification/{id}', [EventController::class, 'readnotification']);
 Route::get('logout', function () {
     auth()->logout();
     Session()->flush();

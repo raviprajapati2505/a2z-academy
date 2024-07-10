@@ -40,12 +40,15 @@
 	<link rel="stylesheet" href="{{ asset('public/frontend/css/select2.min.css') }}" />
 	<link rel="stylesheet" href="{{ asset('public/frontend/css/custom.css') }}" />
 
+
 	<script src="{{ asset('public/frontend/js/jquery-3.6.0.min.js') }}"></script>
 	<script src="{{ asset('public/frontend/js/popper.min.js') }}"></script>
 	<script src="{{ asset('public/frontend/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('public/frontend/js/owl.carousel.min.js') }}"></script>
 	<script src="https://huynhhuynh.github.io/owlcarousel2-filter/dist/owlcarousel2-filter.min.js"></script>
 	<script src="{{ asset('public/frontend/js/select2.min.js') }}"></script>
+
+
 
 	<!-- common in both front and back -->
 	<link rel="stylesheet" href="{{ asset('public/css/bootstrap-datepicker.min.css') }}">
@@ -55,6 +58,10 @@
 	<script src="{{ asset('public/js/additional/additional-methods.js') }}"></script>
 	<script src="{{ asset('public/js/additional/intlTelInput.js') }}"></script>
 	<script src="{{ asset('public/js/additional/utils.js') }}"></script>
+    <script src="{{ asset('public/js/additional/moment.min.js') }}"></script>
+	<script src="{{ asset('public/js/additional/fullcalendar.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('public/css/additional/fullcalendar.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('public/css/additional/fullcalendar.print.css') }}" media='print' />
 
 </head>
 

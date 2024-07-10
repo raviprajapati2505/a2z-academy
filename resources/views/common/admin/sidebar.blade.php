@@ -26,19 +26,19 @@
                 <span class="links_name">Live Class</span>
             </a>
         </li>
-        <li>
+        <!-- <li>
             <a href="{{ URL('teacher/manage_classes') }}" class="{{ (request()->segment(2) == 'manage_classes') ? 'active' : '' }}">
                 <img src="{{ asset('public/svg/my-classes-icon.svg') }}" alt="Manage Classes">
                 <span class="links_name">Manage Classes</span>
             </a>
-        </li>
+        </li> -->
         <li>
             <a href="{{ URL('teacher/events') }}" class="{{ (request()->segment(2) == 'events') ? 'active' : '' }}">
                 <img src="{{ asset('public/svg/calendar-icon.svg') }}" alt="Calendar">
                 <span class="links_name">Calendar</span>
             </a>
         </li>
-        <li>
+        <!-- <li>
             <a href="{{ URL('teacher/grades') }}" class="{{ (request()->segment(2) == 'grades') ? 'active' : '' }}">
                 <img src="{{ asset('public/svg/grades-icon.svg') }}" alt="Trainee Grades">
                 <span class="links_name">Trainee Grades</span>
@@ -49,7 +49,7 @@
                 <img src="{{ asset('public/svg/teaching-evaluation-icon.svg') }}" alt="Trainee Assessment">
                 <span class="links_name">Trainee Assessment</span>
             </a>
-        </li>
+        </li> -->
         <li>
             <a href="{{ URL('teacher/profiles') }}" class="{{ (request()->segment(2) == 'profiles') ? 'active' : '' }}">
                 <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Profile">
@@ -89,12 +89,12 @@
                     <span class="links_name">Manage Users</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="{{ URL('admin/manage_class') }}" class="{{ (request()->segment(2) == 'manage_class') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/my-classes-icon.svg') }}" alt="Manage Classes">
                     <span class="links_name">Manage Classes</span>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="{{ URL('admin/manage_teacher') }}" class="{{ (request()->segment(2) == 'manage_teacher') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Manage Instructor">
@@ -113,7 +113,7 @@
                     <span class="links_name">Calendar</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="{{ URL('admin/grade') }}" class="{{ (request()->segment(2) == 'grade') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/grades-icon.svg') }}" alt="Trainee Grades">
                     <span class="links_name">Trainee Grades</span>
@@ -124,7 +124,7 @@
                     <img src="{{ asset('public/svg/teaching-evaluation-icon.svg') }}" alt="Trainee Assessment">
                     <span class="links_name">Trainee Assessments</span>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="{{ URL('admin/profile') }}" class="{{ (request()->segment(2) == 'profile') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Profile">
@@ -137,12 +137,12 @@
                     <span class="links_name">Book Store</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="{{ URL('admin/class_list') }}" class="{{ (request()->segment(2) == 'class_list') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Class List">
                     <span class="links_name">Class List</span>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="{{ URL('admin/page') }}" class="{{ (request()->segment(2) == 'page') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Pages">
@@ -161,6 +161,7 @@
                     <span class="links_name">Promo Code</span>
                 </a>
             </li>
+            @endif
             <li>
                 <a href="{{ URL('admin/report/certificate_report') }}" class="{{ (request()->segment(3) == 'certificate_report') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Promo Code">
@@ -173,7 +174,6 @@
                     <span class="links_name">Total Enrollment Report</span>
                 </a>
             </li>
-            @endif
 
         @endif
     </ul>

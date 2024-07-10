@@ -54,6 +54,8 @@
 				color = '#F3E500';
 			} else if (value.type == 'Other') {
 				color = '#096C04'
+			} else if (value.type == 'Workshop') {
+				color = 'gray'
 			}
 			dailyclass = {
 				"start": value.datetime,

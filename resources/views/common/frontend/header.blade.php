@@ -12,6 +12,7 @@
                 </div>
                 @auth
                 <div class="aftloginpagebtn">
+
                     <a href="javascript:void(0);" class="selector">
                         @if(auth()->user()->photo)
                         <img src="<?= url('/') . '/public/' ?>{{ auth()->user()->photo }}">
@@ -22,6 +23,26 @@
                         <span>{{ Auth::user()->name.' '.Auth::user()->lastname }}</span>
                         <i class='bx bx-chevron-down'></i>
                     </a>
+                    &nbsp;&nbsp;
+                    <a href="Javascript:void(0);" style="    background: #f7df00;
+    color: #251c70;
+    font-family: 'Gilroy-Bold';
+    display: inline-block;
+    width: auto;
+    padding: 3px 2px 3px 8px;
+    font-size: 16px;
+    border-radius: 45px;
+    border: 1px solid #f7df00;
+    top: 3px;
+    position: relative;" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class='bx bx-bell notification-icon'></i>
+                        {{count($notifications)}}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        @foreach($notifications as $notify)
+                        <li><a href="<?= url('') ?>/readnotification/<?= $notify->nid ?>">Notification: {{ $notify->description }}</a></li>
+                        @endforeach
+                    </ul>
                     <div class="menu-items">
                         <ul>
                             <li>
@@ -39,19 +60,26 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="{{ url('events') }}">
+                                    <img class="activ" src="{{ asset('public/frontend/svg/my-aassessment-icon.svg') }}" alt="">
+                                    <img class="activno" src="{{ asset('public/frontend/svg/my-aassessment-icon-active.svg') }}" alt="">
+                                    <span>Calendar</span>
+                                </a>
+                            </li>
+                            <!-- <li>
                                 <a href="javascript:void(0);">
                                     <img class="activ" src="{{ asset('public/frontend/svg/my-aassessment-icon.svg') }}" alt="">
                                     <img class="activno" src="{{ asset('public/frontend/svg/my-aassessment-icon-active.svg') }}" alt="">
                                     <span>My Assessment</span>
                                 </a>
-                            </li>
-                            <li>
+                            </li> -->
+                            <!-- <li>
                                 <a href="javascript:void(0);">
                                     <img class="activ" src="{{ asset('public/frontend/svg/dashboard-icon.svg') }}" alt="">
                                     <img class="activno" src="{{ asset('public/frontend/svg/dashboard-icon-active.svg') }}" alt="">
                                     <span>Dashboard</span>
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="{{ url('certificate') }}">
                                     <img class="activ" src="{{ asset('public/frontend/svg/certificates-icon.svg') }}" alt="">
@@ -90,6 +118,7 @@
                         </ul>
                     </div>
                 </div>
+
                 @endauth
                 @guest
                 <div class="loginbtn-nav">
@@ -111,7 +140,7 @@
                                     $class_number = isset($class_number[1]) ? trim($class_number[1]) : 8
                                     ?>
                                     <li>
-                                        <a class="dropdown-item classe<?= $class_number ?>" href="{{ url('course_by_class') }}<?= '/'.$class->id ?>">
+                                        <a class="dropdown-item classe<?= $class_number ?>" href="{{ url('course_by_class') }}<?= '/' . $class->id ?>">
                                             <p><?= $class_number ?><span></span></p>
                                             <h5>{{ $class->name }}</h5>
                                         </a>
@@ -131,7 +160,7 @@
                                 <ul class="dropdown-listnav">
                                     @foreach($course_types as $type)
                                     <li>
-                                        <a class="dropdown-item" href="{{ url('course_by_type') }}<?= '/'.$type->id ?>">
+                                        <a class="dropdown-item" href="{{ url('course_by_type') }}<?= '/' . $type->id ?>">
                                             <h3>{{ $type->title }}</h3>
                                         </a>
                                     </li>

@@ -19,7 +19,11 @@
             <div class="classdetails-covlr">
                 <div class="class-mainvideo">
                     @if($course->link)
-                    <iframe src="{{ $course->link }}" title="{{ $course->title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <video id="lecture-video" controls controlsList="nodownload" width="auto" height="360">
+                        <source src="{{ $course->link }}">
+                        Your browser does not support the video tag.
+                    </video>
+                    <!-- <iframe src="{{ $course->link }}" title="{{ $course->title }}" frameborder="0" allow=" autoplay;" allowfullscreen></iframe> -->
                     @else
                     <video width="100%" controls>
                         <source src="<?= url('/') . '/public/' . $course->video ?>" type="video/mp4">

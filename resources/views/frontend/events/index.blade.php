@@ -1,41 +1,27 @@
-@extends('layouts.app_theme')
+@extends('layouts.app_front')
 
 @section('content')
-<div class="coveradminalldata">
-    <div class="calendarpage-cover">
-        <div class="profset-title">
-            <h1>My Calendar</h1>
-            <p>Welcome to Newness My Calendar</p>
+
+<div class="container">
+    <div class="myactpagedatacov">
+        <div class="myactpagedata_title">
+            <h1>Calendar</h1>
+            <p>Welcome to My Events</p>
         </div>
-        <div class="leftright-calendar">
-            <div class="left-calendar">
-                <div class="leftdatacalendar">
-                    <div id='calendar'></div>
+        <div class="fullpageinerdata_cover">
+            <div class="fullpageinerdata_iner">
+                <div class="fullpageinerdata_title">
+                    <h2>Calendar</h2>
                 </div>
-            </div>
-            <div class="right-calendar">
-                <div class="rightdatacalendar">
-                    <h3>Calendar</h3>
-                    <h6>Drag and drop your event or click in the calendar</h6>
-                    <div class="eventdata-list">
-                        <h5><span class="livecls"></span> Live Class</h5>
-                        <h5><span class="eventcls"></span> Event</h5>
-                        <h5><span class="examcls"></span> Exam</h5>
-                        <h5><span class="othercls"></span> Other</h5>
-                        <h5><span class="workshopcls"></span> Workshop</h5>
-                    </div>
-                    <div class="addnew-event">
-                        <a href="javascript:void(0);" id="create-event"><i class='bx bx-plus'></i>New Event</a>
-                    </div>
+                <div class="fullpageinerdata_tbl">
+                    <div id='calendar'></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-@include('admin.event.model')
-
 <script type="text/javascript">
-    var store = <?php echo json_encode(route('event.store')) ?>;
+    var store = <?php echo json_encode(route('events.store')) ?>;
     $('#alert-danger-form').hide();
     $('#alert-success-form').hide();
     $('#alert-success-list').hide();
@@ -133,7 +119,6 @@
             return false;
         }
     });
-
     $('#create-event').click(function() {
         $('#event_id').val('');
         $('#eventform').trigger("reset");
@@ -155,13 +140,13 @@
         $('#calendar').fullCalendar({
             themeSystem: 'bootstrap4',
             header: {
-                center: 'prev,next today',
+                //center: 'prev,next today',
                 left: 'title',
                 right: 'month,agendaWeek,agendaDay'
                 // right: 'year,month,agendaWeek,agendaDay,listMonth'
             },
             droppable: true,
-            weekNumbers: true,
+            //weekNumbers: true,
             eventLimit: true, // allow "more" link when too many events
             events: allevents
         });

@@ -20,7 +20,11 @@
                 <div class="class-mainvideo">
 
                   @if($lecture->link)
-                    <iframe src="{{ $lecture->link }}" title="{{ $lecture->title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <video id="lecture-video" controls controlsList="nodownload" width="auto" height="360">
+                        <source src="{{ $lecture->link }}">
+                        Your browser does not support the video tag.
+                    </video>
+                    <!-- <iframe src="{{ $lecture->link }}" title="{{ $lecture->title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                     @else
                     <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="780" height="400" poster="{{ asset('public/images/my-courses-img9.jpg') }}" data-setup='{ "controls": true, "preload": "auto","liveui": true }'>
                         <source src="<?= url('/') . '/public/' . $lecture->video ?>" type="video/mp4" />

@@ -212,6 +212,11 @@ class User extends Authenticatable
         return $this->role == 'Credentials' ? true : false;
     }
 
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
+
     public function scopeGenerateCode()
     {
 

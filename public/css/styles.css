@@ -2339,6 +2339,10 @@ background: #7b7b7b;
 .othercls{
   background: #096C04;
 }
+.workshopcls{
+  background: gray;
+}
+
 
 .addnew-event{
   display: inline-block;
