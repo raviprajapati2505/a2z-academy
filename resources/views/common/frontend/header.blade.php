@@ -170,7 +170,7 @@
                             </div>
                         </li>
                         <li class="nav-item {{ (request()->segment(1) == 'video_classes') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ url('video_classes') }}">Videos class</a>
+                            <a class="nav-link" href="{{ url('video_classes') }}">Online class</a>
                         </li>
                         <li class="nav-item {{ (request()->segment(1) == 'book_store') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ url('book_store') }}">Book Store</a>

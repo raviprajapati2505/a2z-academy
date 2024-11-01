@@ -191,7 +191,7 @@
                                     </div>
                                     <div class="media-body text-right">
                                         <h3>{{$studentsCount}}</h3>
-                                        <span>Total Trainee</span>
+                                        <span>Total Learner</span>
                                     </div>
                                 </div>
                             </div>

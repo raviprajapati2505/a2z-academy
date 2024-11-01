@@ -23,7 +23,6 @@
 				</div>
 			</div>
 		</div>
-		@include('teacher.right_sidebar')
 	</div>
 </div>
 @include('teacher.events.model')

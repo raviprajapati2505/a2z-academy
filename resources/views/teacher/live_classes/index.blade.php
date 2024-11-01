@@ -81,7 +81,6 @@
                 @endif
             </div>
         </div>
-        @include('teacher.right_sidebar')
     </div>
     <form class="navbar-form navbar-right" id="meeting_form" style="display:none">
         <div class="form-group">

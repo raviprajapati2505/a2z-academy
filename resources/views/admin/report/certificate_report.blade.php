@@ -23,7 +23,7 @@
                 <table id="example" class="display table nowrap certificate_datatable">
                     <thead>
                         <tr>
-                            <th>Trainee Name</th>
+                            <th>Learner Name</th>
                             <th>Course Name</th>
                             <th>Certificate Generated At</th>
                         </tr>

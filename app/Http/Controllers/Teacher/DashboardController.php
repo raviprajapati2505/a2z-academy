@@ -49,9 +49,9 @@ class DashboardController extends Controller
 
         $currentUser = $this->currentUser();
         
-        $userActivities = $this->userActivities($currentUser['id']);
+        $userEvents = $this->userEvents();
         $userVideoCourses = $this->userVideoCourses($currentUser['id']);
 
-        return view('teacher.dashboard.index', compact('dashboardDetails','currentUser','userActivities','userVideoCourses'));
+        return view('teacher.dashboard.index', compact('dashboardDetails','currentUser','userEvents','userVideoCourses'));
     }
 }

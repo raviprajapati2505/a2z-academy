@@ -96,7 +96,7 @@
                         </div>
                         <div class="holestunen-iner">
                             <img src="{{ asset('public/frontend/svg/holestunen-icon-3.svg') }}" alt="">
-                            <p>{{ $total_student_enroll }} Trainee Enrolled</p>
+                            <p>{{ $total_student_enroll }} Learner Enrolled</p>
                         </div>
                         <h3>{{ $course->description }}</h6>
                     </div>
@@ -211,7 +211,7 @@
                 <div class="classdetails-teachers">
                     <h2>Course Features</h2>
                     <div class="coursefeatures-list">
-                        <p>Trainee Enrolled:</p>
+                        <p>Learner Enrolled:</p>
                         <h3>{{ $total_student_enroll }}</h3>
                     </div>
                     <div class="coursefeatures-list">

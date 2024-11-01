@@ -29,7 +29,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Grade</th>
-                                    <th>Trainee Name</th>
+                                    <th>Learner Name</th>
                                     <th>Subject</th>
                                 </tr>
                             </thead>

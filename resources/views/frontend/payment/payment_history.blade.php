@@ -19,7 +19,8 @@
                                 <th>Courses Details</th>
                                 <th>Price</th>
                                 <th>Class</th>
-                                <th>Action</th>
+                                <th>Date</th>
+                                <!-- <th>Action</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -37,11 +38,12 @@
                                 </td>
                                 <td class="tblrowset2">${{ $course->special_price ? $course->special_price : $course->price }}</td>
                                 <td class="tblrowset3">{{ $course->course->class->name }}</td>
-                                <td class="tblrowset4">
+                                <td class="tblrowset3">{{ date("m-d-Y", strtotime($course->created_at)) }}</td>
+                                <!-- <td class="tblrowset4">
                                     <a href="javascript:void(0);">
                                         <i class='bx bx-trash'></i>
                                         Delete</a>
-                                </td>
+                                </td> -->
                             </tr>
                             @endforeach
                             @else

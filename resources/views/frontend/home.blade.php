@@ -80,7 +80,7 @@
 				</div>
 				<div class="onvioustiner-rig">
 					<h3>{{ $all_review_count }}+</h3>
-					<p>Trainee Reviews</p>
+					<p>Learner Reviews</p>
 				</div>
 			</div>
 		</div>
@@ -362,7 +362,7 @@
 								<img src="{{ asset('public/images/user-icon.png') }}" alt="Allie Grater">
 								@endif
 								<h3>{{ $review->student->name }}</h3>
-								<h6>Trainee </h6>
+								<h6>Learner </h6>
 							</div>
 						</div>
 					</div>

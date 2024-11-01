@@ -40,14 +40,14 @@
         </li>
         <!-- <li>
             <a href="{{ URL('teacher/grades') }}" class="{{ (request()->segment(2) == 'grades') ? 'active' : '' }}">
-                <img src="{{ asset('public/svg/grades-icon.svg') }}" alt="Trainee Grades">
-                <span class="links_name">Trainee Grades</span>
+                <img src="{{ asset('public/svg/grades-icon.svg') }}" alt="Learner Grades">
+                <span class="links_name">Learner Grades</span>
             </a>
         </li>
         <li>
             <a href="{{ URL('teacher/assessments') }}" class="{{ (request()->segment(2) == 'assessments') ? 'active' : '' }}">
-                <img src="{{ asset('public/svg/teaching-evaluation-icon.svg') }}" alt="Trainee Assessment">
-                <span class="links_name">Trainee Assessment</span>
+                <img src="{{ asset('public/svg/teaching-evaluation-icon.svg') }}" alt="Learner Assessment">
+                <span class="links_name">Learner Assessment</span>
             </a>
         </li> -->
         <li>
@@ -56,12 +56,12 @@
                 <span class="links_name">Profile</span>
             </a>
         </li>
-        <li>
+        <!-- <li>
             <a href="{{ URL('teacher/notes') }}" class="{{ (request()->segment(2) == 'notes') ? 'active' : '' }}">
                 <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Notes">
                 <span class="links_name">Note</span>
             </a>
-        </li>
+        </li> -->
         @else
             @if (@auth()->user()->isCredentials())
             <li>
@@ -103,8 +103,8 @@
             </li>
             <li>
                 <a href="{{ URL('admin/manage_student') }}" class="{{ (request()->segment(2) == 'manage_student') ? 'active' : '' }}">
-                    <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Manage Trainee">
-                    <span class="links_name">Manage Trainee</span>
+                    <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Manage Learner">
+                    <span class="links_name">Manage Learner</span>
                 </a>
             </li>
             <li>
@@ -115,14 +115,14 @@
             </li>
             <!-- <li>
                 <a href="{{ URL('admin/grade') }}" class="{{ (request()->segment(2) == 'grade') ? 'active' : '' }}">
-                    <img src="{{ asset('public/svg/grades-icon.svg') }}" alt="Trainee Grades">
-                    <span class="links_name">Trainee Grades</span>
+                    <img src="{{ asset('public/svg/grades-icon.svg') }}" alt="Learner Grades">
+                    <span class="links_name">Learner Grades</span>
                 </a>
             </li>
             <li>
                 <a href="{{ URL('admin/assessment') }}" class="{{ (request()->segment(2) == 'assessment') ? 'active' : '' }}">
-                    <img src="{{ asset('public/svg/teaching-evaluation-icon.svg') }}" alt="Trainee Assessment">
-                    <span class="links_name">Trainee Assessments</span>
+                    <img src="{{ asset('public/svg/teaching-evaluation-icon.svg') }}" alt="Learner Assessment">
+                    <span class="links_name">Learner Assessments</span>
                 </a>
             </li> -->
             <li>

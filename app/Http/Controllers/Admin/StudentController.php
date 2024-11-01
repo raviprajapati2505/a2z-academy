@@ -22,7 +22,7 @@ class StudentController extends Controller
 
     public function __construct()
     {
-        $this->titles = "Manage Trainee";
+        $this->titles = "Manage Learner";
         $this->urlSlugs = "manage_student";
     }
 

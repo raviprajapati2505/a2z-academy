@@ -7,13 +7,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image as Image;
 use app\Models\Certificate;
+use App\Models\StudentCourseHistory;
+use App\Models\TrackLecture;
 use Illuminate\Support\Facades\Hash;
 
 class CertificateController extends Controller
 {
     public function index()
     {
-        return view('frontend.certificate.index');
+      $track_lecture = TrackLecture::where('student_id', Auth::user()->id)->get();
+      $purchased_course = StudentCourseHistory::leftJoin('courses', 'courses.id', '=', 'student_course_history.course_id')
+            ->where('student_course_history.student_id', Auth::user()->id)
+            ->where('student_course_history.is_paid', '1')
+            ->get();
+        return view('frontend.certificate.index',compact('purchased_course','track_lecture'));
     }
 
     public function download_certificate(Request $request)
@@ -46,6 +53,10 @@ class CertificateController extends Controller
         ];
         $data = [
             'file' => $filename,
+            'year' => $request->year ?? '',
+            'qualification' => $request->qualification ?? '',
+            'organization' => $request->organization ?? '',
+            'name' => $request->name ?? '',
         ];
         if ($request->admin_id && empty($request->password)) {
             unset($data['password']);

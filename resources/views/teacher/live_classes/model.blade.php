@@ -144,14 +144,14 @@
               <div class="row">
                 <div class="form-group">
 										<label for="description"></label>
-										<input type="checkbox" id="select_all" name="select_all" value="0" placeholder=""> All Trainee
+										<input type="checkbox" id="select_all" name="select_all" value="0" placeholder=""> All Learner
 									</div>
               </div>
 
               <div class="row">
                 <div class="col-sm">
                   <div class="form-group">
-                    <label for="status">Select Trainee</label>
+                    <label for="status">Select Learner</label>
                     <select class="js-example-basic-single form-control" multiple name="students[]" id="students">
                       @foreach($students as $student)
                       <option value="{{ $student->id }}">{{ $student->name }}</option>

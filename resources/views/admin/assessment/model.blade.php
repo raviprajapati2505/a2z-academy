@@ -10,7 +10,7 @@
 				<div class="userprofalldata-full">
 
 					<div class="userprofalldata-iner model-form">
-						<h3>Trainee Assessment</h3><br><br>
+						<h3>Learner Assessment</h3><br><br>
 						<form id="assessmentform">
 							<div class="alert alert-danger" id="alert-danger-form">
 							</div>
@@ -43,7 +43,7 @@
 							<div class="row">
 								<div class="col-sm">
 									<div class="form-group">
-										<label for="status">Select Trainee *</label>
+										<label for="status">Select Learner *</label>
 										<select class="js-example-basic-single form-control" name="student" id="student">
 											@foreach($students as $student)
 											<option value="{{ $student->id }}">{{ $student->name }}</option>

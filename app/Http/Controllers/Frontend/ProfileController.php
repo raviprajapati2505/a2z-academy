@@ -9,20 +9,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Helper\CommonHelper as Helper;
-use App\Models\StudentCourseHistory;
-use App\Models\TrackLecture;
 
 class ProfileController extends Controller
 {
     public function index()
     {
-        $track_lecture = TrackLecture::where('student_id', Auth::user()->id)->get();
-        $purchased_course = StudentCourseHistory::leftJoin('courses', 'courses.id', '=', 'student_course_history.course_id')
-            ->where('student_course_history.student_id', Auth::user()->id)
-            ->where('student_course_history.is_paid', '1')
-            ->get();
         $user = User::find(Auth::user()->id);
-        return view('frontend.profile.update_profile', compact('user', 'track_lecture', 'purchased_course'));
+        return view('frontend.profile.update_profile', compact('user'));
     }
 
     public function change_password()

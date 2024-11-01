@@ -12,7 +12,7 @@
         </div>
         <div class="addadmsupbtnright">
             <a href="javascript:void(0)" id="create-student">
-                <i class='bx bxs-plus-circle'></i> Add Trainee
+                <i class='bx bxs-plus-circle'></i> Add Learner
             </a>
         </div>
     </div>
@@ -28,7 +28,7 @@
                         <tr>
                             <th>ID</th>
                             <th>External ID</th>
-                            <th>Trainee Name</th>
+                            <th>Learner Name</th>
                             <th>Email Address</th>
                             <th>Mobile Number</th>
                             <th>Class</th>

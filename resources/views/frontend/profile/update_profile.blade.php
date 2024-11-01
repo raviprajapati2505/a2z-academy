@@ -29,43 +29,15 @@
                                 <p>Max file size is 20mb</p>
                             </div>
                         </div>
-                        <div class="form-group formdatamiancov">
+                        <!-- <div class="form-group formdatamiancov">
                             <label for="">Full Name</label>
                             <input type="text" class="form-control" name="fname" id="fname" placeholder="">
                         </div>
                         <div class="form-group formdatamiancov">
                             <label for="">Certificates Name</label>
                             <input type="" class="form-control" id="" placeholder="">
-                        </div>
-                        @foreach($purchased_course as $course)
-                        <?php
-                        $total_course_duration = 0;
-                        $total_ceu_points = 0;
-                        $pp = \App\Models\Course::where('id', $course->id)->first();
-                        foreach ($pp->curriculam_lecture as $lc) {
-                            $total_course_duration += $lc->duration_in_seconds;
-                        }
-                        $total_time_in_seconds = 0;
-                        foreach ($track_lecture as $track_lc) {
-                            if ($track_lc->course_id == $course->id) {
-                                $total_time_in_seconds += $track_lc->time_in_seconds;
-                            }
-                        }
-                        if ($total_course_duration > 0 && $total_time_in_seconds > 0) {
-                            $total = (int)$total_time_in_seconds / (int)$total_course_duration * 100;
-                            $total_course_completed = (int)$total;
-                        } else {
-                            $total_course_completed = 0;
-                        }
-                        ?>
-                        @if($total_course_completed >= 99)
-                        <? $total_ceu_points += $course->ceu_points ?>
-                        @endif
-                        @endforeach
-                        <button type="button" class="btn btn-primary">
-                            CEU Points Earned <span class="badge badge-light"><?= $total_ceu_points ?></span>
-                            <span class="sr-only"></span>
-                        </button>
+                        </div> -->
+                        
                         <!-- <div class="saveprofdata">
                     <button>Save</button>
                 </div> -->

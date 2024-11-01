@@ -22,7 +22,7 @@
                 <table id="example" class="display table nowrap enrollment_datatable">
                     <thead>
                         <tr>
-                            <th>Trainee Name</th>
+                            <th>Learner Name</th>
                             <th>Course Name</th>
                             <th>Course Price</th>
                             <th>Course Purchased At</th>
