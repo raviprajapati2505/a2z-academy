@@ -23,7 +23,7 @@ class MainController extends Controller
         $student_review = StudentReview::orderBy('created_at')->skip(0)->take(10)->get();
 
         $query = NewnessClassStudent::with('newness_class')->whereHas('newness_class', function ($q) {
-            $q->where('is_live', '0');
+            $q->where('is_live', '1');
         });
         if (Auth::user()) {
             $query->where('student_id', Auth::user()->id);

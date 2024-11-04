@@ -31,7 +31,7 @@ class EventController extends Controller
             ->whereNull('user_id')
             ->orWhere('user_id', '=', Auth::user()->id)
             ->get();
-        $classes = NewnessClass::select(array('date', 'description', 'time_from', 'time_to'))->where('is_live', '0')->where('teacher_id', Auth::user()->id)->get();
+        $classes = NewnessClass::select(array('date', 'description', 'time_from', 'time_to'))->where('is_live', '1')->where('teacher_id', Auth::user()->id)->get();
         $urlSlug = $this->urlSlugs;
         $title = $this->titles;
         return view('frontend.' . $urlSlug . '.index', compact('urlSlug', 'title', 'events', 'classes'));

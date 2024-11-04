@@ -29,7 +29,7 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::select(array('datetime', 'description', 'type'))->get();
-        $classes = NewnessClass::select(array('date', 'description', 'time_from', 'time_to'))->where('is_live', '0')->get();
+        $classes = NewnessClass::select(array('date', 'description', 'time_from', 'time_to'))->where('is_live', '1')->get();
         $urlSlug = $this->urlSlugs;
         $title = $this->titles;
         return view('admin.' . $urlSlug . '.index', compact('urlSlug', 'title', 'events', 'classes'));
