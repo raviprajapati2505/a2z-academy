@@ -28,8 +28,13 @@
                         <?php
                         $url = $class->zoom_join_url;
                         $meeting_credentials = explode('?', $url);
-                        $mn = str_replace('https://us05web.zoom.us/j/', '', $meeting_credentials[0]);
-                        $password = str_replace('pwd=', '', $meeting_credentials[1]);
+                        
+                        $password = '';
+                        $mn = '';
+                        if(isset($meeting_credentials[0]) && isset($meeting_credentials[1])){
+                            $mn = str_replace('https://us05web.zoom.us/j/', '', $meeting_credentials[0]);
+                            $password = str_replace('pwd=', '', $meeting_credentials[1]);
+                        } 
                         ?>
                         <?php
                         $current_hour = date('H');

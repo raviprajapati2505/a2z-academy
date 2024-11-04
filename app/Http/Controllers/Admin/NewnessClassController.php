@@ -123,7 +123,8 @@ class NewnessClassController extends Controller
                 'teacher_id' => $request->teacher,
                 'created_by' => Auth::user()->id,
                 'description' => $request->description ? $request->description : 'class information',
-                'user_id' => Auth::user()->id
+                'user_id' => Auth::user()->id,
+                'is_live' => '1'
             ];
             if ($request->hasFile('image')) {
                 $data['image'] = Helper::uploadDocuments($request, 'image', 'uploads/classes/images');

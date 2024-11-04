@@ -32,7 +32,7 @@ trait UserTrait
     public function userVideoCourses($userId)
     {
         // Fetch all the students from the 'student' table.
-        $courses = NewnessClass::where('is_live', '0')->where('teacher_id', Auth::user()->id)->where('date', '>', Carbon::today())->skip(0)->take(3)->get();
+        $courses = NewnessClass::where('is_live', '1')->where('teacher_id', Auth::user()->id)->where('date', '>', Carbon::today())->skip(0)->take(3)->get();
 
         return $courses;
     }

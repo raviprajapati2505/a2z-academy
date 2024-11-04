@@ -45,8 +45,12 @@
                             <?php
                             $url = $class->newness_class->zoom_join_url;
                             $meeting_credentials = explode('?', $url);
-                            $mn = str_replace('https://us05web.zoom.us/j/', '', $meeting_credentials[0]);
-                            $password = str_replace('pwd=', '', $meeting_credentials[1]);
+                            $password = '';
+                            $mn = '';
+                            if (isset($meeting_credentials[0]) && isset($meeting_credentials[1])) {
+                                $mn = str_replace('https://us05web.zoom.us/j/', '', $meeting_credentials[0]);
+                                $password = str_replace('pwd=', '', $meeting_credentials[1]);
+                            }
                             ?>
                             <?php
                             $current_hour = date('H');
@@ -69,8 +73,8 @@
                                 $text = 'Live at ' . $class->time_from . ':00';
                             }
                             ?>
-                            <a href="<?php echo $password ?>" target="_blank">
-                            <!-- <a href="javascript:void(0);" class="{{ $zoom_link }}" data-mn="{{ $mn }}" data-pwd="{{ $password }}" data-display_name="{{ auth()->user()->name }}" data-role="0" data-url="<?= url('/').'/meeting?' ?>"> -->
+                            <a href="<?php echo $class->zoom_start_url ?>" target="_blank">
+                                <!-- <a href="javascript:void(0);" class="{{ $zoom_link }}" data-mn="{{ $mn }}" data-pwd="{{ $password }}" data-display_name="{{ auth()->user()->name }}" data-role="0" data-url="<?= url('/') . '/meeting?' ?>"> -->
                                 <div class="coursesdata-img">
                                     <div class="retclass">
                                         <h5>3.5 <i class='bx bxs-star'></i></h5>
@@ -102,7 +106,7 @@
     </div>
 </div>
 
-<div class="container videosclassesmain-covpg">
+<!-- <div class="container videosclassesmain-covpg">
     <div class="classall-datacover">
 
         <div class="classalldata-title">
@@ -258,7 +262,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <form class="navbar-form navbar-right" id="meeting_form" style="display:none">
     <div class="form-group">
         <input type="text" name="display_name" id="display_name" maxLength="100" placeholder="Name" class="form-control" required>
