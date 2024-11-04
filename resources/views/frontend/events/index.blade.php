@@ -6,7 +6,7 @@
     <div class="myactpagedatacov">
         <div class="myactpagedata_title">
             <h1>Calendar</h1>
-            <p>Welcome to My Events</p>
+            <p>Welcome to Events</p>
         </div>
         <div class="fullpageinerdata_cover">
             <div class="fullpageinerdata_iner">

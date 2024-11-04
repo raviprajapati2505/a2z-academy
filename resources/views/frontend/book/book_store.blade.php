@@ -33,9 +33,9 @@
                 <h5>By {{ $book->author }}</h5>
                 <div class="book-readmorebtn">
                   @if($book->external_link)
-                  <a href="<?= $book->external_link ?>" target="_blank">Read</a>
+                  <a href="<?= $book->external_link ?>" target="_blank">Buy Now</a>
                   @else
-                  <a href="<?= url('/') . '/public/' . $book->book_file ?>" target="_blank">Read</a>
+                  <a href="<?= url('/') . '/public/' . $book->book_file ?>" target="_blank">Buy Now</a>
                   @endif
 
                 </div>

@@ -10,7 +10,7 @@
             <h3>{{ Auth::user()->name.' '.Auth::user()->lastname }}</h3>
         </div>
         <div class="videoandcurrent-title">
-            <h3>My Note</h3>
+            <h3>Note</h3>
             <a href="Javascript:void(0);" id="create-note">Add Note</a>
         </div>
         <div class="activitydata-cover">
@@ -31,7 +31,7 @@
         </div>
 
         <div class="videoandcurrent-title">
-            <h3>My Upcoming Class</h3>
+            <h3>Upcoming Class</h3>
             <a href="Javascript:void(0);">View All</a>
         </div>
         @if(count($upcoming_class) > 0)
@@ -88,6 +88,29 @@
                                     <div class="form-group">
                                         <label for="status">Description *</label>
                                         <textarea name="description" id="description_note" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="form-group">
+                                        <label for="status">Type *</label>
+                                        <select class="form-control" name="type" id="type">
+                                            <option value="1">Personal Note</option>
+                                            <option value="2">Class Note</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="form-group">
+                                        <label for="status">Subject *</label>
+                                        <select class="form-control" name="subject" id="subject">
+                                            @foreach($subjects as $subject)
+                                            <option value="{{ $subject->id }}">{{ $subject->title }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                             </div>

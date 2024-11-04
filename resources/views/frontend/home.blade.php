@@ -284,7 +284,7 @@
 <div class="container">
 	<div class="myclsstudy-maincov">
 		<div class="myclsstudy-maintitle">
-			<p>My Class</p>
+			<p>Class</p>
 			<h3>What stage of study are you now?</h3>
 		</div>
 		<div class="myclsstudy-slider">

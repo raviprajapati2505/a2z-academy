@@ -4,8 +4,8 @@
 <div class="coveradminalldata">
     <div class="calendarpage-cover">
         <div class="profset-title">
-            <h1>My Calendar</h1>
-            <p>Welcome to Newness My Calendar</p>
+            <h1>Calendar</h1>
+            <p>Welcome to Gord Academy Calendar</p>
         </div>
         <div class="leftright-calendar">
             <div class="left-calendar">

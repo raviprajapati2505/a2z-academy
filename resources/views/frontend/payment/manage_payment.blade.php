@@ -22,7 +22,7 @@
       <div class="payhistdatacov1">
         <div class="fullpageinerdata_iner">
           <div class="fullpageinerdata_title">
-            <h2>My Courses</h2>
+            <h2>Courses</h2>
           </div>
           <div class="fullpageinerdata_tbl">
             <table id="paymenttbl" class="table display">

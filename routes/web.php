@@ -43,6 +43,7 @@ use App\Http\Controllers\Frontend\MainController;
 use App\Http\Controllers\Frontend\PaymentController;
 use App\Http\Controllers\Frontend\ProfileController as SProfileController;
 use App\Http\Controllers\Frontend\EventController as SEventController;
+use App\Http\Controllers\Frontend\DashboardController as SDashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
@@ -94,6 +95,7 @@ Route::middleware(['auth', '2fa', 'student'])->group(function () {
     Route::post('download_certificate', [CertificateController::class, 'download_certificate'])->name('download_certificate');
     Route::get('/meeting', [ClassesController::class, 'meeting']);
     Route::get('/events', [SEventController::class, 'events']);
+    Route::get('/dashboard', [SDashboardController::class, 'index']);
 });
 
 Route::middleware(['auth'])->group(function () {

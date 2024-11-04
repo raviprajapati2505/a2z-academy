@@ -56,12 +56,12 @@
                 <span class="links_name">Profile</span>
             </a>
         </li>
-        <!-- <li>
+        <li>
             <a href="{{ URL('teacher/notes') }}" class="{{ (request()->segment(2) == 'notes') ? 'active' : '' }}">
                 <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Notes">
                 <span class="links_name">Note</span>
             </a>
-        </li> -->
+        </li>
         @else
             @if (@auth()->user()->isCredentials())
             <li>
@@ -89,12 +89,12 @@
                     <span class="links_name">Manage Users</span>
                 </a>
             </li>
-            <!-- <li>
+            <li>
                 <a href="{{ URL('admin/manage_class') }}" class="{{ (request()->segment(2) == 'manage_class') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/my-classes-icon.svg') }}" alt="Manage Classes">
                     <span class="links_name">Manage Classes</span>
                 </a>
-            </li> -->
+            </li>
             <li>
                 <a href="{{ URL('admin/manage_teacher') }}" class="{{ (request()->segment(2) == 'manage_teacher') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Manage Instructor">

@@ -4,8 +4,8 @@
 <div class="container">
     <div class="myactpagedatacov">
         <div class="myactpagedata_title">
-            <h1>My Accounts</h1>
-            <p>Welcome to My Profile</p>
+            <h1>Accounts</h1>
+            <p>Welcome to Profile</p>
         </div>
         <form method="POST" enctype="multipart/form-data" id="userform" action="{{ route('submit_change_profile') }}">
             <div class="myactpagedata_left">

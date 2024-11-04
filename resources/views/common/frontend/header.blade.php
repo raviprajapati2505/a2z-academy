@@ -45,18 +45,25 @@
                     </ul>
                     <div class="menu-items">
                         <ul>
+                             <li>
+                                <a href="{{ url('dashboard') }}">
+                                    <img class="activ" src="{{ asset('public/frontend/svg/my-accounts-icon.svg') }}" alt="">
+                                    <img class="activno" src="{{ asset('public/frontend/svg/my-accounts-icon-active.svg') }}" alt="">
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
                             <li>
                                 <a href="{{ url('my_account') }}">
                                     <img class="activ" src="{{ asset('public/frontend/svg/my-accounts-icon.svg') }}" alt="">
                                     <img class="activno" src="{{ asset('public/frontend/svg/my-accounts-icon-active.svg') }}" alt="">
-                                    <span>My Accounts</span>
+                                    <span>Accounts</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ url('purchased_courses') }}">
                                     <img class="activ" src="{{ asset('public/frontend/svg/my-courses-icon.svg') }}" alt="">
                                     <img class="activno" src="{{ asset('public/frontend/svg/my-courses-icon-active.svg') }}" alt="">
-                                    <span>My Courses</span>
+                                    <span>Courses</span>
                                 </a>
                             </li>
                             <li>
@@ -127,7 +134,7 @@
                 @endguest
                 <div class="collapse navbar-collapse right-hednavmaincov" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown d-menu {{ (request()->segment(1) == 'course_by_class') ? 'active' : '' }}">
+                        <!-- <li class="nav-item dropdown d-menu {{ (request()->segment(1) == 'course_by_class') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Batches<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="6 9 12 15 18 9"></polyline>
                                 </svg>
@@ -150,7 +157,7 @@
 
                                 </ul>
                             </div>
-                        </li>
+                        </li> -->
                         <li class="nav-item dropdown d-menu {{ (request()->segment(1) == 'course_by_type') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Courses<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="6 9 12 15 18 9"></polyline>

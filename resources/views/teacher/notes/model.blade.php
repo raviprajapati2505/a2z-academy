@@ -33,6 +33,29 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="form-group">
+                                        <label for="status">Type *</label>
+                                        <select class="form-control" name="type" id="type">
+                                            <option value="1">Personal Note</option>
+                                            <option value="2">Class Note</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="form-group">
+                                        <label for="status">Subject *</label>
+                                        <select class="form-control" name="subject" id="subject">
+                                            @foreach($subjects as $subject)
+                                            <option value="{{ $subject->id }}">{{ $subject->title }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
 
                             <input type="hidden" id="note_id" name="note_id" value="">
                             <div class="saveprofdata">

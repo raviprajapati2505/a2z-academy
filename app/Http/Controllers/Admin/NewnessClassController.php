@@ -31,7 +31,7 @@ class NewnessClassController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = NewnessClass::where('is_live', '0')->get();
+            $data = NewnessClass::where('is_live', '1')->get();
             return Datatables::of($data)->addIndexColumn()
                 ->addColumn('status', function ($row) {
                     if ($row->status == "Enabled") {

@@ -7,6 +7,7 @@ use App\Models\CourseType;
 use App\Models\NewnessClass;
 use App\Models\Note;
 use App\Models\Notification;
+use App\Models\Subject;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
@@ -35,6 +36,7 @@ class AppServiceProvider extends ServiceProvider
             function ($view) {
                 $view->with('upcoming_class', NewnessClass::where('is_live', '0')->where('teacher_id', Auth::user()->id)->where('date', '>', Carbon::today())->skip(0)->take(3)->get());
                 $view->with('notes', Note::where('teacher_id', Auth::user()->id)->orderby('id', 'desc')->skip(0)->take(3)->get());
+                $view->with('subjects', Subject::all());
                 ;
             }
         );

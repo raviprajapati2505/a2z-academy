@@ -21,7 +21,7 @@ class EventController extends Controller
 
 	public function __construct()
 	{
-		$this->titles = "My Calendar";
+		$this->titles = "Calendar";
 		$this->urlSlugs = "events";
 	}
 

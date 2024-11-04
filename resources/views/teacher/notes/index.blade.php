@@ -23,6 +23,8 @@
                             <th>ID</th>
                             <th>Title</th>
                             <th>Description</th>
+                            <th>Type</th>
+                            <th>Subject</th>
                             <th width="200">Actions</th>
                         </tr>
                     </thead>
@@ -62,6 +64,14 @@
                 {
                     data: 'description',
                     name: 'description'
+                },
+                {
+                    data: 'type',
+                    name: 'type'
+                },
+                {
+                    data: 'subject',
+                    name: 'subject'
                 },
                 {
                     data: 'action',
@@ -171,6 +181,8 @@
             $('#note_id').val(data.data.id);
             $('#title').val(data.data.title);
             $('#description').val(data.data.description);
+            $('#type').val(data.data.type);
+            $('#subject').val(data.data.subject_id);
         })
     });
 

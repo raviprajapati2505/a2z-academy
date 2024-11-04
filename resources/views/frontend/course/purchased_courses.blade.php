@@ -4,8 +4,8 @@
 <div class="container">
     <div class="mycorspagedatacov">
         <div class="myactpagedata_title">
-            <h1>My Courses</h1>
-            <p>Welcome to My Courses</p>
+            <h1>Courses</h1>
+            <p>Welcome to Courses</p>
         </div>
         <div class="row">
             @if(count($purchased_course) > 0)
