@@ -18,7 +18,6 @@ class MainController extends Controller
     public function index()
     {
         $course_types = CourseType::all();
-        $delivery_modes = CourseType::whereIn('id', array(12,13,14,15))->get();
         $all_courses = Course::all();
         $class_list = ClassList::all();
         $student_review = StudentReview::orderBy('created_at')->skip(0)->take(10)->get();
@@ -36,7 +35,7 @@ class MainController extends Controller
         $all_review_count = StudentReview::count();
         $adviser_count = User::where('role', 'Teacher')->count();
         $video_tutorials_count = CurriculamLecture::count();
-        return view('frontend.home', compact('all_courses', 'course_types', 'student_review', 'all_review_count', 'adviser_count', 'video_tutorials_count', 'newness_classes', 'class_list', 'delivery_modes'));
+        return view('frontend.home', compact('all_courses', 'course_types', 'student_review', 'all_review_count', 'adviser_count', 'video_tutorials_count', 'newness_classes', 'class_list'));
     }
 
     public function filter_course_by_class(Request $request)
