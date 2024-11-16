@@ -12,7 +12,7 @@
         </div>
         <div class="addadmsupbtnright">
             <a href="javascript:void(0)" id="create-subject">
-                <i class='bx bxs-plus-circle'></i> Add Subject
+                <i class='bx bxs-plus-circle'></i> Add Sub-Category
             </a>
         </div>
     </div>

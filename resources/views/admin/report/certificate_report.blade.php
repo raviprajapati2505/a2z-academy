@@ -7,7 +7,7 @@
     <div class="quizmaindata-cover">
         @include ('messages')
         <div class="profset-title">
-            <h1>Certificate Report</h1>
+            <h1>Certification report</h1>
             <!--  <p>Welcome to Newness Super Admin</p> -->
         </div>
     </div>
@@ -15,11 +15,42 @@
         <div class="supadmmain_cover">
             <div class="supadmmain_maintbl">
                 <div class="row">
-                    <div class="col-md-2"><label>From Date : </label>&nbsp;&nbsp;<input type="date" name="from_date" id="from_date"></div>
-                    <div class="col-md-2"><label>To Date : </label>&nbsp;&nbsp;<input type="date" name="to_date" id="to_date"></div>
+                    <div class="col-md-2"><label>From Date : </label>&nbsp;&nbsp;<input type="date" name="from_date" id="from_date" class="form-control"></div>
+                    <div class="col-md-2"><label>To Date : </label>&nbsp;&nbsp;<input type="date" name="to_date" id="to_date" class="form-control"></div>
+                    <div class="col-md-2"><label>Course : </label>&nbsp;&nbsp;
+                        <select class="form-control" name="course" id="course">
+                            @foreach($courses as $course)
+                            <option value="{{$course->id}}">{{$course->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-md-2"><label>Category : </label>&nbsp;&nbsp;
+                        <select class="form-control" name="course_type" id="course_type">
+                            @foreach($course_type as $type)
+                            <option value="{{$type->id}}">{{$type->title}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-md-2"><label>Sub-Category : </label>&nbsp;&nbsp;
+                        <select class="form-control" name="subject" id="subject">
+                            @foreach($subjects as $sub)
+                            <option value="{{$sub->id}}">{{$sub->title}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-md-2"><label>Batch : </label>&nbsp;&nbsp;
+                        <select class="form-control" name="class" id="class">
+                            @foreach($classes as $class)
+                            <option value="{{$class->id}}">{{$class->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
                     <div class="col-md-2"><a class="btn btn-primary btn-xs" id="filter_data">Filter</a></div>
                 </div>
-                <br><br>
+                <br>
                 <table id="example" class="display table nowrap certificate_datatable">
                     <thead>
                         <tr>
@@ -45,6 +76,10 @@
                 "data": function(d) {
                     d.from_date = $('#from_date').val();
                     d.to_date = $('#to_date').val();
+                    d.subject = $('#subject').val();
+                    d.class = $('#class').val();
+                    d.course = $('#course').val();
+                    d.course_type = $('#course_type').val();
                 }
             },
             autoWidth: true,
@@ -67,8 +102,8 @@
                     data: 'firstname',
                     name: 'firstname'
                 }, {
-                    data: 'name',
-                    name: 'name'
+                    data: 'course_name',
+                    name: 'course_name'
                 },
                 {
                     data: 'generated_date',
@@ -77,7 +112,7 @@
             ]
         });
 
-        $('#filter_data').click(function(){
+        $('#filter_data').click(function() {
             table.ajax.reload();
         })
 

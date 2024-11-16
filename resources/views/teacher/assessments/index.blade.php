@@ -28,9 +28,9 @@
                         <tr>
                             <th>ID</th>
                             <th>Marks</th>
-                            <th>Class Name</th>
+                            <th>Batch Name</th>
                             <th>Learner Name</th>
-                            <th>Subject</th>
+                            <th>Sub-Category</th>
                             <th width="200">Actions</th>
                         </tr>
                     </thead>

@@ -34,7 +34,7 @@ class DashboardController extends Controller
         $dashboardDetails['classes'][3]['title'] = "Physics- Unit 5";
         $dashboardDetails['classes'][3]['percentage'] = "30";
 
-        $dashboardDetails['time_spent']['total'] = "10 Hours <br>35 mins";
+        $dashboardDetails['time_spent']['total'] = "";
         $dashboardDetails['time_spent']['items'][0]['title'] = "Chemistry - 45 Mins";
         $dashboardDetails['time_spent']['items'][0]['color'] = "#feca43";
 

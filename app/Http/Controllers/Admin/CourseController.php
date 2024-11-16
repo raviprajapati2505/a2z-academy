@@ -7,6 +7,7 @@ use App\Models\Course;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\ChildCategory;
 use App\Models\ClassList;
 use App\Models\CourseMaterial;
 use App\Models\CourseType;
@@ -80,8 +81,9 @@ class CourseController extends Controller
         $classes = ClassList::all();
         $subjects = Subject::all();
         $course_type = CourseType::all();
+        $child_category = ChildCategory::all();
         $teachers = User::where('role', 'Teacher')->get();
-        return view('admin.' . $urlSlug . '.index', compact('urlSlug', 'title', 'classes', 'subjects', 'teachers', 'course_type'));
+        return view('admin.' . $urlSlug . '.index', compact('urlSlug', 'title', 'classes', 'subjects', 'teachers', 'course_type', 'child_category'));
     }
 
     /**
@@ -138,7 +140,8 @@ class CourseController extends Controller
                 'short_description' => $request->short_description,
                 'what_you_learn' => $request->what_you_learn,
                 'instructor_infromation' => $request->instructor_infromation,
-                'ceu_points' => $request->ceu_points
+                'ceu_points' => $request->ceu_points,
+                'child_category_id' => $request->child_category
             ];
 
             if ($request->hasFile('cover_image')) {

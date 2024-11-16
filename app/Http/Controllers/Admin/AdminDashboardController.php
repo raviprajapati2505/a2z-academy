@@ -30,8 +30,8 @@ class AdminDashboardController extends Controller
     {
         $urlSlug = $this->urlSlugs;
         $title = $this->titles;
-        $studentsCount = User::where('role', 'teacher')->count();
-        $teachersCount = User::where('role', 'student')->count();
+        $studentsCount = User::where('role', 'student')->count();
+        $teachersCount = User::where('role', 'teacher')->count();
         $activeCourses = Course::where('status', 'Enabled')->count();
         $enrolledCourses = StudentCourseHistory::distinct()->count('course_id');
         $freeCourses = Course::where('is_paid', '0')->count();

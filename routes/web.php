@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\TwoFAController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\BookStoreController;
+use App\Http\Controllers\Admin\ChildCategoryController;
 use App\Http\Controllers\Admin\ClassListController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\CourseCurriculamController;
@@ -119,6 +120,7 @@ Route::middleware(['auth', '2fa', 'admin'])->prefix('admin')->group(function () 
     Route::resource('class_list', ClassListController::class);
     Route::resource('page', PageController::class);
     Route::resource('subject', SubjectController::class);
+    Route::resource('child_category', ChildCategoryController::class);
     Route::resource('promocode', PromoCodeController::class);
 
     Route::get('courses_curriculam/{cid}', [CourseCurriculamController::class, 'index']);

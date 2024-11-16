@@ -30,8 +30,8 @@
                             <th>Instructor Name</th>
                             <th>Email Address</th>
                             <th>Mobile Number</th>
-                            <th>Class</th>
-                            <th>Subject</th>
+                            <th>Batch</th>
+                            <th>Sub-Category</th>
                             <th>Status</th>
                             <th width="200">Actions</th>
                         </tr>

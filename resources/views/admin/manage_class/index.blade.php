@@ -12,7 +12,7 @@
         </div>
         <div class="addadmsupbtnright">
             <a href="javascript:void(0)" id="create-class">
-                <i class='bx bxs-plus-circle'></i> Add Class
+                <i class='bx bxs-plus-circle'></i> Add Live Class
             </a>
         </div>
     </div>
@@ -29,8 +29,8 @@
                             <th>ID</th>
                             <th>Date</th>
                             <th>Instructor</th>
-                            <th>Class</th>
-                            <th>Subject</th>
+                            <th>Batch</th>
+                            <th>Sub-Category</th>
                             <th>Status</th>
                             <th width="200">Actions</th>
                         </tr>

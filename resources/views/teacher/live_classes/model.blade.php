@@ -10,7 +10,7 @@
         <div class="userprofalldata-full">
 
           <div class="userprofalldata-iner model-form">
-            <h3>Class Information</h3><br><br>
+            <h3>Batch Information</h3><br><br>
             <form method="POST" enctype="multipart/form-data" id="classform" action="javascript:void(0)">
               <div class="alert alert-danger" id="alert-danger-form">
               </div>
@@ -29,7 +29,7 @@
               <div class="row">
                 <div class="col-sm">
                   <div class="form-group">
-                    <label for="">Select Class *</label>
+                    <label for="">Select Batch *</label>
                     <select class="js-example-basic-single form-control" name="class_class" id="class_class">
                       @foreach($classes as $class)
                       <option value="{{ $class->id }}">{{ $class->name}}</option>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-sm">
                   <div class="form-group">
-                    <label for="">Select Subject *</label>
+                    <label for="">Select Subcategory *</label>
                     <select class="js-example-basic-single form-control" name="class_subject" id="class_subject">
                       @foreach($subjects as $subject)
                       <option value="{{ $subject->id }}">{{ $subject->title }}</option>

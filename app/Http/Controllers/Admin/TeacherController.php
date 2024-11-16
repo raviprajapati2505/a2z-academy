@@ -24,7 +24,7 @@ class TeacherController extends Controller
 
     public function __construct()
     {
-        $this->titles = "Manage Teacher";
+        $this->titles = "Manage Instructor";
         $this->urlSlugs = "manage_teacher";
     }
 

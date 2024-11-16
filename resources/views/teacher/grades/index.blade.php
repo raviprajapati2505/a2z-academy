@@ -30,7 +30,7 @@
                                     <th>ID</th>
                                     <th>Grade</th>
                                     <th>Learner Name</th>
-                                    <th>Subject</th>
+                                    <th>Sub-Category</th>
                                 </tr>
                             </thead>
                         </table>

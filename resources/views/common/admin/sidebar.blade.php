@@ -72,13 +72,25 @@
             </li>
             <li>
                 <a href="{{ URL('admin/course_type') }}" class="{{ (request()->segment(2) == 'course_type') ? 'active' : '' }}">
-                    <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Course Type">
-                    <span class="links_name">Course Type</span>
+                    <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Category">
+                    <span class="links_name">Category</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ URL('admin/subject') }}" class="{{ (request()->segment(2) == 'subject') ? 'active' : '' }}">
+                    <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Sub-Category">
+                    <span class="links_name">Sub Category</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ URL('admin/child_category') }}" class="{{ (request()->segment(2) == 'child_category') ? 'active' : '' }}">
+                    <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Sub-Category">
+                    <span class="links_name">Child Category</span>
                 </a>
             </li>
             @else
             <li>
-                <a href="{{ URL('admin/manage_admin') }}" class="{{ (request()->segment(2) == 'admin_dashboard') ? 'active' : '' }}">
+                <a href="{{ URL('admin/admin_dashboard') }}" class="{{ (request()->segment(2) == 'admin_dashboard') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/dashboard-icon.svg') }}" alt="My Classes">
                     <span class="links_name">Dashboard</span>
                 </a>
@@ -91,8 +103,8 @@
             </li>
             <li>
                 <a href="{{ URL('admin/manage_class') }}" class="{{ (request()->segment(2) == 'manage_class') ? 'active' : '' }}">
-                    <img src="{{ asset('public/svg/my-classes-icon.svg') }}" alt="Manage Classes">
-                    <span class="links_name">Manage Classes</span>
+                    <img src="{{ asset('public/svg/my-classes-icon.svg') }}" alt="Manage Live Class">
+                    <span class="links_name">Manage Live Class</span>
                 </a>
             </li>
             <li>
@@ -150,12 +162,6 @@
                 </a>
             </li>
             <li>
-                <a href="{{ URL('admin/subject') }}" class="{{ (request()->segment(2) == 'subject') ? 'active' : '' }}">
-                    <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Subject">
-                    <span class="links_name">Subject</span>
-                </a>
-            </li>
-            <li>
                 <a href="{{ URL('admin/promocode') }}" class="{{ (request()->segment(2) == 'promocode') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Promo Code">
                     <span class="links_name">Promo Code</span>
@@ -165,13 +171,13 @@
             <li>
                 <a href="{{ URL('admin/report/certificate_report') }}" class="{{ (request()->segment(3) == 'certificate_report') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Promo Code">
-                    <span class="links_name">Certificate Report</span>
+                    <span class="links_name">Certification report</span>
                 </a>
             </li>
             <li>
                 <a href="{{ URL('admin/report/total_enrollment_report') }}" class="{{ (request()->segment(3) == 'total_enrollment_report') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Promo Code">
-                    <span class="links_name">Total Enrollment Report</span>
+                    <span class="links_name">Enrollment Report</span>
                 </a>
             </li>
 

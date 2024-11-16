@@ -24,7 +24,7 @@
                             <th>Title</th>
                             <th>Description</th>
                             <th>Type</th>
-                            <th>Subject</th>
+                            <th>Sub-Category</th>
                             <th width="200">Actions</th>
                         </tr>
                     </thead>

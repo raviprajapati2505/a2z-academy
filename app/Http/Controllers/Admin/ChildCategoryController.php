@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Subject;
+use App\Models\ChildCategory;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
 
-class SubjectController extends Controller
+class ChildCategoryController extends Controller
 {
 	private $urlSlugs, $titles;
 	/**
@@ -20,21 +20,21 @@ class SubjectController extends Controller
 
 	public function __construct()
 	{
-		$this->titles = "Sub-Category List";
-		$this->urlSlugs = "subject";
+		$this->titles = "SubSub Category List";
+		$this->urlSlugs = "child_category";
 	}
 
 	public function index(Request $request)
 	{
 		if ($request->ajax()) {
-			$data = Subject::all();
+			$data = ChildCategory::all();
 			return Datatables::of($data)->addIndexColumn()
 				->addColumn('action', function ($row) {
-					$btn = '<a href="javascript:void(0);" class="edit-tbl edit-subject" data-id=' . $row->id . '">
+					$btn = '<a href="javascript:void(0);" class="edit-tbl edit-category" data-id=' . $row->id . '">
                         <img src="' . asset("public/images/edit-icon.png") . '" alt=""> <span>Edit</span>
                     </a>
 
-                        <a href="javascript:void(0);" title="delete" class="delete-tbl delete-subject" data-id=' . $row->id . '">
+                        <a href="javascript:void(0);" title="delete" class="delete-tbl delete-category" data-id=' . $row->id . '">
                             <img src="' . asset("public/images/delete-icon.png") . '" alt=""> <span>Delete</span>
                         </a>';
 					return $btn;
@@ -81,9 +81,9 @@ class SubjectController extends Controller
 			$data = [
 				'title' => $request->title
 			];
-			Subject::updateOrCreate(
+			ChildCategory::updateOrCreate(
 				[
-					'id' => $request->subject_id
+					'id' => $request->childcategory_id
 				],
 				$data
 			);
@@ -91,7 +91,7 @@ class SubjectController extends Controller
 			return response()->json(
 				[
 					'success' => true,
-					'message' => $request->subject_id ? 'Data updated successfully' : 'Data inserted successfully'
+					'message' => $request->childcategory_id ? 'Data updated successfully' : 'Data inserted successfully'
 				]
 			);
 		} catch (\Exception $e) {
@@ -110,7 +110,7 @@ class SubjectController extends Controller
 	 * @param  \App\Models\Subject  $subject
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(Subject $subject)
+	public function show(ChildCategory $childCategory)
 	{
 	}
 
@@ -122,10 +122,10 @@ class SubjectController extends Controller
 	 */
 	public function edit($id)
 	{
-		$subject  = Subject::find($id);
+		$childCategory  = ChildCategory::find($id);
 
 		return response()->json([
-			'data' => $subject
+			'data' => $childCategory
 		]);
 	}
 
@@ -136,7 +136,7 @@ class SubjectController extends Controller
 	 * @param  \App\Models\Subject  $subject
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, Subject $subject)
+	public function update(Request $request, ChildCategory $childCategory)
 	{
 	}
 
@@ -148,7 +148,7 @@ class SubjectController extends Controller
 	 */
 	public function destroy($id)
 	{
-		$subject = Subject::find($id);
+		$subject = ChildCategory::find($id);
 
         $subject->delete();
 

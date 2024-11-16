@@ -10,8 +10,8 @@
 				<div class="userprofalldata-full">
 
 					<div class="userprofalldata-iner model-form">
-						<h3>Sub-Category Information</h3><br><br>
-						<form id="subjectform">
+						<h3>Child Category Information</h3><br><br>
+						<form id="childcategoryform">
 							<div class="alert alert-danger" id="alert-danger-form">
 							</div>
 							<div class="alert alert-success" id="alert-success-form">
@@ -26,7 +26,7 @@
 								</div>
 							</div>
 
-							<input type="hidden" id="subject_id" name="subject_id" value="">
+							<input type="hidden" id="childcategory_id" name="childcategory_id" value="">
 							<div class="saveprofdata">
 								<button type="submit" value="Save" id="saveBtn">Save</button>
 							</div>

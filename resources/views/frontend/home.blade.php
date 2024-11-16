@@ -15,13 +15,13 @@
 						<select class="form-select course-name" aria-label="Default select example">
 							<option selected>Select New Course</option>
 							@foreach($all_courses as $course)
-							<option value="1">{{ $course->name }}</option>
+							<option value="{{ $course->id }}">{{ $course->name }}</option>
 							@endforeach
 						</select>
 					</div>
 					<div class="srcmainda-mid">
 						<select class="form-select class-name" aria-label="Default select example">
-							<option selected>Class</option>
+							<option selected>Batch</option>
 							@foreach($class_list as $class)
 							<option value="{{ $class->id }}">{{$class->name}}</option>
 							@endforeach
@@ -160,7 +160,7 @@
 		<div class="popucours-title">
 			<div class="popucourtitle-left">
 				<p>Our Most</p>
-				<h3>Popular Course</h3>
+				<h3>Recent Course</h3>
 			</div>
 			<div class="popucourtitle-right">
 				<a href="{{ url('/course_by_type/all')}}">All Course</a>
@@ -284,7 +284,7 @@
 <div class="container">
 	<div class="myclsstudy-maincov">
 		<div class="myclsstudy-maintitle">
-			<p>Class</p>
+			<p>Batch</p>
 			<h3>What stage of study are you now?</h3>
 		</div>
 		<div class="myclsstudy-slider">

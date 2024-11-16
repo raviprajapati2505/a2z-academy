@@ -24,7 +24,7 @@ class NewnessClassController extends Controller
 
     public function __construct()
     {
-        $this->titles = "Manage Classes";
+        $this->titles = "Manage Live Class";
         $this->urlSlugs = "manage_class";
     }
 

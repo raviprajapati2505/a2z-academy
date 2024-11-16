@@ -28,8 +28,8 @@
                         <tr>
                             <th>ID</th>
                             <th>Course Name</th>
-                            <th>Class</th>
-                            <th>Subject</th>
+                            <th>Batch</th>
+                            <th>Sub-Category</th>
                             <th>Price</th>
                             <th>Status</th>
                             <th width="200">Actions</th>
@@ -279,6 +279,7 @@
             $('#status').val(data.data.status).trigger('change');
             $('#course_class').val(data.data.class_id).trigger('change');
             $('#course_subject').val(data.data.subject_id).trigger('change');
+            $('#child_category').val(data.data.child_category_id).trigger('change');
             
             //$('#teacher').val(data.data.teacher_id).trigger('change');
             $("input[name=is_paid][value=" + data.data.is_paid + "]").prop('checked', true);

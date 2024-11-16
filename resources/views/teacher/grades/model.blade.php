@@ -20,7 +20,7 @@
 							<div class="row">
 								<div class="col-sm">
 									<div class="form-group">
-										<label for="">Select Subject *</label>
+										<label for="">Select Subcategory *</label>
 										<select class="js-example-basic-single form-control" name="grade_subject" id="grade_subject">
 											@foreach($subjects as $subject)
 											<option value="{{ $subject->id }}">{{ $subject->title }}</option>

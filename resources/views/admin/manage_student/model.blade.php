@@ -67,7 +67,7 @@
               <div class="row">
                 <div class="col-sm">
                   <div class="form-group">
-                    <label for="">Select Learner Class *</label>
+                    <label for="">Select Learner Batch *</label>
                     <select class="js-example-basic-single form-control" name="student_class" id="student_class">
                       @foreach($classes as $class)
                       <option value="{{ $class->id }}">{{ $class->name}}</option>

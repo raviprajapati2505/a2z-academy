@@ -12,7 +12,7 @@
         </div>
         <div class="addadmsupbtnright">
             <a href="javascript:void(0)" id="create-course-type">
-                <i class='bx bxs-plus-circle'></i> Add Course Type
+                <i class='bx bxs-plus-circle'></i> Add Category
             </a>
         </div>
     </div>

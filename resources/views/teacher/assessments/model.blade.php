@@ -20,7 +20,7 @@
 							<div class="row">
 								<div class="col-sm">
 									<div class="form-group">
-										<label for="assessment_subject">Select Subject *</label>
+										<label for="assessment_subject">Select Subcategory *</label>
 										<select class="js-example-basic-single form-control" name="assessment_subject" id="assessment_subject">
 											@foreach($subjects as $subject)
 											<option value="{{ $subject->id }}">{{ $subject->title }}</option>
@@ -30,7 +30,7 @@
 								</div>
 								<div class="col-sm">
 									<div class="form-group">
-										<label for="assessment_class">Select Class *</label>
+										<label for="assessment_class">Select Batch *</label>
 										<select class="js-example-basic-single form-control" name="assessment_class" id="assessment_class">
 											@foreach($classes as $class)
 											<option value="{{ $class->id }}">{{ $class->name }}</option>

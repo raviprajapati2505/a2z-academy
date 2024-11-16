@@ -18,7 +18,7 @@
                             <tr>
                                 <th>Courses Details</th>
                                 <th>Price</th>
-                                <th>Class</th>
+                                <th>Batch</th>
                                 <th>Date</th>
                                 <!-- <th>Action</th> -->
                             </tr>

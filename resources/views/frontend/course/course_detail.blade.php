@@ -243,7 +243,7 @@
                     <h2>Download Material</h2>
                     <div class="coursefeatures-list">
                         @foreach($course->course_material as $key => $material)
-                        <a href="{{url('/')}}/{{ $material->file }}" Download>Download Material {{$key+1}}</a><br><br>
+                        <a href="{{url('/')}}/{{ $material->file }}" download>Download Material {{$key+1}}</a><br><br>
                         @endforeach
                     </div>
 
