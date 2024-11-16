@@ -18,11 +18,11 @@
                     <h3>Calendar</h3>
                     <h6>Drag and drop your event or click in the calendar</h6>
                     <div class="eventdata-list">
-                        <h5><span class="livecls"></span> Live Class</h5>
+                        <!-- <h5><span class="livecls"></span> Live Class</h5> -->
                         <h5><span class="eventcls"></span> Event</h5>
                         <h5><span class="examcls"></span> Exam</h5>
-                        <h5><span class="othercls"></span> Other</h5>
                         <h5><span class="workshopcls"></span> Workshop</h5>
+                        <h5><span class="othercls"></span> Other</h5>
                     </div>
                     <div class="addnew-event">
                         <a href="javascript:void(0);" id="create-event"><i class='bx bx-plus'></i>New Event</a>

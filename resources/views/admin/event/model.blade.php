@@ -19,7 +19,7 @@
                                 <div class="form-group">
                                     <label for="name">Schedule For *</label>
                                     <select class="js-example-basic-single form-control" name="type" id="type">
-                                        <option value="Live Class">Live Class</option>
+                                        <!-- <option value="Live Class">Live Class</option> -->
                                         <option value="Event">Event</option>
                                         <option value="Exam">Exam</option>
                                         <option value="Other">Other</option>
