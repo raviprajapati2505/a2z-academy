@@ -19,7 +19,7 @@
                     <div class="col-md-2"><label><b>To Date</b> </label>&nbsp;&nbsp;<input type="date" name="to_date" id="to_date" class="form-control"></div>
                     <div class="col-md-2"><label><b>Course</b> </label>&nbsp;&nbsp;
                         <select class="form-control" name="course" id="course">
-                            <option value=""></option>
+                            <option value="">Select</option>
                             @foreach($courses as $course)
                             <option value="{{$course->id}}">{{$course->name}}</option>
                             @endforeach
