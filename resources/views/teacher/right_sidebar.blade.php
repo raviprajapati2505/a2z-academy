@@ -105,7 +105,7 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label for="status">Sub-Category *</label>
+                                        <label for="status">Sub-Category</label>
                                         <select class="form-control" name="subject" id="subject">
                                             @foreach($subjects as $subject)
                                             <option value="{{ $subject->id }}">{{ $subject->title }}</option>
