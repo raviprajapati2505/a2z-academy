@@ -14,7 +14,8 @@ class CourseType extends Model
 	public $timestamps = true;
 
 	protected $fillable = [
-		'title'
+		'title',
+        'is_delivery_mode'
 	];
 
 	/**

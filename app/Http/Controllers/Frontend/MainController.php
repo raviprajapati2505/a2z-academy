@@ -17,7 +17,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $course_types = CourseType::all();
+        $course_types = CourseType::where("is_delivery_mode", 0)->get();
         $all_courses = Course::all();
         $class_list = ClassList::all();
         $student_review = StudentReview::orderBy('created_at')->skip(0)->take(10)->get();
@@ -41,7 +41,7 @@ class MainController extends Controller
     public function filter_course_by_class(Request $request)
     {
         try {
-            $courses = Course::where('class_id', $request->class_id)->get();
+            $courses = Course::where('course_type_id', $request->category_id)->get();
             if (count($courses) > 0) {
                 return response()->json(
                     [

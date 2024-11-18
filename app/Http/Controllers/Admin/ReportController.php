@@ -29,7 +29,10 @@ class ReportController extends Controller
     public function totalEnrollmentReport(Request $request)
     {
         if ($request->ajax()) {
-            $query = StudentCourseHistory::select('courses.*', 'student_course_history.*', 'users.firstname as firstname', 'student_course_history.created_at as purchased_date')->leftJoin('courses', 'courses.id', '=', 'student_course_history.course_id')->leftJoin('users', 'users.id', '=', 'student_course_history.student_id')
+            $query = StudentCourseHistory::select('courses.*', 'student_course_history.*', 'users.firstname as firstname', 'student_course_history.created_at as purchased_date', 'curriculam_lectures.teacher_id as course_teacher')
+            ->leftJoin('courses', 'courses.id', '=', 'student_course_history.course_id')
+            ->join('curriculam_lectures', 'curriculam_lectures.course_id', '=', 'courses.id')
+            ->leftJoin('users', 'users.id', '=', 'student_course_history.student_id')
                 ->where('student_course_history.is_paid', '1');
 
             if (!empty($request->from_date) && !empty($request->to_date)) {
@@ -52,6 +55,14 @@ class ReportController extends Controller
                 $query->where('courses.course_type_id', $request->course_type);
             }
 
+            if (!empty($request->delivery_mode)) {
+                $query->where('courses.delivery_mode_id', $request->delivery_mode);
+            }
+
+            if (!empty($request->instructor)) {
+                $query->where('curriculam_lectures.teacher_id', $request->instructor);
+            }
+
             $data = $query->get();
 
             return Datatables::of($data)->addIndexColumn()->addColumn('purchased_date', function ($row) {
@@ -63,14 +74,19 @@ class ReportController extends Controller
         $courses = Course::all();
         $subjects = Subject::all();
         $classes = ClassList::all();
-        $course_type = CourseType::all();
-        return view('admin.report.total_enrollment_report', compact('courses', 'subjects', 'classes', 'course_type'));
+        $course_type = CourseType::where("is_delivery_mode", 0)->get();
+        $delivery_modes = CourseType::where("is_delivery_mode", 1)->get();
+        $instructors = User::where('role', 'Teacher')->get();
+        return view('admin.report.total_enrollment_report', compact('courses', 'subjects', 'classes', 'course_type', 'delivery_modes', 'instructors'));
     }
 
     public function certificateReport(Request $request)
     {
         if ($request->ajax()) {
-            $query = Certificate::select('courses.*', 'certificates.*', 'users.firstname as firstname', 'certificates.created_at as generated_date')->leftJoin('courses', 'courses.id', '=', 'certificates.course_id')->leftJoin('users', 'users.id', '=', 'certificates.student_id');
+            $query = Certificate::select('courses.*', 'certificates.*', 'users.firstname as firstname', 'certificates.created_at as generated_date', 'curriculam_lectures.teacher_id as course_teacher')
+            ->leftJoin('courses', 'courses.id', '=', 'certificates.course_id')
+            ->leftJoin('curriculam_lectures', 'curriculam_lectures.course_id', '=', 'courses.id')
+            ->leftJoin('users', 'users.id', '=', 'certificates.student_id');
 
             if (!empty($request->from_date) && !empty($request->to_date)) {
                 $query->whereBetween(DB::raw('DATE(certificates.created_at)'), [$request->from_date, $request->to_date]);
@@ -92,6 +108,14 @@ class ReportController extends Controller
                 $query->where('courses.course_type_id', $request->course_type);
             }
 
+            if (!empty($request->delivery_mode)) {
+                $query->where('courses.delivery_mode_id', $request->delivery_mode);
+            }
+
+            if (!empty($request->instructor)) {
+                $query->where('curriculam_lectures.teacher_id', $request->instructor);
+            }
+
             $data = $query->get();
 
             return Datatables::of($data)->addIndexColumn()
@@ -110,7 +134,9 @@ class ReportController extends Controller
         $courses = Course::all();
         $subjects = Subject::all();
         $classes = ClassList::all();
-        $course_type = CourseType::all();
-        return view('admin.report.certificate_report', compact('courses', 'subjects', 'classes', 'course_type'));
+        $delivery_modes = CourseType::where("is_delivery_mode", 1)->get();
+        $instructors = User::where('role', 'Teacher')->get();
+        $course_type = CourseType::where("is_delivery_mode", 0)->get();
+        return view('admin.report.certificate_report', compact('courses', 'subjects', 'classes', 'course_type', 'delivery_modes', 'instructors'));
     }
 }

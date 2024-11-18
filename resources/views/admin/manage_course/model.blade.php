@@ -153,7 +153,7 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label for="child_category">Select Child Category</label>
+                                        <label for="child_category">Select Sub-subcategory Category</label>
                                         <select class="js-example-basic-single form-control" name="child_category" id="child_category">
                                             @foreach($child_category as $type)
                                             <option value="{{ $type->id }}">{{ $type->title }}</option>
@@ -162,6 +162,14 @@
                                     </div>
                                 </div>
                                 <div class="col-sm">
+                                    <div class="form-group">
+                                        <label for="">Select Delivery Mode</label>
+                                        <select class="js-example-basic-single form-control" name="delivery_mode" id="delivery_mode">
+                                            @foreach($delivery_modes as $type)
+                                            <option value="{{ $type->id }}">{{ $type->title }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 

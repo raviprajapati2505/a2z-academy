@@ -85,7 +85,7 @@
             <li>
                 <a href="{{ URL('admin/child_category') }}" class="{{ (request()->segment(2) == 'child_category') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Sub-Category">
-                    <span class="links_name">Child Category</span>
+                    <span class="links_name">Sub-subcategory Category</span>
                 </a>
             </li>
             @else

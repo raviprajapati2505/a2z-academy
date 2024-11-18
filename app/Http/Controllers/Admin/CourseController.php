@@ -80,10 +80,11 @@ class CourseController extends Controller
         $title = $this->titles;
         $classes = ClassList::all();
         $subjects = Subject::all();
-        $course_type = CourseType::all();
+        $course_type = CourseType::where("is_delivery_mode", 0)->get();
+        $delivery_modes = CourseType::where("is_delivery_mode", 1)->get();
         $child_category = ChildCategory::all();
         $teachers = User::where('role', 'Teacher')->get();
-        return view('admin.' . $urlSlug . '.index', compact('urlSlug', 'title', 'classes', 'subjects', 'teachers', 'course_type', 'child_category'));
+        return view('admin.' . $urlSlug . '.index', compact('urlSlug', 'title', 'classes', 'subjects', 'teachers', 'course_type', 'child_category', 'delivery_modes'));
     }
 
     /**
@@ -141,7 +142,8 @@ class CourseController extends Controller
                 'what_you_learn' => $request->what_you_learn,
                 'instructor_infromation' => $request->instructor_infromation,
                 'ceu_points' => $request->ceu_points,
-                'child_category_id' => $request->child_category
+                'child_category_id' => $request->child_category,
+                'delivery_mode_id' => $request->delivery_mode
             ];
 
             if ($request->hasFile('cover_image')) {

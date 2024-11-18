@@ -7,7 +7,9 @@ use App\Models\NewnessClass;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\ChildCategory;
 use App\Models\ClassList;
+use App\Models\CourseType;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
@@ -75,10 +77,12 @@ class LiveClassController extends Controller
         $title = $this->titles;
         $classes = ClassList::all();
         $subjects = Subject::all();
+        $course_type = CourseType::where("is_delivery_mode", 0)->get();
+        $child_category = ChildCategory::all();
         $teachers = User::where('role', 'Teacher')->get();
         $students = User::where('role', 'Student')->get();
         $live_class = NewnessClass::where('is_live', '1')->where('teacher_id', Auth::user()->id)->get();
-        return view('teacher.' . $urlSlug . '.index', compact('urlSlug', 'title', 'classes', 'subjects', 'teachers', 'students', 'live_class'));
+        return view('teacher.' . $urlSlug . '.index', compact('urlSlug', 'title', 'classes', 'subjects', 'teachers', 'students', 'live_class', 'course_type', 'child_category'));
     }
 
     /**
@@ -127,6 +131,8 @@ class LiveClassController extends Controller
                 'teacher_id' => Auth::user()->id,
                 'created_by' => Auth::user()->id,
                 'description' => $request->description ? $request->description : 'Live class',
+                'child_category_id' => $request->child_category,
+                'course_type_id' => $request->type,
                 'user_id' => Auth::user()->id,
                 'is_live' => '1'
             ];

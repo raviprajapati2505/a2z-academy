@@ -14,41 +14,62 @@
     <div class="mainquizans-cover">
         <div class="supadmmain_cover">
             <div class="supadmmain_maintbl">
-                <div class="row">
-                    <div class="col-md-2"><label>From Date : </label>&nbsp;&nbsp;<input type="date" name="from_date" id="from_date" class="form-control"></div>
-                    <div class="col-md-2"><label>To Date : </label>&nbsp;&nbsp;<input type="date" name="to_date" id="to_date" class="form-control"></div>
-                    <div class="col-md-2"><label>Course : </label>&nbsp;&nbsp;
+            <div class="row">
+                    <div class="col-md-2"><label><b>From Date</b> </label>&nbsp;&nbsp;<input type="date" name="from_date" id="from_date" class="form-control"></div>
+                    <div class="col-md-2"><label><b>To Date</b> </label>&nbsp;&nbsp;<input type="date" name="to_date" id="to_date" class="form-control"></div>
+                    <div class="col-md-2"><label><b>Course</b> </label>&nbsp;&nbsp;
                         <select class="form-control" name="course" id="course">
+                            <option value=""></option>
                             @foreach($courses as $course)
                             <option value="{{$course->id}}">{{$course->name}}</option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-md-2"><label>Category : </label>&nbsp;&nbsp;
+                    <div class="col-md-2"><label><b>Category</b> </label>&nbsp;&nbsp;
                         <select class="form-control" name="course_type" id="course_type">
+                            <option value="">Select</option>
                             @foreach($course_type as $type)
                             <option value="{{$type->id}}">{{$type->title}}</option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-md-2"><label>Sub-Category : </label>&nbsp;&nbsp;
+                    <div class="col-md-2"><label><b>Sub-Category</b> </label>&nbsp;&nbsp;
                         <select class="form-control" name="subject" id="subject">
+                            <option value="">Select</option>
                             @foreach($subjects as $sub)
                             <option value="{{$sub->id}}">{{$sub->title}}</option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-md-2"><label>Batch : </label>&nbsp;&nbsp;
+                    <div class="col-md-2"><label><b>Batch</b> </label>&nbsp;&nbsp;
                         <select class="form-control" name="class" id="class">
+                            <option value="">Select</option>
                             @foreach($classes as $class)
                             <option value="{{$class->id}}">{{$class->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <br><br><br>
+                    <div class="col-md-2"><label><b>Instructor</b> </label>&nbsp;&nbsp;
+                        <select class="form-control" name="instructor" id="instructor">
+                            <option value="">Select</option>
+                            @foreach($instructors as $user)
+                            <option value="{{$user->id}}">{{$user->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-md-2"><label><b>Delivery Mode</b> </label>&nbsp;&nbsp;
+                        <select class="form-control" name="delivery_mode" id="delivery_mode">
+                            <option value="">Select</option>
+                            @foreach($delivery_modes as $delivery)
+                            <option value="{{$delivery->id}}">{{$delivery->title}}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-md-2"><a class="btn btn-primary btn-xs" id="filter_data">Filter</a></div>
+                    <div class="col-md-2"><a class="btn btn-primary btn-xs" id="filter_data">Filter</a>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-xs" id="reset_data">Reset</a></div>
                 </div>
                 <br>
                 <table id="example" class="display table nowrap certificate_datatable">
@@ -80,6 +101,8 @@
                     d.class = $('#class').val();
                     d.course = $('#course').val();
                     d.course_type = $('#course_type').val();
+                    d.instructor = $('#instructor').val();
+                    d.delivery_mode = $('#delivery_mode').val();
                 }
             },
             autoWidth: true,
@@ -114,6 +137,17 @@
 
         $('#filter_data').click(function() {
             table.ajax.reload();
+        })
+        $('#reset_data').click(function() {
+            $('#from_date').val('');
+            $('#to_date').val('');
+            $('#subject').val('');
+            $('#class').val('');
+            $('#course').val('');
+            $('#course_type').val('');
+            $('#instructor').val('');
+            $('#delivery_modes').val('');
+            table.ajax.reload('');
         })
 
         function newexportaction(e, dt, button, config) {

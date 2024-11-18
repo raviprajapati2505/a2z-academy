@@ -56,7 +56,7 @@
                                 <a href="{{ url('my_account') }}">
                                     <img class="activ" src="{{ asset('public/frontend/svg/my-accounts-icon.svg') }}" alt="">
                                     <img class="activno" src="{{ asset('public/frontend/svg/my-accounts-icon-active.svg') }}" alt="">
-                                    <span>Accounts</span>
+                                    <span>Account</span>
                                 </a>
                             </li>
                             <li>

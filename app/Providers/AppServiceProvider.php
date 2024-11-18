@@ -44,8 +44,8 @@ class AppServiceProvider extends ServiceProvider
         view()->composer(
             'common.frontend.header',
             function ($view) {
-                $view->with('course_types', CourseType::all());
-                $view->with('delivery_modes', CourseType::whereIn('id', array(12,13,14,15))->get());
+                $view->with('course_types', CourseType::where("is_delivery_mode", 0)->get());
+                $view->with('delivery_modes', CourseType::where("is_delivery_mode", 1)->get());
                 $view->with('classes', ClassList::all());
                 $notifications = Auth::check() ? Notification::select('notifications.id as nid','events.*')->leftJoin('events', 'notifications.event_id', '=', 'events.id')->where('notifications.user_id', Auth::user()->id)->where('is_read', '0')->get() : collect();
                 $view->with('notifications', $notifications);

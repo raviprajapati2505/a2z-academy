@@ -228,6 +228,8 @@
             $('#time_from').val(data.data.time_from).trigger('change');
             $('#time_to').val(data.data.time_to).trigger('change');
             $('#description').val(data.data.description);
+            $('#type').val(data.data.course_type_id).trigger('change');
+            $('#child_category').val(data.data.child_category_id).trigger('change');
             if (data.data.image) {
                 $('.download').show();
                 $('.download').attr('href', base_url + '/public/' + data.data.image)

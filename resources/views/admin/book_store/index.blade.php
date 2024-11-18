@@ -132,7 +132,7 @@
             "name": {
                 required: true,
                 minlength: 1,
-                maxlength: 20,
+                maxlength: 50,
                 pattern: '^[a-zA-Z ]+$'
             },
             "author": {

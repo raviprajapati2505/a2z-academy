@@ -45,7 +45,7 @@ class ProfileController extends Controller
         $user->mother_name = $request->mother_name;
         $user->gender = $request->gender;
         $user->dob = $request->dob;
-        $user->marital_status = $request->marital_status;
+        // $user->marital_status = $request->marital_status;
         $user->phone = $request->contact;
         //$user->religion = $request->religion;
         //$user->nationality = $request->nationality;

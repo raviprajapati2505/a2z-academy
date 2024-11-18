@@ -4,7 +4,7 @@
 <div class="container">
     <div class="myactpagedatacov">
         <div class="myactpagedata_title">
-            <h1>Accounts</h1>
+            <h1>Account</h1>
             <p>Welcome to Profile</p>
         </div>
         <form method="POST" enctype="multipart/form-data" id="userform" action="{{ route('submit_change_profile') }}">
@@ -102,7 +102,7 @@
                                     <input type="text" name="dob" id="dob" class="form-control datepicker" placeholder="" value="{{ $user->dob }}">
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <!-- <div class="col-sm">
                                 <div class="form-group formdatamiancov">
                                     <label for="">Marital Status</label>
                                     <select class="js-example-basic-single" name="marital_status" id="marital_status">
@@ -112,7 +112,7 @@
                                         <option value="Divorced">Divorced </option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="row">
                             <div class="col-sm">

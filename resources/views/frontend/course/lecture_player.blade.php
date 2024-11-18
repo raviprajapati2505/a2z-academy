@@ -288,12 +288,12 @@
                 </div>
             </div>
         </div>
-        <div class="classformcon-right">
+        <!-- <div class="classformcon-right">
             <div class="classformcon-inermain">
                 <img src="{{ asset('public/images/logo.png') }}" alt="" class="logolftcls">
                 <img src="{{ asset('public/frontend/images/class-details-img1.png')}}" alt="" class="class-details-img">
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 

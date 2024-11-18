@@ -20,7 +20,7 @@ class ChildCategoryController extends Controller
 
 	public function __construct()
 	{
-		$this->titles = "SubSub Category List";
+		$this->titles = "Sub-subcategory List";
 		$this->urlSlugs = "child_category";
 	}
 

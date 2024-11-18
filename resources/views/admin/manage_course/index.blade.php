@@ -280,7 +280,8 @@
             $('#course_class').val(data.data.class_id).trigger('change');
             $('#course_subject').val(data.data.subject_id).trigger('change');
             $('#child_category').val(data.data.child_category_id).trigger('change');
-            
+            $('#delivery_mode').val(data.data.delivery_mode_id).trigger('change');
+
             //$('#teacher').val(data.data.teacher_id).trigger('change');
             $("input[name=is_paid][value=" + data.data.is_paid + "]").prop('checked', true);
             if (data.data.cover_image) {

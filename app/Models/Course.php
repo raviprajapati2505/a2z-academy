@@ -36,7 +36,8 @@ class Course extends Model
         'what_you_learn',
         'instructor_infromation',
         'ceu_points',
-        'child_category_id'
+        'child_category_id',
+        'delivery_mode_id'
     ];
 
     public function class(): BelongsTo

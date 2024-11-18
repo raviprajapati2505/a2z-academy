@@ -240,7 +240,7 @@
 
             <div class="classdetails-covright">
                 <div class="classdetails-teachers">
-                    <h2>Download Material</h2>
+                    <h2>Download Study Material</h2>
                     <div class="coursefeatures-list">
                         @foreach($course->course_material as $key => $material)
                         <a href="{{url('/')}}/{{ $material->file }}" download>Download Material {{$key+1}}</a><br><br>
@@ -308,12 +308,12 @@
                 </div>
             </div>
         </div>
-        <div class="classformcon-right">
+        <!-- <div class="classformcon-right">
             <div class="classformcon-inermain">
                 <img src="{{ asset('public/images/logo.png') }}" alt="" class="logolftcls">
                 <img src="{{ asset('public/frontend/images/class-details-img1.png')}}" alt="" class="class-details-img">
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 

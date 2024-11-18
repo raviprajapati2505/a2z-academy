@@ -36,7 +36,10 @@ class NewnessClass extends Model
         'created_by',
         'is_live',
         'zoom_join_url',
-        'zoom_start_url'
+        'zoom_start_url',
+        'child_category_id',
+        'course_type_id',
+        'delivery_mode_id'
     ];
 
     public function class(): BelongsTo

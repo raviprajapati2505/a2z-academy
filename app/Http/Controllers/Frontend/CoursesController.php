@@ -70,7 +70,7 @@ class CoursesController extends Controller
     public function course_by_type()
     {
         if (request()->segment(2) == 'all') {
-            $all_course_types = CourseType::all();
+            $all_course_types = CourseType::where("is_delivery_mode", 0)->get();
         } else {
             $all_course_types = CourseType::where('id', request()->segment(2))->get();
         }
