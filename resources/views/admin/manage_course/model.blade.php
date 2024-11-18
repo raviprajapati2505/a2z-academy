@@ -153,7 +153,7 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label for="child_category">Select Sub-subcategory Category</label>
+                                        <label for="child_category">Select Sub-subcategory</label>
                                         <select class="js-example-basic-single form-control" name="child_category" id="child_category">
                                             @foreach($child_category as $type)
                                             <option value="{{ $type->id }}">{{ $type->title }}</option>

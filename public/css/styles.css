@@ -4189,4 +4189,7 @@ nav .sidebar-button i {
         margin-top: 15px;
     }
 }
+p.cke_notification_message {
+    display: none;
+}
 /* media queries */

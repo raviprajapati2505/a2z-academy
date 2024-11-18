@@ -148,7 +148,7 @@
             "name": {
                 required: true,
                 minlength: 1,
-                maxlength: 20,
+                maxlength: 100,
                 pattern: '^[a-zA-Z ]+$'
             },
             "course_class": {
