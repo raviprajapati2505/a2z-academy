@@ -2903,7 +2903,6 @@ img.footer-logo {
 .book-readmorebtn {
     display: inline-block;
     width: auto;
-    position: absolute;
     top: 20px;
     right: 5px;
 }

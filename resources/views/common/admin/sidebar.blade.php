@@ -96,6 +96,12 @@
                 </a>
             </li>
             <li>
+                <a href="{{ URL('admin/manage_course') }}" class="{{ (request()->segment(2) == 'manage_course') ? 'active' : '' }}">
+                    <img src="{{ asset('public/svg/my-courses-icon.svg') }}" alt="My Classes">
+                    <span class="links_name">Manage Courses</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{ URL('admin/manage_admin') }}" class="{{ (request()->segment(2) == 'manage_admin') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/dashboard-icon.svg') }}" alt="My Classes">
                     <span class="links_name">Manage Users</span>

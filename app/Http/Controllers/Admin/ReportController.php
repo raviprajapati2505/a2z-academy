@@ -63,6 +63,10 @@ class ReportController extends Controller
                 $query->where('curriculam_lectures.teacher_id', $request->instructor);
             }
 
+            if (!empty($request->learners)) {
+                $query->where('student_course_history.student_id', $request->learners);
+            }
+
             $data = $query->get();
 
             return Datatables::of($data)->addIndexColumn()->addColumn('purchased_date', function ($row) {
@@ -76,8 +80,9 @@ class ReportController extends Controller
         $classes = ClassList::all();
         $course_type = CourseType::where("is_delivery_mode", 0)->get();
         $delivery_modes = CourseType::where("is_delivery_mode", 1)->get();
+        $learners = User::where('role', 'Student')->get();
         $instructors = User::where('role', 'Teacher')->get();
-        return view('admin.report.total_enrollment_report', compact('courses', 'subjects', 'classes', 'course_type', 'delivery_modes', 'instructors'));
+        return view('admin.report.total_enrollment_report', compact('courses', 'subjects', 'classes', 'course_type', 'delivery_modes', 'instructors', 'learners'));
     }
 
     public function certificateReport(Request $request)
@@ -116,6 +121,10 @@ class ReportController extends Controller
                 $query->where('curriculam_lectures.teacher_id', $request->instructor);
             }
 
+            if (!empty($request->learners)) {
+                $query->where('certificates.student_id', $request->learners);
+            }
+
             $data = $query->get();
 
             return Datatables::of($data)->addIndexColumn()
@@ -137,6 +146,7 @@ class ReportController extends Controller
         $delivery_modes = CourseType::where("is_delivery_mode", 1)->get();
         $instructors = User::where('role', 'Teacher')->get();
         $course_type = CourseType::where("is_delivery_mode", 0)->get();
-        return view('admin.report.certificate_report', compact('courses', 'subjects', 'classes', 'course_type', 'delivery_modes', 'instructors'));
+        $learners = User::where('role', 'Student')->get();
+        return view('admin.report.certificate_report', compact('courses', 'subjects', 'classes', 'course_type', 'delivery_modes', 'instructors', 'learners'));
     }
 }

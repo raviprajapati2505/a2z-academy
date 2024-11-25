@@ -86,14 +86,14 @@
                                     <img class="activno" src="{{ asset('public/frontend/svg/dashboard-icon-active.svg') }}" alt="">
                                     <span>Dashboard</span>
                                 </a>
-                            </li> -->
+                            </li> 
                             <li>
                                 <a href="{{ url('certificate') }}">
                                     <img class="activ" src="{{ asset('public/frontend/svg/certificates-icon.svg') }}" alt="">
                                     <img class="activno" src="{{ asset('public/frontend/svg/certificates-icon-active.svg') }}" alt="">
                                     <span>Certificates</span>
                                 </a>
-                            </li>
+                            </li>-->
                             <li>
                                 <a href="{{ url('payment_history') }}">
                                     <img class="activ" src="{{ asset('public/frontend/svg/payment-history-icon.svg') }}" alt="">

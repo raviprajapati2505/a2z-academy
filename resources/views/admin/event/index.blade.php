@@ -22,6 +22,7 @@
                         <h5><span class="eventcls"></span> Event</h5>
                         <h5><span class="examcls"></span> Exam</h5>
                         <h5><span class="workshopcls"></span> Workshop</h5>
+                        <h5><span class="wrapup"></span> Wrap-up Session</h5>
                         <h5><span class="othercls"></span> Other</h5>
                     </div>
                     <div class="addnew-event">
@@ -62,6 +63,8 @@
                 color = '#096C04'
             } else if (value.type == 'Workshop') {
                 color = 'gray'
+            } else if(value.type == 'Wrapup'){
+                color = '#6b2956'
             }
             dailyclass = {
                 "start": value.datetime,

@@ -19,5 +19,6 @@ class PromoCode extends Model
         'valid_till',
         'discount_type',
         'discount_amount',
+        'course_type_id'
     ];
 }

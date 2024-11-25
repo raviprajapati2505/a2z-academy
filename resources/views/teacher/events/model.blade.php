@@ -23,6 +23,7 @@
                                         <option value="Event">Event</option>
                                         <option value="Exam">Exam</option>
                                         <option value="Workshop">Workshop</option>
+                                        <option value="Wrapup">Wrap-up Session</option>
                                         <option value="Other">Other</option>
                                     </select>
                                 </div>

@@ -2,53 +2,55 @@
 
 @section('content')
 <div class="container bookreedstormaincov">
-  <div class="classall-datacover">
+    <div class="classall-datacover">
 
-    <div class="classalldatitand-cls">
-      <div class="classalldata-title">
-        <h3>Study Books</h3>
-      </div>
-      <!-- <div class="rightviewallbtnset">
+        <div class="classalldatitand-cls">
+            <div class="classalldata-title">
+                <h3>Study Books</h3>
+            </div>
+            <!-- <div class="rightviewallbtnset">
         <a href="javascript:void(0);">View All</a>
       </div> -->
-    </div>
-
-    <div class="classalldata-inerbox">
-      <div class="row">
-        @if(count($books) > 0)
-        @foreach($books as $book)
-        <div class="classalldata-box3">
-          <div class="coursesdata-cover">
-            <div class="coursesdata-iner">
-              <div class="coursesdata-img">
-                @if($book->cover_image)
-                <img src="<?= url('/') . '/public/' . $book->cover_image ?>">
-                @else
-                <!-- default image book -->
-                <img src="{{ asset('public/frontend/images/book-img1.png') }}" alt="Allie Grater">
-                @endif
-              </div>
-              <div class="coursesdata-livetext">
-                <h3>{{ $book->name }}</h3>
-                <h5>By {{ $book->author }}</h5>
-                <div class="book-readmorebtn">
-                  @if($book->external_link)
-                  <a href="<?= $book->external_link ?>" target="_blank">Buy Now</a>
-                  @else
-                  <a href="<?= url('/') . '/public/' . $book->book_file ?>" target="_blank">Buy Now</a>
-                  @endif
-
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-        @endforeach
-        @else
-        <p>No books available</p>
-        @endif
-      </div>
+
+        <div class="classalldata-inerbox">
+            <div class="row">
+                @if(count($books) > 0)
+                @foreach($books as $book)
+                <div class="classalldata-box3">
+                    <div class="coursesdata-cover">
+                        <div class="coursesdata-iner">
+                            <div class="coursesdata-img">
+                                @if($book->cover_image)
+                                <img src="<?= url('/') . '/public/' . $book->cover_image ?>">
+                                @else
+                                <!-- default image book -->
+                                <img src="{{ asset('public/frontend/images/book-img1.png') }}" alt="Allie Grater">
+                                @endif
+                            </div>
+                            <div class="coursesdata-livetext">
+                                <h3>{{ $book->name }}</h3>
+                                <h5>By {{ $book->author }}</h5><br><br><br>
+                                <div class="book-readmorebtn">
+                                    @if($book->external_link)
+                                    <a style="width:100px" href="<?= $book->external_link ?>" target="_blank">View Course</a>
+                                    <!-- <a style="width:90px" href="<?= $book->external_link ?>" target="_blank">Preview</a> -->
+                                    @else
+                                    <a style="width:100px" href="<?= url('/') . '/public/' . $book->book_file ?>" target="_blank">Buy Now</a>
+                                    <a style="width:90px" href="<?= url('/') . '/public/' . $book->book_file ?>" target="_blank">Preview</a>
+                                    @endif
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                @else
+                <p>No books available</p>
+                @endif
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 @endsection

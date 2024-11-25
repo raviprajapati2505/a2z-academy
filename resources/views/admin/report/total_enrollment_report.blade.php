@@ -66,6 +66,14 @@
                             @endforeach
                         </select>
                     </div>
+                    <div class="col-md-2"><label><b>Learners</b> </label>&nbsp;&nbsp;
+                        <select class="form-control" name="learners" id="learners">
+                            <option value="">Select</option>
+                            @foreach($learners as $learn)
+                            <option value="{{$learn->id}}">{{$learn->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
                 <br>
                 <div class="row">
@@ -104,6 +112,7 @@
                     d.course_type = $('#course_type').val();
                     d.instructor = $('#instructor').val();
                     d.delivery_mode = $('#delivery_mode').val();
+                    d.learners = $('#learners').val();
                 }
             },
             autoWidth: true,
@@ -148,6 +157,7 @@
             $('#course_type').val('');
             $('#instructor').val('');
             $('#delivery_modes').val('');
+            $('#learners').val('');
             table.ajax.reload('');
         })
 

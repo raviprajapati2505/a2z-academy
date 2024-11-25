@@ -27,7 +27,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Code</th>
+                            <th>Promo Code</th>
                             <th>Discount Type</th>
                             <th width="200">Actions</th>
                         </tr>
@@ -198,6 +198,7 @@
             $('#discount_type').val(data.data.discount_type).trigger('change');
             $('#discount_amount').val(data.data.discount_amount);
             $('#valid_till').val(data.data.valid_till);
+            $('#type').val(data.data.course_type_id).trigger('change');
         })
     });
 

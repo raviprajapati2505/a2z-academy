@@ -44,9 +44,8 @@
                                 $total_course_completed = 0;
                             }
                             ?>
-                            @if($total_course_completed >= 99)
-                            <a title="Download Certificate" href="<?= url('/certificate') . '/' . $course->id ?>"><i class="fa fa-download"></i>Download Certificate</a>
-                            @endif
+                            <a title="Download Certificate" href="{{ asset('public/certificates/'.$course->student_id.'-'.$course->id.'-certificate.png') }}"><i class="fa fa-download"></i>Download Certificate</a>
+                            
                             <div class="progress progcolor3" data-percentage="{{ $total_course_completed }}">
                                 <span class="progress-left">
                                     <span class="progress-bar"></span>

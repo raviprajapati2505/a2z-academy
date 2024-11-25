@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\CourseType;
 use App\Models\PromoCode;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
-
 class PromocodeController extends Controller
 {
 	private $urlSlugs, $titles;
@@ -44,7 +44,8 @@ class PromocodeController extends Controller
 		}
 		$urlSlug = $this->urlSlugs;
 		$title = $this->titles;
-		return view('admin.' . $urlSlug . '.index', compact('urlSlug', 'title'));
+        $course_type = CourseType::where("is_delivery_mode", 0)->get();
+		return view('admin.' . $urlSlug . '.index', compact('urlSlug', 'title', 'course_type'));
 	}
 
 	/**
@@ -85,6 +86,7 @@ class PromocodeController extends Controller
 				'discount_amount' => $request->discount_amount,
 				'discount_type' => $request->discount_type,
 				'valid_till' => $request->valid_till,
+                'course_type_id' => $request->type,
 			];
 			PromoCode::updateOrCreate(
 				[

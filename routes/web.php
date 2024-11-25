@@ -136,6 +136,9 @@ Route::middleware(['auth', '2fa', 'admin'])->prefix('admin')->group(function () 
     Route::get('report/certificate_report', [ReportController::class, 'certificateReport']);
     Route::get('admin_dashboard', [AdminDashboardController::class, 'index']);
     Route::get('revenue_chart', [AdminDashboardController::class, 'getRevenueChartData']);
+
+    Route::get('manage_student/{id}/certificate', [StudentController::class, 'certificate'])->name('certificate');
+    Route::post('manage_student/{id}/save_certificate', [StudentController::class, 'save_certificate'])->name('save_certificate');
 });
 
 Route::middleware(['auth', '2fa', 'teacher'])->prefix('teacher')->group(function () {

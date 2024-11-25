@@ -48,6 +48,8 @@
                 color = '#096C04'
             } else if (value.type == 'Workshop') {
                 color = 'gray'
+            } else if (value.type == 'Wrapup') {
+                color = '#6b2956'
             }
             dailyclass = {
                 "start": value.datetime,

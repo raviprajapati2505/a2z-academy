@@ -33,7 +33,7 @@
 
               <div class="row">
                 <div class="form-group">
-                  <label for="video">Book File *</label>
+                  <label for="video">Book Preview File *</label>
                   <input type="file" class="form-control" id="book_file" name="book_file" placeholder="">
                   <a href="#" download class="download">Download</a>
                 </div>
@@ -49,7 +49,7 @@
               <div class="row">
                 <div class="col-sm">
                   <div class="form-group">
-                    <label for="name">External link</label>
+                    <label for="name">Purchased External link</label>
                     <input type="text" class="form-control" id="external_link" name="external_link" placeholder="">
                   </div>
                 </div>

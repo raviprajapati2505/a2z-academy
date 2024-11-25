@@ -30,12 +30,13 @@
             </div>
         </div>
         @foreach($all_course_types as $type)
+        @if(count($type->course) > 0)
         <div class="classalldata-title">
             <!-- <p>Skill</p> -->
             <h3>{{ $type->title }}</h3>
             <div class="classalldata-inerbox">
+
                 <div class="row">
-                    @if(count($type->course) > 0)
                     @foreach($type->course as $course)
                     <div class="classalldata-box3">
                         <div class="coursesdata-cover">
@@ -83,12 +84,13 @@
                         </div>
                     </div>
                     @endforeach
-                    @else
-                    <p>No courses available</p>
-                    @endif
                 </div>
+
             </div>
         </div>
+        @else
+        <!-- <p>No courses available</p> -->
+        @endif
         <br><br>
         @endforeach
     </div>
