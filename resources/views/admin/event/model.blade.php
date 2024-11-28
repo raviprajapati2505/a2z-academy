@@ -41,7 +41,7 @@
                         <div class="row">
                             <div class="col-sm">
                                 <div class="form-group">
-                                    <label for="name">More Information</label>
+                                    <label for="name">More Information <small>(200 characters)</small></label>
                                     <textarea name="description" id="description" class="form-control" placeholder="Description"></textarea>
                                 </div>
                             </div>

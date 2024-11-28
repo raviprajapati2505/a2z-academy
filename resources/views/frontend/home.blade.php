@@ -16,14 +16,6 @@
                 <h3>Get Started</h3>
                 <h5>Your <span>Learning</span> & <br> Enrich your <span>Dream</span></h5>
                 <div class="srcmainda-listcov">
-                    <div class="srcmainda-left">
-                        <select class="form-select course-name" aria-label="Default select example">
-                            <option selected>Select New Course</option>
-                            @foreach($all_courses as $course)
-                            <option value="{{ $course->id }}">{{ $course->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
                     <div class="srcmainda-mid">
                         <select class="form-select category_id" aria-label="Default select example">
                             <option selected>Category</option>
@@ -32,6 +24,15 @@
                             @endforeach
                         </select>
                     </div>
+                    <div class="srcmainda-left">
+                        <select class="form-select course-name" aria-label="Default select example">
+                            <option selected>Select Course</option>
+                            @foreach($all_courses as $course)
+                            <option value="{{ $course->id }}">{{ $course->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div class="srcmainda-right">
                         <a href="javascript:void(0);" class="enroll-home">Enroll Now</a>
                     </div>
@@ -339,7 +340,7 @@
         </div>
     </div>
 </div>
-*/?>
+*/ ?>
 
 <div class="feedbackmain-slider">
     <div class="container">
@@ -388,7 +389,7 @@
         </div>
         <div class="skilllist-cover">
             <ul class="owl-filter-bar">
-            <li class="btn-filter" id="project-terms"><a id="all" class="active" href="javascript:void(0);">ALL</a></li>
+                <li class="btn-filter" id="project-terms"><a id="all" class="active" href="javascript:void(0);">ALL</a></li>
                 @if(count($course_types) > 0)
                 @foreach($course_types as $type)
                 <li class="btn-filter" id="project-terms"><a id="{{ $type->id }}" class="item" href="javascript:void(0);">{{ $type->title }}</a></li>

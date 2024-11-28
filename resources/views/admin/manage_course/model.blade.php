@@ -7,7 +7,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="userprofalldata-full">
+                <div class="userprofalldata-full" style="overflow:auto;height:500px">
 
                     <div class="userprofalldata-iner model-form">
                         <h3>Course Information</h3><br><br>
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label for="password">Cover Image *</label>
+                                        <label for="password">Cover Image <small>(dimention prefer 700 x 600)</small> <small>(size prefer 5MB max)</small> *</label>
                                         <input type="file" class="form-control" id="cover_image" name="cover_image" placeholder="">
                                         <a href="#" download class="downloadi">Download</a>
                                     </div>
@@ -77,7 +77,7 @@
                                 </div>
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label for="video">Course Video *</label>
+                                        <label for="video">Course Video</label>
                                         <input type="file" class="form-control" id="video" name="video" placeholder="">
                                         <a href="#" download class="download">Download</a>
                                     </div>
@@ -144,7 +144,7 @@
                                 </div>
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label for="name">CEU Points</label>
+                                        <label for="name">Learning Hours (LH) Points</label>
                                         <input type="text" class="form-control" id="ceu_points" name="ceu_points" placeholder="">
                                     </div>
                                 </div>
@@ -176,7 +176,7 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label for="description">Course Description *</label>
+                                        <label for="description">Course Description <small>(200 characters)</small> *</label>
                                         <textarea class="form-control" id="description" name="description" placeholder=""></textarea>
                                     </div>
                                 </div>

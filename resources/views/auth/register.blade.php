@@ -45,7 +45,7 @@
                     <button type="submit" class="btn btn-primary">{{ __('Register') }}</button>
                 </div>
             </form>
-            <div class="orsignwithbtntx">
+            <!-- <div class="orsignwithbtntx">
                 <h3>Or Sign in with</h3>
                 <a href="javascript:void(0);">
                     <img src="images/google-icon.png" alt="">
@@ -55,7 +55,7 @@
                     <img src="images/facebook-icon.png" alt="">
                     <span>Facebook</span>
                 </a>
-            </div>
+            </div> -->
             <div class="signinboxbtnlastfogo">
                 <p>Already have an account? <a href="{{ route('login') }}">Sign in</a></p>
             </div>
@@ -63,10 +63,10 @@
     </div>
 </div>
 
-<div class="signupboxform-main">
+<!-- <div class="signupboxform-main">
     <div class="signupboxform-iner">
         <h1>{{ __('Register') }}</h1>
 
     </div>
-</div>
+</div> -->
 @endsection

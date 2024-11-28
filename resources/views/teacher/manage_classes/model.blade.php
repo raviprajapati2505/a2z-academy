@@ -146,7 +146,7 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label for="status">More Information *</label>
+                                        <label for="status">More Information <small>(200 characters)</small> *</label>
                                         <textarea name="description" id="description" class="form-control"></textarea>
                                     </div>
                                 </div>
