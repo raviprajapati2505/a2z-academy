@@ -75,7 +75,7 @@
                     @endif
                     @endforeach
                     <button type="button" class="btn btn-primary">
-                        Learning Hours (LH) Points Earned <span class="badge badge-light"><?= $total_ceu_points ?></span>
+                        Learning Hours (LH) Earned <span class="badge badge-light"><?= $total_ceu_points ?></span>
                         <span class="sr-only"></span>
                     </button>
                     <!-- <div class="saveprofdata">

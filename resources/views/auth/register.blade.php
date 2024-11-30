@@ -28,7 +28,35 @@
                         <p class="errortext">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="form-group @error('password') errorsetcl @enderror">
+                    <div class="form-group">
+                        <label for="phone">{{ __('Mobile Number') }}</label>
+                        <input id="phone" type="text" class="form-control" name="phone" required>
+                        @error('phone')
+                        <p class="errortext">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="membership">{{ __('Membership') }}</label>
+                        <input id="membership" type="text" class="form-control" name="membership" required>
+                        @error('membership')
+                        <p class="errortext">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="company_name">{{ __('Company Name') }}</label>
+                        <input id="company_name" type="text" class="form-control" name="company_name" required>
+                        @error('company_name')
+                        <p class="errortext">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="prefession">{{ __('Profession') }}</label>
+                        <input id="prefession" type="text" class="form-control" name="prefession" required>
+                        @error('prefession')
+                        <p class="errortext">{{ $message }}</p>
+                        @enderror
+                    </div>
+                     <div class="form-group @error('password') errorsetcl @enderror">
                         <label for="password">Password</label>
                         <input id="password" type="password" class="form-control" name="password" required autocomplete="new-password">
                         @error('password')

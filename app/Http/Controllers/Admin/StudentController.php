@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Certificate;
 use App\Models\StudentCourseHistory;
+use App\Models\TrackLecture;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -55,6 +56,10 @@ class StudentController extends Controller
                         
                         <a href="' . url('') . '/admin/manage_student/' . $row->id . '/certificate" title="certificate" class="delete-tbl" data-id=' . $row->id . '">
                             <img src="' . asset("public/images/delete-icon.png") . '" alt=""> <span>Certificates</span>
+                        </a>
+
+                        <a href="' . url('') . '/admin/manage_student/' . $row->id . '/purchased_courses" title="certificate" class="delete-tbl" data-id=' . $row->id . '">
+                        <img src="' . asset("public/images/delete-icon.png") . '" alt=""> <span>Track Courses</span>
                         </a>
                         ';
                     return $btn;
@@ -223,6 +228,18 @@ class StudentController extends Controller
         return view('admin.' . $urlSlug . '.certificate', compact('title', 'purchased_course', 'user'));
     }
 
+    public function purchased_courses($id)
+    {
+        $urlSlug = $this->urlSlugs;
+        $title = 'Track Courses';
+        $track_lecture = TrackLecture::where('student_id', $id)->get();
+        $purchased_course = StudentCourseHistory::leftJoin('courses', 'courses.id', '=', 'student_course_history.course_id')
+            ->where('student_course_history.student_id', $id)
+            ->where('student_course_history.is_paid', '1')
+            ->get();
+        return view('admin.' . $urlSlug . '.purchased_courses', compact('purchased_course', 'track_lecture', 'title'));
+    }
+
     public function save_certificate(Request $request, $id)
     {
         // create Image from file
@@ -247,7 +264,7 @@ class StudentController extends Controller
             $font->align('center');
             $font->valign('top');
         });
-        
+
         $filename = $id . '-' . $request->course_id . '-certificate.png';
         $img->save('public/certificates/' . $filename);
         $headers = [

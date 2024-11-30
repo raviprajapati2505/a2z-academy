@@ -179,7 +179,12 @@
                         <li class="nav-item {{ (request()->segment(1) == 'video_classes') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ url('video_classes') }}">Live class</a>
                         </li>
-                        <li class="nav-item dropdown d-menu {{ (request()->segment(1) == 'course_by_type') ? 'active' : '' }}">
+                        @foreach($delivery_modes as $mode)
+                            <li class="nav-item {{ (request()->segment(1) == $mode->title) ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ url('course_by_type') }}<?= '/' . $mode->id ?>">{{ $mode->title }}</a>
+                            </li>
+                        @endforeach
+                        <!-- <li class="nav-item dropdown d-menu {{ (request()->segment(1) == 'course_by_type') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Delivery Mode<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="6 9 12 15 18 9"></polyline>
                                 </svg>
@@ -196,7 +201,7 @@
                                     @endforeach
                                 </ul>
                             </div>
-                        </li>
+                        </li> -->
                         <li class="nav-item {{ (request()->segment(1) == 'book_store') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ url('book_store') }}">Book Store</a>
                         </li>

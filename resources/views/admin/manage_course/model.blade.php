@@ -56,13 +56,13 @@
                             <div class="row pricediv">
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label for="price">Course Price</label>
+                                        <label for="price">Course Price (USD)</label>
                                         <input type="number" class="form-control" id="price" name="price" placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label for="price">Special Price</label>
+                                        <label for="price">Special Price (USD)</label>
                                         <input type="number" class="form-control" id="special_price" name="special_price" placeholder="">
                                     </div>
                                 </div>
@@ -144,7 +144,7 @@
                                 </div>
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label for="name">Learning Hours (LH) Points</label>
+                                        <label for="name">Learning Hours (LH)</label>
                                         <input type="text" class="form-control" id="ceu_points" name="ceu_points" placeholder="">
                                     </div>
                                 </div>

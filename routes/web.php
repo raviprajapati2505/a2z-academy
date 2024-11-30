@@ -139,6 +139,8 @@ Route::middleware(['auth', '2fa', 'admin'])->prefix('admin')->group(function () 
 
     Route::get('manage_student/{id}/certificate', [StudentController::class, 'certificate'])->name('certificate');
     Route::post('manage_student/{id}/save_certificate', [StudentController::class, 'save_certificate'])->name('save_certificate');
+
+    Route::get('manage_student/{id}/purchased_courses', [StudentController::class, 'purchased_courses'])->name('purchased_courses');
 });
 
 Route::middleware(['auth', '2fa', 'teacher'])->prefix('teacher')->group(function () {
