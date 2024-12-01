@@ -128,7 +128,7 @@
             </div>
             <div class="classdetails-covlr cocimainboxset1">
                 <div class="classdetails-titlemn">
-                    <h3>Course Curriculam</h3>
+                    <h3>Course Curriculum</h3>
                 </div>
                 <div class="course-circullum-list">
                     <div class="accordion" id="accordionExample">

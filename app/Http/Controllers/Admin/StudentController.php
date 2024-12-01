@@ -6,7 +6,9 @@ use App\Models\User;
 use App\Models\ClassList;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\CertificateGeneratedMail;
 use App\Models\Certificate;
+use App\Models\Course;
 use App\Models\StudentCourseHistory;
 use App\Models\TrackLecture;
 use Illuminate\Support\Facades\Validator;
@@ -15,6 +17,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Yajra\DataTables\Facades\DataTables;
 use Intervention\Image\Facades\Image as Image;
+use Illuminate\Support\Facades\Mail;
 
 class StudentController extends Controller
 {
@@ -271,6 +274,8 @@ class StudentController extends Controller
             'Content-Type' => 'image/png',
             'Content-Disposition' => 'attachment; filename=' . $filename,
         ];
+        $user = User::find($id);
+        
         $data = [
             'file' => $filename,
             'year' => $request->year ?? '',
@@ -284,7 +289,6 @@ class StudentController extends Controller
         if ($request->admin_id && empty($request->password)) {
             unset($data['password']);
         }
-
         Certificate::updateOrCreate(
             [
                 'student_id' => $id,
@@ -292,6 +296,11 @@ class StudentController extends Controller
             ],
             $data
         );
+        $courses = Course::find($request->course_id);
+        $details = [
+            'course_name' => $courses->name
+        ];
+        Mail::to($user->email)->send(new CertificateGeneratedMail($details));
         return response()->stream(function () use ($img) {
             echo $img;
         }, 200, $headers);

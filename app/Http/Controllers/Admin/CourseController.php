@@ -106,7 +106,7 @@ class CourseController extends Controller
     {
         try {
             $validator = Validator::make($request->all(), [
-                'name' => 'required|regex:/^[a-zA-Z ]+$/u|min:1|max:20',
+                'name' => 'required|regex:/^[a-zA-Z ]+$/u|min:1|max:200',
                 'course_class' => 'required',
                 'course_subject' => 'required',
                 //'teacher' => 'required',

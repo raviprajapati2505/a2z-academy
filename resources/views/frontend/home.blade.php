@@ -96,7 +96,7 @@
 
 <!-- <div class="iframe-container" style="overflow: hidden; padding-top: 56.25%; position: relative;"> <iframe allow="microphone; camera" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%;" src="https://zoom.us/wc/join/86473712696" frameborder="0"></iframe> </div> -->
 
-<div class="container">
+<!-- <div class="container">
     <div class="letjourneymain-cover">
         <div class="letjourneymain-title">
             <h3>Let the journey of <br>
@@ -159,6 +159,59 @@
             <a href="javascript:void(0);">View All</a>
         </div>
     </div>
+</div> -->
+
+<div class="container">
+    <div class="myclsstudy-maincov">
+        <div class="myclsstudy-maintitle">
+            <p>News</p>
+            <h3>Highlights & Updates</h3>
+        </div>
+        <div class="myclsstudy-slider">
+            <div class="row">
+                <div class="owl-carousel owl-theme owlnavslider-nav" id="myclassslider">
+                    @if(count($news) > 0)
+                    @foreach($news as $newsdata)
+                    <div class="item">
+                        <div class="coursesdata-cover">
+                            <div class="coursesdata-iner">
+                                <div class="coursesdata-img">
+                                    <div class="retclass">
+                                        <h5>3.5 <i class="bx bxs-star"></i></h5>
+                                    </div>
+                                    @if($newsdata->image)
+                                    <img src="<?= url('/') . '/public/' . $newsdata->image ?>">
+                                    @else
+                                    <!-- default image class -->
+                                    <img src="{{ asset('public/images/my-courses-img9.jpg') }}" alt="Allie Grater">
+                                    @endif
+                                </div>
+                                <div class="coursesdata-text">
+                                    <div class="livtexttitle-cov">
+                                        <h3>{{ $newsdata->title }}</h3>
+                                        <!-- <h6><i class="bx bx-time-five"></i> 2 hr</h6> -->
+                                    </div>
+                                    <p>{{ $newsdata->description }}</p>
+                                    <!-- <div class="popucours-sldin">
+                                        <h5>(460 Free Videos)</h5>
+                                        <a href="javascript:void(0);">Enroll Now</a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    @else
+                    <p>No news available</p>
+                    @endif
+                </div>
+                <!-- <div class="allcoursebtnmain-cover">
+                    <a href="{{ url('/course_by_type/all')}}">All Course</a>
+                </div> -->
+            </div>
+
+        </div>
+    </div>
 </div>
 
 <div class="popucours-cover">
@@ -197,6 +250,9 @@
                                         }
                                         ?>
                                         <h5>{{ round($avg_rating) }} <i class="bx bxs-star"></i></h5>
+                                    </div>
+                                    <div class="retclassdate">
+                                        <h5>{{ $course->created_at->format('F d, Y') }}</h5>
                                     </div>
                                     @if($course->cover_image)
                                     <a href="{{ url('course_detail') }}<?= '/' . $course->id ?>"><img src="<?= url('/') . '/public/' . $course->cover_image ?>"></a>
@@ -347,8 +403,8 @@
         <div class="feedbackmain-cover">
             <div class="feedbackmain-left">
                 <img src="{{ asset('public/frontend/images/quotes-icon-2.png') }}" alt="">
-                <h6>Trainees feedback</h6>
-                <h3>Our Trainees Says</h3>
+                <h6>Learners feedback</h6>
+                <h3>Our Learners Says</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur
                     adipisicing elit. Accusantium
                     officia cupiditate.</p>
@@ -406,6 +462,9 @@
                         <div class="coursesdata-cover">
                             <div class="coursesdata-iner">
                                 <div class="coursesdata-img">
+                                    <div class="retclassdate">
+                                        <h5>{{ $course->created_at->format('F d, Y') }}</h5>
+                                    </div>
                                     @if($course->cover_image)
                                     <a href="{{ url('course_detail') }}<?= '/' . $course->id ?>"><img src="<?= url('/') . '/public/' . $course->cover_image ?>"></a>
                                     @else

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NewNessClassrooms.com</title>
+    <title>Gord Academy</title>
 </head>
 <body>
     <h1>{{ $details['title'] }}</h1>

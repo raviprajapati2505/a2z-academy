@@ -155,6 +155,12 @@
                     <span class="links_name">Book Store</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ URL('admin/news') }}" class="{{ (request()->segment(2) == 'news') ? 'active' : '' }}">
+                    <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="News">
+                    <span class="links_name">Manage News</span>
+                </a>
+            </li>
             <!-- <li>
                 <a href="{{ URL('admin/class_list') }}" class="{{ (request()->segment(2) == 'class_list') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Class List">

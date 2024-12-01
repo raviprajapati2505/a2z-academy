@@ -10,7 +10,7 @@
         <div class="userprofalldata-full">
 
           <div class="userprofalldata-iner model-form">
-            <h3>Course Curriculam</h3><br><br>
+            <h3>Course Curriculum</h3><br><br>
             <form method="POST" enctype="multipart/form-data" id="curriculam_lectureform" action="javascript:void(0)">
               <div class="alert alert-danger" id="alert-danger-form">
               </div>

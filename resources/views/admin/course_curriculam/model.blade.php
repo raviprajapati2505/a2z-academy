@@ -10,7 +10,7 @@
 				<div class="userprofalldata-full">
 
 					<div class="userprofalldata-iner model-form">
-						<h3>Course Curriculam</h3><br><br>
+						<h3>Course Curriculum</h3><br><br>
 						<form id="course_curriculamform">
 							<div class="alert alert-danger" id="alert-danger-form">
 							</div>

@@ -267,7 +267,7 @@ a:hover {
     display: inline-block;
 }
 .left-navmenulogo .navbar-brand img {
-    width: 168px;
+    width: 105px;
 }
 .right-hednavmaincov {
     display: inline-block;
@@ -872,6 +872,24 @@ a:hover {
     font-size: 13px;
     margin-top: 3px;
     margin-left: 3px;
+}
+
+.retclassdate {
+    display: inline-block;
+    position: absolute;
+    top: 155px;
+    right: 6px;
+}
+
+.retclassdate h5 {
+    display: inline-block;
+    font-size: 14px;
+    color: #ffffff;
+    font-family: "Gilroy-SemiBold";
+    background: #73ce48;
+    padding: 4px 12px 4px 12px;
+    line-height: 1.5;
+    margin: 0;
 }
 
 .dowmobiapp-min {

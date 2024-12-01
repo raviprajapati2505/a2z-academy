@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\CourseTypeController;
 use App\Http\Controllers\Admin\CurriculamLectureController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\NewnessClassController;
+use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\PromoCodeController;
@@ -116,6 +117,7 @@ Route::middleware(['auth', '2fa', 'admin'])->prefix('admin')->group(function () 
     Route::resource('grade', StudentGradeController::class);
     Route::resource('assessment', StudentAssessmetController::class);
     Route::resource('book_store', BookStoreController::class);
+    Route::resource('news', NewsController::class);
     Route::resource('course_type', CourseTypeController::class);
     Route::resource('class_list', ClassListController::class);
     Route::resource('page', PageController::class);

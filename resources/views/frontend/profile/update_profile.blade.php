@@ -37,7 +37,7 @@
                             <label for="">Certificates Name</label>
                             <input type="" class="form-control" id="" placeholder="">
                         </div> -->
-                        
+
                         <!-- <div class="saveprofdata">
                     <button>Save</button>
                 </div> -->
@@ -117,7 +117,7 @@
                         <div class="row">
                             <div class="col-sm">
                                 <div class="form-group formdatamiancov">
-                                    <label for="">Contact *</label>
+                                    <label for="">Mobile *</label>
                                     <div class="contnumbset-cov">
                                         <h6>+91</h6>
                                         <input type="text" class="form-control" id="contact" name="contact" placeholder="" maxlength="10" value="{{ $user->phone }}">
@@ -154,7 +154,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="hidden" name="country_code" id="country_code">
+                        <input type="hidden" name="country_code" id="country_code" value="{{ $user->country_code  }}">
                         <div class="saveprofdata">
                             <button type="submit">Save</button>
                         </div>
@@ -205,6 +205,27 @@
         submitHandler: function() {
             return true;
         }
+    });
+</script>
+<script>
+    var input = document.querySelector("#contact");
+    window.intlTelInput(input, {
+        separateDialCode: true,
+        customPlaceholder: function(
+            selectedCountryPlaceholder,
+            selectedCountryData
+        ) {
+            return "e.g. " + selectedCountryPlaceholder;
+        },
+    });
+
+    var iti = window.intlTelInputGlobals.getInstance(input);
+    setTimeout(function() {
+        iti.setCountry($('#country_code').val());
+    }, 3000);
+    input.addEventListener('blur', function() {
+        var countryCode = iti.getSelectedCountryData().iso2;
+        $('#country_code').val(countryCode);
     });
 </script>
 @endsection

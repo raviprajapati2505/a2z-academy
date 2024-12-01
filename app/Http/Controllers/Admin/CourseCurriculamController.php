@@ -20,7 +20,7 @@ class CourseCurriculamController extends Controller
 
 	public function __construct()
 	{
-		$this->titles = "Course Curriculam";
+		$this->titles = "Course Curriculum";
 		$this->urlSlugs = "course_curriculam";
 	}
 

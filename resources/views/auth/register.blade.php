@@ -9,7 +9,7 @@
         </div>
         <div class="loginsighup-right">
             <div class="loginsighuptitle">
-                <h1>{{ __('Register') }}</h1>
+                <h1>{{ __('Sign up') }}</h1>
             </div>
             <form method="POST" action="{{ route('register') }}">
                 <div class="loginformbox">
@@ -37,7 +37,19 @@
                     </div>
                     <div class="form-group">
                         <label for="membership">{{ __('Membership') }}</label>
-                        <input id="membership" type="text" class="form-control" name="membership" required>
+                        <select id="membership" class="form-control" name="membership" required>
+                            <option value="">Select </option>
+                            <option value="GSAS Operations">GSAS Operations</option>
+                            <option value="GSAS Construction Management">GSAS Construction Management</option>
+                            <option value="GSAS Design & Build">GSAS Design & Build</option>
+                            <option value="GSAS-CGP Associate">GSAS-CGP Associate</option>
+                            <option value="GSAS-CGP Licentiate">GSAS-CGP Licentiate</option>
+                            <option value="GSAS-CGP Practitioner">GSAS-CGP Practitioner</option>
+                            <option value="Service Provider - GSAS Design & Build">Service Provider - GSAS Design & Build</option>
+                            <option value="Service Provider - GSAS Operations">Service Provider - GSAS Operations</option>
+                            <option value="Service Provider - GSAS Construction Management">Service Provider - GSAS Construction Management</option>
+                            <option value="Not Available">Not available</option>
+                        </select>
                         @error('membership')
                         <p class="errortext">{{ $message }}</p>
                         @enderror
@@ -56,7 +68,7 @@
                         <p class="errortext">{{ $message }}</p>
                         @enderror
                     </div>
-                     <div class="form-group @error('password') errorsetcl @enderror">
+                    <div class="form-group @error('password') errorsetcl @enderror">
                         <label for="password">Password</label>
                         <input id="password" type="password" class="form-control" name="password" required autocomplete="new-password">
                         @error('password')
@@ -70,7 +82,7 @@
                         <p class="errortext">{{ $message }}</p>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary">{{ __('Register') }}</button>
+                    <button type="submit" class="btn btn-primary">{{ __('Sign up') }}</button>
                 </div>
             </form>
             <!-- <div class="orsignwithbtntx">
