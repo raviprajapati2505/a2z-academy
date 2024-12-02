@@ -305,8 +305,8 @@
     <div class="container">
         <div class="dowmobiapp-mcover">
             <div class="dowmobiapp-left">
-                <h2>Download our mobile app, start <br>
-                    <span>learning today</span>
+                <h2>Access Anytime, Anywhere, <br>
+                    <span>on Any Device!</span>
                 </h2>
                 <div class="dowmobiapp-vilicocov">
                     <div class="dowmobiapvilico-lef">
@@ -405,10 +405,8 @@
                 <img src="{{ asset('public/frontend/images/quotes-icon-2.png') }}" alt="">
                 <h6>Learners feedback</h6>
                 <h3>Our Learners Says</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Accusantium
-                    officia cupiditate.</p>
-                <a href="javascript:void(0);">Join Now</a>
+                <p>Here's What Our Learners Are Saying About Their Journey With Us: Inspiring Stories, Valuable Feedback, and Life-Changing Experiences!</p>
+                <a href="<?= url('/login') ?>">Join Now</a>
             </div>
             <div class="feedbackmain-right">
                 <div class="owl-carousel owl-theme" id="feedbackslider">
