@@ -33,6 +33,9 @@ class NewsController extends Controller
         if ($request->ajax()) {
             $data = News::all();
             return Datatables::of($data)->addIndexColumn()
+                ->addColumn('description', function ($row) {
+                    return substr($row->description, 0, 50);
+                })
                 ->addColumn('status', function ($row) {
                     if ($row->status == "Enabled") {
                         $btn = '<span class="badge bg-primary">Active</span>';

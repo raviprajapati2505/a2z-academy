@@ -176,9 +176,9 @@
                         <div class="coursesdata-cover">
                             <div class="coursesdata-iner">
                                 <div class="coursesdata-img">
-                                    <div class="retclass">
+                                    <!-- <div class="retclass">
                                         <h5>3.5 <i class="bx bxs-star"></i></h5>
-                                    </div>
+                                    </div> -->
                                     @if($newsdata->image)
                                     <img src="<?= url('/') . '/public/' . $newsdata->image ?>">
                                     @else
