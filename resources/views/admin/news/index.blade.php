@@ -125,8 +125,7 @@
             "title": {
                 required: true,
                 minlength: 1,
-                maxlength: 100,
-                pattern: '^[a-zA-Z ]+$'
+                maxlength: 100
             },
             "image": {
                 required: function(element) {

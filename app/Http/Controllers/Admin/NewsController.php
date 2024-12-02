@@ -82,7 +82,7 @@ class NewsController extends Controller
     {
         try {
             $validator = Validator::make($request->all(), [
-                'title' => 'required|regex:/^[a-zA-Z ]+$/u|min:1|max:100',
+                'title' => 'required|min:1|max:100',
                 'image' => 'mimes:png,jpg,jpeg'
             ]);
 

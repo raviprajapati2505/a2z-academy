@@ -45,7 +45,7 @@
                     </ul>
                     <div class="menu-items">
                         <ul>
-                             <li>
+                            <li>
                                 <a href="{{ url('dashboard') }}">
                                     <img class="activ" src="{{ asset('public/frontend/svg/my-accounts-icon.svg') }}" alt="">
                                     <img class="activno" src="{{ asset('public/frontend/svg/my-accounts-icon-active.svg') }}" alt="">
@@ -180,9 +180,9 @@
                             <a class="nav-link" href="{{ url('video_classes') }}">Live class</a>
                         </li>
                         @foreach($delivery_modes as $mode)
-                            <li class="nav-item {{ (request()->segment(1) == $mode->title) ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ url('course_by_type') }}<?= '/' . $mode->id ?>">{{ $mode->title }}</a>
-                            </li>
+                        <li class="nav-item {{ (request()->segment(1) == $mode->title) ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ url('course_by_type') }}<?= '/' . $mode->id ?>/delivery_mode">{{ $mode->title }}</a>
+                        </li>
                         @endforeach
                         <!-- <li class="nav-item dropdown d-menu {{ (request()->segment(1) == 'course_by_type') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Delivery Mode<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

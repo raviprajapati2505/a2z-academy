@@ -77,6 +77,13 @@ class CoursesController extends Controller
         return view('frontend.course.course_by_type', compact('all_course_types'));
     }
 
+    public function course_by_delivery_mode()
+    {
+        $courses = Course::where('delivery_mode_id',request()->segment(2))->get();
+        $title = CourseType::find(request()->segment(2))['title'];
+        return view('frontend.course.course_by_delivery_mode', compact('courses','title'));
+    }
+
     public function track_lecture(Request $request)
     {
         try {

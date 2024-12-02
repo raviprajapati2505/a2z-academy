@@ -71,6 +71,7 @@ Route::get('/pages/{slug}', CommonPagesController::class);
 Route::get('/book_store', [BookController::class, 'book_store']);
 Route::get('/course_by_class/{id}', [CoursesController::class, 'course_by_class']);
 Route::get('/course_by_type/{id}', [CoursesController::class, 'course_by_type']);
+Route::get('/course_by_type/{id}/delivery_mode', [CoursesController::class, 'course_by_delivery_mode']);
 Route::post('filter_course_by_class', [MainController::class, 'filter_course_by_class'])->name('filter_course_by_class');
 
 Route::middleware(['auth', '2fa', 'student'])->group(function () {
