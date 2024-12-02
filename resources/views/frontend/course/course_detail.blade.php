@@ -19,21 +19,23 @@
             <div class="classdetails-covlr">
                 <div class="class-mainvideo">
                     @if($course->delivery_mode_id == 13)
-                        <img src="<?= url('/') . '/public/' . $course->cover_image ?>">
+                        <img src="<?= url('/') . '/public/' . $course->cover_image ?>" style="height:500px;width:100%">
+                    @else 
+                        @if($course->link)
+                        <video id="lecture-video" controls controlsList="nodownload" width="auto" height="360">
+                            <source src="{{ $course->link }}">
+                            Your browser does not support the video tag.
+                        </video>
+                        <!-- <iframe src="{{ $course->link }}" title="{{ $course->title }}" frameborder="0" allow=" autoplay;" allowfullscreen></iframe> -->
+                        @else
+                        <video width="100%" controls>
+                            <source src="<?= url('/') . '/public/' . $course->video ?>" type="video/mp4">
+                            <source src="<?= url('/') . '/public/' . $course->video ?>" type="video/ogg">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        @endif
                     @endif
-                    @if($course->link)
-                    <video id="lecture-video" controls controlsList="nodownload" width="auto" height="360">
-                        <source src="{{ $course->link }}">
-                        Your browser does not support the video tag.
-                    </video>
-                    <!-- <iframe src="{{ $course->link }}" title="{{ $course->title }}" frameborder="0" allow=" autoplay;" allowfullscreen></iframe> -->
-                    @else
-                    <video width="100%" controls>
-                        <source src="<?= url('/') . '/public/' . $course->video ?>" type="video/mp4">
-                        <source src="<?= url('/') . '/public/' . $course->video ?>" type="video/ogg">
-                        Your browser does not support HTML5 video.
-                    </video>
-                    @endif
+                    
                 </div>
                 <div class="classvideodeta-main">
                     <div class="classvideo-details">
