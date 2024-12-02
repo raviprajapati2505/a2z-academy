@@ -18,7 +18,7 @@
         <div class="classdetails-left">
             <div class="classdetails-covlr">
                 <div class="class-mainvideo">
-                    @if($course->delivery_mode == 13)
+                    @if($course->delivery_mode_id == 13)
                         <img src="<?= url('/') . '/public/' . $course->cover_image ?>">
                     @endif
                     @if($course->link)
