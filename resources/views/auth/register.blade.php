@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">{{ __('Mobile Number') }}</label>
-                        <input id="phone" type="text" class="form-control" name="phone" required>
+                        <input id="phone" type="text" class="form-control" name="phone" required style="width:557px">
                         @error('phone')
                         <p class="errortext">{{ $message }}</p>
                         @enderror
@@ -84,6 +84,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">{{ __('Sign up') }}</button>
                 </div>
+                <input type="hidden" name="country_code" id="country_code">
             </form>
             <!-- <div class="orsignwithbtntx">
                 <h3>Or Sign in with</h3>
@@ -109,4 +110,25 @@
 
     </div>
 </div> -->
+<script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+        separateDialCode: true,
+        customPlaceholder: function(
+            selectedCountryPlaceholder,
+            selectedCountryData
+        ) {
+            return "e.g. " + selectedCountryPlaceholder;
+        },
+    });
+
+    var iti = window.intlTelInputGlobals.getInstance(input);
+    setTimeout(function() {
+        iti.setCountry($('#country_code').val());
+    }, 3000);
+    input.addEventListener('blur', function() {
+        var countryCode = iti.getSelectedCountryData().iso2;
+        $('#country_code').val(countryCode);
+    });
+</script>
 @endsection

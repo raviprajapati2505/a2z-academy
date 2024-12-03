@@ -191,7 +191,8 @@
                                         <h3>{{ $newsdata->title }}</h3>
                                         <!-- <h6><i class="bx bx-time-five"></i> 2 hr</h6> -->
                                     </div>
-                                    <p>{{ $newsdata->description }}</p>
+                                    <p class="read-more" data-full-text="{{ $newsdata->description }}">{{ \Illuminate\Support\Str::limit($newsdata->description, 10) }}</p>
+                                    <a href="javascript:void(0);" class="toggle-text-btn">Read More</a>
                                     <!-- <div class="popucours-sldin">
                                         <h5>(460 Free Videos)</h5>
                                         <a href="javascript:void(0);">Enroll Now</a>
@@ -578,5 +579,18 @@
             }
         })
     })
+    $(".toggle-text-btn").on("click", function () {
+        const $description = $(this).prev(".read-more");
+        const fullText = $description.data("full-text");
+        const isExpanded = $(this).text() === "Read Less";
+
+        if (isExpanded) {
+            $description.text(fullText.slice(0, 100) + "...");
+            $(this).text("Read More");
+        } else {
+            $description.text(fullText);
+            $(this).text("Read Less");
+        }
+    });
 </script>
 @endsection
