@@ -13,8 +13,8 @@
     <div class="getstart-leftrightcov">
         <div class="container">
             <div class="getstartmain-left">
-                <h3>Get Started</h3>
-                <h5>Your <span>Learning</span> & <br> Enrich your <span>Dream</span></h5>
+                <h3>Elevate Your</h3>
+                <h5>Your <span>Career</span> for a  <br> Sustainable <span>Tomorrow</span></h5>
                 <div class="srcmainda-listcov">
                     <div class="srcmainda-mid">
                         <select class="form-select category_id" aria-label="Default select example">
@@ -302,7 +302,7 @@
     </div>
 </div>
 
-<div class="dowmobiapp-min">
+<!-- <div class="dowmobiapp-min">
     <div class="container">
         <div class="dowmobiapp-mcover">
             <div class="dowmobiapp-left">
@@ -343,7 +343,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <?php /*
 <div class="container">
     <div class="myclsstudy-maincov">
@@ -404,9 +404,9 @@
         <div class="feedbackmain-cover">
             <div class="feedbackmain-left">
                 <img src="{{ asset('public/frontend/images/quotes-icon-2.png') }}" alt="">
-                <h6>Learners feedback</h6>
-                <h3>Our Learners Says</h3>
-                <p>Here's What Our Learners Are Saying About Their Journey With Us: Inspiring Stories, Valuable Feedback, and Life-Changing Experiences!</p>
+                <h6>Trainees feedback</h6>
+                <h3>What Our Trainees Have to Say</h3>
+                <p>Discover how our training programs have equipped professionals with the skills to excel in their careers and contribute to a more sustainable future.</p>
                 <a href="<?= url('/login') ?>">Join Now</a>
             </div>
             <div class="feedbackmain-right">
@@ -439,8 +439,8 @@
 <div class="container">
     <div class="skilldeve-maincov">
         <div class="myclsstudy-maintitle">
-            <p>Skill Development Courses</p>
-            <h3>What stage of study are you now?</h3>
+            <p>Diverse Range of Courses</p>
+            <h3>Empowering professionals for a climate-resilient future</h3>
         </div>
         <div class="skilllist-cover">
             <ul class="owl-filter-bar">
@@ -585,7 +585,7 @@
         const isExpanded = $(this).text() === "Read Less";
 
         if (isExpanded) {
-            $description.text(fullText.slice(0, 100) + "...");
+            $description.text(fullText.slice(0, 1000) + "...");
             $(this).text("Read More");
         } else {
             $description.text(fullText);

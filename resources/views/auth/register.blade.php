@@ -82,6 +82,16 @@
                         <p class="errortext">{{ $message }}</p>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label for="membership">{{ __('Are you ?') }}</label>
+                        <select id="membership" class="form-control" name="role" required>
+                            <option value="Student">Learner</option>
+                            <option value="Teacher">Instructor</option>
+                        </select>
+                        @error('role')
+                        <p class="errortext">{{ $message }}</p>
+                        @enderror
+                    </div>
                     <button type="submit" class="btn btn-primary">{{ __('Sign up') }}</button>
                 </div>
                 <input type="hidden" name="country_code" id="country_code">
