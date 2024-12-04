@@ -1536,6 +1536,7 @@ img.footer-logo {
     margin: 0px;
     margin-top: 34px;
     margin-bottom: 48px;
+    text-align: justify;
 }
 .footerdata-left ul {
     display: inline-block;
