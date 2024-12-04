@@ -191,8 +191,8 @@
                                         <h3>{{ $newsdata->title }}</h3>
                                         <!-- <h6><i class="bx bx-time-five"></i> 2 hr</h6> -->
                                     </div>
-                                    <p class="read-more" data-full-text="{{ $newsdata->description }}">{{ \Illuminate\Support\Str::limit($newsdata->description, 10) }}</p>
-                                    <a href="javascript:void(0);" class="toggle-text-btn">Read More</a>
+                                    <p class="read-more" data-full-text="{{ $newsdata->description }}">{{ $newsdata->description }}</p>
+                                    <!-- <a href="javascript:void(0);" class="toggle-text-btn">Read More</a> -->
                                     <!-- <div class="popucours-sldin">
                                         <h5>(460 Free Videos)</h5>
                                         <a href="javascript:void(0);">Enroll Now</a>

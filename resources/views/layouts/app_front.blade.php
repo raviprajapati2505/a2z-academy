@@ -149,9 +149,9 @@
 			var owl = $("#myclassslider");
 			owl.owlCarousel({
 				margin: 10,
-				loop: true,
-				nav: true,
-				items: 3,
+				loop: false,
+				nav: false,
+				items: 2,
 				responsive: {
 					0: {
 						items: 1,
@@ -166,7 +166,7 @@
 						items: 2
 					},
 					768: {
-						items: 3
+						items: 2
 					}
 				}
 			});

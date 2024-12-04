@@ -38,7 +38,7 @@
                     <input type="email" class="form-control" id="email" name="email" placeholder="">
                   </div>
                 </div>
-                <div class="col-sm">
+                <!-- <div class="col-sm">
                   <div class="form-group">
                     <label for="contact">Contact *</label>
                     <div class="contnumbset-cov">
@@ -46,7 +46,7 @@
                       <input type="text" class="form-control" id="contact" name="contact" placeholder="">
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
 
               <div class="row">

@@ -158,7 +158,7 @@
                 email: true
             },
             "contact": {
-                required: true,
+                required: false,
                 digits: true,
                 minlength: 10,
             },
