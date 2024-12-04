@@ -83,7 +83,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-sm">
                   <div class="form-group">
                     <label for="">Select Permission</label>
@@ -92,7 +92,7 @@
                     </select>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <br><br>
               <h3>Current User Identity Verification</h3><br>
 
