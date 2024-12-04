@@ -14,7 +14,7 @@
         <div class="container">
             <div class="getstartmain-left">
                 <h3>Elevate Your</h3>
-                <h5>Your <span>Career</span> for a  <br> Sustainable <span>Tomorrow</span></h5>
+                <h5><span>Career</span> for a  <br> Sustainable <span>Tomorrow</span></h5>
                 <div class="srcmainda-listcov">
                     <div class="srcmainda-mid">
                         <select class="form-select category_id" aria-label="Default select example">
