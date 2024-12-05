@@ -302,7 +302,7 @@
     </div>
 </div>
 
-<!-- <div class="dowmobiapp-min">
+<div class="dowmobiapp-min">
     <div class="container">
         <div class="dowmobiapp-mcover">
             <div class="dowmobiapp-left">
@@ -343,7 +343,7 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 <?php /*
 <div class="container">
     <div class="myclsstudy-maincov">

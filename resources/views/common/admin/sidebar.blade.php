@@ -152,7 +152,7 @@
             <li>
                 <a href="{{ URL('admin/book_store') }}" class="{{ (request()->segment(2) == 'book_store') ? 'active' : '' }}">
                     <img src="{{ asset('public/svg/profile-icon.svg') }}" alt="Book Store">
-                    <span class="links_name">Book Store</span>
+                    <span class="links_name">Resources</span>
                 </a>
             </li>
             <li>
