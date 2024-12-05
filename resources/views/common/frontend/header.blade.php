@@ -203,7 +203,7 @@
                             </div>
                         </li> -->
                         <li class="nav-item {{ (request()->segment(1) == 'book_store') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ url('book_store') }}">Book Store</a>
+                            <a class="nav-link" href="{{ url('book_store') }}">Resources</a>
                         </li>
                     </ul>
                     <!-- <form class="d-flex">
