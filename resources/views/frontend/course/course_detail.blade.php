@@ -228,8 +228,32 @@
                         <h3>{{ $total_course_duration }} hours</h3>
                     </div>
                     <div class="coursefeatures-list">
+                        <p>Fees:</p>
+                        <h3>USD {{ $course->price }}</h3>
+                    </div>
+                    <div class="coursefeatures-list">
                         <p>Language:</p>
                         <h3>{{ $course->language }}</h3>
+                    </div>
+                    <div class="coursefeatures-list">
+                        <p>Experience Level:</p>
+                        <h3>{{ $course->experience_level }}</h3>
+                    </div>
+                    <div class="coursefeatures-list">
+                        <p>Accreditation:</p>
+                        <h3>{{ $course->accreditation }}</h3>
+                    </div>
+                    <div class="coursefeatures-list">
+                        <p>Course Type:</p>
+                        <h3>{{ $course->course_type->title }}</h3>
+                    </div>
+                    <div class="coursefeatures-list">
+                        <p>Status</p>
+                        <h3>{{ $course->status }}</h3>
+                    </div>
+                    <div class="coursefeatures-list">
+                        <p>More Info:</p>
+                        <p>{{ $course->short_description }}</p>
                     </div>
                 </div>
             </div>

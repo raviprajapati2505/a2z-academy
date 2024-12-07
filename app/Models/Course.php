@@ -37,7 +37,9 @@ class Course extends Model
         'instructor_infromation',
         'ceu_points',
         'child_category_id',
-        'delivery_mode_id'
+        'delivery_mode_id',
+        'experience_level',
+        'accreditation'
     ];
 
     public function class(): BelongsTo

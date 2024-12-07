@@ -153,6 +153,25 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="form-group">
+                                        <label for="description">Experience Level</label>
+                                        <select class="js-example-basic-single form-control" name="experience_level" id="experience_level">
+                                            <option value="Intermediate">Intermediate</option>
+                                            <option value="Beginner">Beginner</option>
+                                            <option value="Expert">Expert</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="form-group">
+                                        <label for="name">Accreditation</label>
+                                        <input type="text" class="form-control" id="accreditation" name="accreditation" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="form-group">
                                         <label for="child_category">Select Sub-subcategory</label>
                                         <select class="js-example-basic-single form-control" name="child_category" id="child_category">
                                             @foreach($child_category as $type)

@@ -92,6 +92,8 @@ Route::middleware(['auth', '2fa', 'student'])->group(function () {
     Route::get('remove_course_enroll/{id}', [PaymentController::class, 'remove_course_enroll'])->name('remove_course_enroll');
     Route::post('submit_student_review', [FeedbackController::class, 'submit_student_review'])->name('submit_student_review');
     Route::get('pay_for_courses', [PaymentController::class, 'pay_for_courses'])->name('pay_for_courses');
+    Route::get('paypal_success', [PaymentController::class, 'paypal_success'])->name('paypal_success');
+    Route::get('paypal_cancel', [PaymentController::class, 'paypal_cancel'])->name('paypal_cancel');
     Route::post('mark_as_favourite', [FeedbackController::class, 'mark_as_favourite'])->name('mark_as_favourite');
     Route::post('apply_promo', [FeedbackController::class, 'apply_promo'])->name('apply_promo');
     Route::post('track_lecture', [CoursesController::class, 'track_lecture'])->name('track_lecture');

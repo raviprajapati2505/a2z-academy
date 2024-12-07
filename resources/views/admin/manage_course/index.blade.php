@@ -275,6 +275,8 @@
             $('#special_price').val(data.data.special_price);
             $('#language').val(data.data.language);
             $('#ceu_points').val(data.data.ceu_points);
+            $('#experience_level').val(data.data.experience_level);
+            $('#accreditation').val(data.data.accreditation);
             $('#status').val(data.data.status).trigger('change');
             $('#course_class').val(data.data.class_id).trigger('change');
             $('#course_subject').val(data.data.subject_id).trigger('change');

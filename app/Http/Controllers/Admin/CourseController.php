@@ -143,7 +143,9 @@ class CourseController extends Controller
                 'instructor_infromation' => $request->instructor_infromation,
                 'ceu_points' => $request->ceu_points,
                 'child_category_id' => $request->child_category,
-                'delivery_mode_id' => $request->delivery_mode
+                'delivery_mode_id' => $request->delivery_mode,
+                'experience_level' => $request->experience_level,
+                'accreditation' => $request->accreditation
             ];
 
             if ($request->hasFile('cover_image')) {
