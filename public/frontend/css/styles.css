@@ -855,6 +855,12 @@ a:hover {
     top: 8px;
     right: 8px;
 }
+.retclassgif {
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    right: 327px;
+}
 .retclass h5 {
     display: inline-block;
     font-size: 14px;

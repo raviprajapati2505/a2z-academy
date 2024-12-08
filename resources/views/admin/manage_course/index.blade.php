@@ -124,6 +124,11 @@
             dt.ajax.reload();
         }
 
+        $(".datepicker").datepicker({
+            format: 'yyyy-mm-dd',
+            todayHighlight: true,
+        });
+
         CKEDITOR.config.allowedContent = true;
         CKEDITOR.replace('what_you_learn');
         CKEDITOR.replace('instructor_infromation');
@@ -277,6 +282,9 @@
             $('#ceu_points').val(data.data.ceu_points);
             $('#experience_level').val(data.data.experience_level);
             $('#accreditation').val(data.data.accreditation);
+            $('#location').val(data.data.location);
+            $('#course_time').val(data.data.time);
+            $("#course_date").datepicker("setDate", data.data.date);
             $('#status').val(data.data.status).trigger('change');
             $('#course_class').val(data.data.class_id).trigger('change');
             $('#course_subject').val(data.data.subject_id).trigger('change');

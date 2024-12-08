@@ -172,6 +172,30 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="form-group">
+                                        <label for="description">Course Date</label>
+                                        <input type="text" class="form-control datepicker" id="course_date" name="course_date" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="form-group">
+                                        <label for="name">Time</label>
+                                        <input type="text" class="form-control" id="course_time" name="course_time" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="form-group">
+                                        <label for="description">Location</label>
+                                        <input type="text" class="form-control" id="location" name="location" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="form-group">
                                         <label for="child_category">Select Sub-subcategory</label>
                                         <select class="js-example-basic-single form-control" name="child_category" id="child_category">
                                             @foreach($child_category as $type)

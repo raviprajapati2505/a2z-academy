@@ -145,7 +145,9 @@ class CourseController extends Controller
                 'child_category_id' => $request->child_category,
                 'delivery_mode_id' => $request->delivery_mode,
                 'experience_level' => $request->experience_level,
-                'accreditation' => $request->accreditation
+                'location' => $request->location,
+                'time' => $request->course_time,
+                'date' => $request->course_date,
             ];
 
             if ($request->hasFile('cover_image')) {

@@ -39,7 +39,10 @@ class Course extends Model
         'child_category_id',
         'delivery_mode_id',
         'experience_level',
-        'accreditation'
+        'accreditation',
+        'date',
+        'time',
+        'location'
     ];
 
     public function class(): BelongsTo

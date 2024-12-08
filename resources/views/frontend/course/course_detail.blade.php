@@ -93,15 +93,18 @@
                                 }
                             }
                             ?>
-                            <p>{{ $total_course_duration }} hours</p>
+                            <!-- <p>{{ $total_course_duration }} hours</p> -->
+                            <p>Time: {{ $course->time }}</p>
                         </div>
                         <div class="holestunen-iner">
                             <img src="{{ asset('public/frontend/svg/holestunen-icon-2.svg') }}" alt="">
-                            <p>{{ count($course->curriculam_lecture) }} Lectures</p>
+                            <!-- <p>{{ count($course->curriculam_lecture) }} Lectures</p> -->
+                            <p>Location: {{ $course->location }}</p>
                         </div>
                         <div class="holestunen-iner">
                             <img src="{{ asset('public/frontend/svg/holestunen-icon-3.svg') }}" alt="">
-                            <p>{{ $total_student_enroll }} Learner Enrolled</p>
+                            <!-- <p>{{ $total_student_enroll }} Learner Enrolled</p> -->
+                            <p>Fees: {{ $course->price }} USD</p>
                         </div>
                         <h3>{{ $course->description }}</h6>
                     </div>
@@ -216,11 +219,11 @@
                 <div class="classdetails-teachers">
                     <h2>Course Features</h2>
                     <div class="coursefeatures-list">
-                        <p>Learner Enrolled:</p>
+                        <p>Learner enrolled:</p>
                         <h3>{{ $total_student_enroll }}</h3>
                     </div>
                     <div class="coursefeatures-list">
-                        <p>lectures:</p>
+                        <p>Lectures:</p>
                         <h3>{{ count($course->curriculam_lecture) }}</h3>
                     </div>
                     <div class="coursefeatures-list">

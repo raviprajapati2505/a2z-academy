@@ -14,7 +14,7 @@
         <div class="container">
             <div class="getstartmain-left">
                 <h3>Elevate Your</h3>
-                <h5><span>Career</span> for a  <br> Sustainable <span>Tomorrow</span></h5>
+                <h5><span>Career</span> for a <br> Sustainable <span>Tomorrow</span></h5>
                 <div class="srcmainda-listcov">
                     <div class="srcmainda-mid">
                         <select class="form-select category_id" aria-label="Default select example">
@@ -252,8 +252,17 @@
                                         ?>
                                         <h5>{{ round($avg_rating) }} <i class="bx bxs-star"></i></h5>
                                     </div>
+                                    <div class="retclassgif">
+                                        @if(\Carbon\Carbon::parse($course->created_at)->diffInDays(\Carbon\Carbon::now()) <= 20)
+                                            <img style="height:20px;width:40px !important" src="{{ asset('public/frontend/images/new.gif') }}">
+                                            @endif
+                                    </div>
                                     <div class="retclassdate">
+                                        @if(!empty($course->date) && isset($course->date))
+                                        <h5>{{ date('F d, Y', strtotime($course->date)) }}</h5>
+                                        @else
                                         <h5>{{ $course->created_at->format('F d, Y') }}</h5>
+                                        @endif
                                     </div>
                                     @if($course->cover_image)
                                     <a href="{{ url('course_detail') }}<?= '/' . $course->id ?>"><img src="<?= url('/') . '/public/' . $course->cover_image ?>"></a>
@@ -266,7 +275,7 @@
                                     <h3>{{ $course->name }}</h3>
                                     <p>{{ $course->description }}</p>
                                     <div class="popucours-sldin">
-                                        <h5>
+                                        <!-- <h5>
                                             <?php
                                             $total_free_videos = 0;
                                             foreach ($course->curriculam_lecture as $lecture) {
@@ -280,7 +289,7 @@
                                                 echo '(' . $total_free_videos . ' Free Videos)';
                                             }
                                             ?>
-                                        </h5>
+                                        </h5> -->
                                         <?php if ($course->is_paid == 1) { ?>
                                             <a href="<?= url('/manage_payment') . '/' . $course->id ?>">Enroll Now</a>
                                         <?php } else { ?>
@@ -462,7 +471,11 @@
                             <div class="coursesdata-iner">
                                 <div class="coursesdata-img">
                                     <div class="retclassdate">
+                                        @if(!empty($course->date) && isset($course->date))
+                                        <h5>{{ date('F d, Y', strtotime($course->date)) }}</h5>
+                                        @else
                                         <h5>{{ $course->created_at->format('F d, Y') }}</h5>
+                                        @endif
                                     </div>
                                     @if($course->cover_image)
                                     <a href="{{ url('course_detail') }}<?= '/' . $course->id ?>"><img src="<?= url('/') . '/public/' . $course->cover_image ?>"></a>
@@ -579,7 +592,7 @@
             }
         })
     })
-    $(".toggle-text-btn").on("click", function () {
+    $(".toggle-text-btn").on("click", function() {
         const $description = $(this).prev(".read-more");
         const fullText = $description.data("full-text");
         const isExpanded = $(this).text() === "Read Less";

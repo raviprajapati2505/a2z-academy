@@ -82,7 +82,7 @@
                                     <h3><a href="{{ url('course_detail') }}<?= '/' . $course->id ?>">{{ $course->name }}</a></h3>
                                     <p class="desc_course_by_class">{{ $course->description }}</p>
                                     <div class="popucours-sldin">
-                                        <h5>
+                                        <!-- <h5>
                                             <?php
                                             $total_free_videos = 0;
                                             foreach ($course->curriculam_lecture as $lecture) {
@@ -96,7 +96,7 @@
                                                 echo '(' . $total_free_videos . ' Free Videos)';
                                             }
                                             ?>
-                                        </h5>
+                                        </h5> -->
                                         <?php if ($course->is_paid == 1) { ?>
                                             <a href="<?= url('/manage_payment') . '/' . $course->id ?>">Enroll Now</a>
                                         <?php } else { ?>
