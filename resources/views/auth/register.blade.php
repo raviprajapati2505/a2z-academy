@@ -39,6 +39,7 @@
                         <label for="membership">{{ __('Membership') }}</label>
                         <select id="membership" class="form-control" name="membership" required>
                             <option value="">Select </option>
+                            <option value="AEE">AEE</option>
                             <option value="GSAS Operations">GSAS Operations</option>
                             <option value="GSAS Construction Management">GSAS Construction Management</option>
                             <option value="GSAS Design & Build">GSAS Design & Build</option>
