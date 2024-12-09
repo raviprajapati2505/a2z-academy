@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -39,6 +40,16 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function register(Request $request)
+    {
+        // Validate the request and create the user
+        $this->validator($request->all())->validate();
+        $this->create($request->all());
+
+        // Redirect to the login screen
+        return redirect('/login')->with('success', 'Registration successful. Please log in.');
     }
 
     /**
@@ -75,5 +86,10 @@ class RegisterController extends Controller
             'country_code' => $data['country_code'],
             'role' => $data['role']
         ]);
+    }
+
+    protected function redirectTo()
+    {
+        return '/login'; // Replace with your desired path
     }
 }
