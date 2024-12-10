@@ -18,8 +18,8 @@
                     </li>
                     <li><a href="{{ url('pages/about') }}">About Us</a></li>
                     <li><a href="{{ url('pages/contact') }}">Contact Us</a></li>
-                    <li><a href="{{ url('pages/investor') }}">Investors</a></li>
-                    <li><a href="{{ url('pages/career') }}">Careers</a></li>
+                    <!-- <li><a href="{{ url('pages/investor') }}">Investors</a></li>
+                    <li><a href="{{ url('pages/career') }}">Careers</a></li> -->
                 </ul>
             </div>
             <div class="footerdata-right">
@@ -27,9 +27,9 @@
                     <li>
                         <h3>Disclaimer</h3>
                     </li>
-                    <li><a href="{{ url('pages/privacy') }}">Privacy Policy</a></li>
+                    <!-- <li><a href="{{ url('pages/privacy') }}">Privacy Policy</a></li>
                     <li><a href="{{ url('pages/terms') }}">Terms of Services</a></li>
-                    <li><a href="{{ url('pages/sitemap') }}">Sitemap</a></li>
+                    <li><a href="{{ url('pages/sitemap') }}">Sitemap</a></li> -->
                 </ul>
             </div>
         </div>

@@ -60,7 +60,7 @@
         <div class="onvioustmain-iner">
             <div class="onvioustiner-leftrig">
                 <div class="onvioustiner-lef">
-                    <img src="{{ asset('public/frontend/svg/icon-2.svg') }}" alt="Icon">
+                    <img src="{{ asset('public/frontend/images/icon-2.png') }}" alt="Icon">
                 </div>
                 <div class="onvioustiner-rig">
                     <h3>{{ $video_tutorials_count }}+</h3>
@@ -71,7 +71,7 @@
         <div class="onvioustmain-iner">
             <div class="onvioustiner-leftrig">
                 <div class="onvioustiner-lef">
-                    <img src="{{ asset('public/frontend/svg/icon-3.svg') }}" alt="Icon">
+                    <img src="{{ asset('public/frontend/images/icon-3.png') }}" alt="Icon">
                 </div>
                 <div class="onvioustiner-rig">
                     <h3>{{ $adviser_count }}+</h3>
@@ -82,7 +82,7 @@
         <div class="onvioustmain-iner">
             <div class="onvioustiner-leftrig">
                 <div class="onvioustiner-lef">
-                    <img src="{{ asset('public/frontend/svg/icon-4.svg') }}" alt="Icon">
+                    <img src="{{ asset('public/frontend/images/icon-4.png') }}" alt="Icon">
                 </div>
                 <div class="onvioustiner-rig">
                     <h3>{{ $all_review_count }}+</h3>
@@ -320,7 +320,7 @@
                 </h2>
                 <div class="dowmobiapp-vilicocov">
                     <div class="dowmobiapvilico-lef">
-                        <img src="{{ asset('public/frontend/svg/learning-today-icon-1.svg') }}" alt="">
+                        <img src="{{ asset('public/frontend/images/icon-01.png') }}" alt="">
                     </div>
                     <div class="dowmobiapvilico-rig">
                         <h4>Video lectures</h4>
@@ -329,7 +329,7 @@
                 </div>
                 <div class="dowmobiapp-vilicocov">
                     <div class="dowmobiapvilico-lef">
-                        <img src="{{ asset('public/frontend/svg/learning-today-icon-2.svg') }}" alt="">
+                        <img src="{{ asset('public/frontend/images/icon-01.png') }}" alt="">
                     </div>
                     <div class="dowmobiapvilico-rig">
                         <h4>Live class</h4>
@@ -338,7 +338,7 @@
                 </div>
                 <div class="dowmobiapp-vilicocov">
                     <div class="dowmobiapvilico-lef">
-                        <img src="{{ asset('public/frontend/svg/learning-today-icon-3.svg') }}" alt="">
+                        <img src="{{ asset('public/frontend/images/icon-03.png') }}" alt="">
                     </div>
                     <div class="dowmobiapvilico-rig">
                         <h4>Convenient practice</h4>
