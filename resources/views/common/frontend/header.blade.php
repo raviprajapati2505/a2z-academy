@@ -127,11 +127,7 @@
                 </div>
 
                 @endauth
-                @guest
-                <div class="loginbtn-nav">
-                    <a href="{{ url('login') }}">Login</a>
-                </div>
-                @endguest
+                
                 <div class="collapse navbar-collapse right-hednavmaincov" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <!-- <li class="nav-item dropdown d-menu {{ (request()->segment(1) == 'course_by_class') ? 'active' : '' }}">
@@ -211,7 +207,11 @@
 						<button class="btn btn-outline-success" type="submit">Search</button>
 						</form> -->
                 </div>
-
+                @guest
+                <div class="loginbtn-nav">
+                    <a href="{{ url('login') }}">Login</a>
+                </div>
+                @endguest
             </div>
         </nav>
     </div>
