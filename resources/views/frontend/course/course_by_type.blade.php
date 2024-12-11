@@ -49,10 +49,10 @@
                                             $total_course_duration += $lecture->duration_in_hour;
                                         }
                                         ?>
-                                        <p style="font-size:17px">
+                                        <!-- <p style="font-size:17px">
                                             <i class="bx bx-time-five"></i>
                                             <span>{{ $total_course_duration }} hr</span>
-                                        </p>
+                                        </p> -->
                                     </div>
                                     @if($course->cover_image)
                                     <a href="{{ url('course_detail') }}<?= '/' . $course->id ?>"><img src="<?= url('/') . '/public/' . $course->cover_image ?>"></a>

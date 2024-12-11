@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>Gord Academy</title>
+	<title>GORD ACADEMY</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
@@ -149,9 +149,9 @@
 			var owl = $("#myclassslider");
 			owl.owlCarousel({
 				margin: 10,
-				loop: false,
-				nav: false,
-				items: 2,
+				loop: true,
+				nav: true,
+				items: 3,
 				responsive: {
 					0: {
 						items: 1,
@@ -166,7 +166,7 @@
 						items: 2
 					},
 					768: {
-						items: 2
+						items: 3
 					}
 				}
 			});
