@@ -26,8 +26,10 @@
                             <?php
                             $total_course_duration = 0;
                             $pp = \App\Models\Course::where('id', $course->id)->first();
-                            foreach ($pp->curriculam_lecture as $lc) {
-                                $total_course_duration += $lc->duration_in_seconds;
+                            if ($pp && $pp->curriculam_lecture) {
+                                foreach ($pp->curriculam_lecture as $lc) {
+                                    $total_course_duration += $lc->duration_in_seconds;
+                                }
                             }
                             //$time = $total_course_duration . ':00:00';
                             //$seconds = strtotime("1970-01-01 $time UTC");

@@ -10,6 +10,85 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
+                <div class="collapse navbar-collapse right-hednavmaincov" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- <li class="nav-item dropdown d-menu {{ (request()->segment(1) == 'course_by_class') ? 'active' : '' }}">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Batches<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu shadow-sm sm-menu classesnavmainhed" aria-labelledby="dropdown01">
+                                <ul class="dropdown-listnav">
+                                    @foreach($classes as $class)
+                                    <?php
+                                    $class_number = explode('-', $class->name);
+                                    $class_number = isset($class_number[1]) ? trim($class_number[1]) : 8
+                                    ?>
+                                    <li>
+                                        <a class="dropdown-item classe<?= $class_number ?>" href="{{ url('course_by_class') }}<?= '/' . $class->id ?>">
+                                            <p><?= $class_number ?><span></span></p>
+                                            <h5>{{ $class->name }}</h5>
+                                        </a>
+                                    </li>
+                                    <hr>
+                                    @endforeach
+
+                                </ul>
+                            </div>
+                        </li> -->
+                        <li class="nav-item dropdown d-menu {{ (request()->segment(1) == 'course_by_type') ? 'active' : '' }}">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Course Catalog<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu shadow-sm sm-menu classesnavmainhed skilprod-nav1" aria-labelledby="dropdown01">
+                                <ul class="dropdown-listnav">
+                                    @foreach($course_types as $type)
+                                    <li>
+                                        <a class="dropdown-item" href="{{ url('course_by_type') }}<?= '/' . $type->id ?>">
+                                            <h3>{{ $type->title }}</h3>
+                                        </a>
+                                    </li>
+                                    <hr>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item {{ (request()->segment(1) == 'video_classes') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ url('video_classes') }}">Live class</a>
+                        </li>
+                        @foreach($delivery_modes as $mode)
+                        <li class="nav-item {{ (request()->segment(1) == $mode->title) ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ url('course_by_type') }}<?= '/' . $mode->id ?>/delivery_mode">{{ $mode->title }}</a>
+                        </li>
+                        @endforeach
+                        <!-- <li class="nav-item dropdown d-menu {{ (request()->segment(1) == 'course_by_type') ? 'active' : '' }}">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Delivery Mode<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu shadow-sm sm-menu classesnavmainhed skilprod-nav1" aria-labelledby="dropdown01">
+                                <ul class="dropdown-listnav">
+                                    @foreach($delivery_modes as $type)
+                                    <li>
+                                        <a class="dropdown-item" href="{{ url('course_by_type') }}<?= '/' . $type->id ?>">
+                                            <h3>{{ $type->title }}</h3>
+                                        </a>
+                                    </li>
+                                    <hr>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </li> -->
+                        <li class="nav-item {{ (request()->segment(1) == 'book_store') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ url('book_store') }}">Resources</a>
+                        </li>
+                    </ul>
+                    <!-- <form class="d-flex">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
+						</form> -->
+                </div>
                 @auth
                 <div class="aftloginpagebtn">
 
@@ -127,86 +206,6 @@
                 </div>
 
                 @endauth
-                
-                <div class="collapse navbar-collapse right-hednavmaincov" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <!-- <li class="nav-item dropdown d-menu {{ (request()->segment(1) == 'course_by_class') ? 'active' : '' }}">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Batches<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="6 9 12 15 18 9"></polyline>
-                                </svg>
-                            </a>
-                            <div class="dropdown-menu shadow-sm sm-menu classesnavmainhed" aria-labelledby="dropdown01">
-                                <ul class="dropdown-listnav">
-                                    @foreach($classes as $class)
-                                    <?php
-                                    $class_number = explode('-', $class->name);
-                                    $class_number = isset($class_number[1]) ? trim($class_number[1]) : 8
-                                    ?>
-                                    <li>
-                                        <a class="dropdown-item classe<?= $class_number ?>" href="{{ url('course_by_class') }}<?= '/' . $class->id ?>">
-                                            <p><?= $class_number ?><span></span></p>
-                                            <h5>{{ $class->name }}</h5>
-                                        </a>
-                                    </li>
-                                    <hr>
-                                    @endforeach
-
-                                </ul>
-                            </div>
-                        </li> -->
-                        <li class="nav-item dropdown d-menu {{ (request()->segment(1) == 'course_by_type') ? 'active' : '' }}">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Course Catalog<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="6 9 12 15 18 9"></polyline>
-                                </svg>
-                            </a>
-                            <div class="dropdown-menu shadow-sm sm-menu classesnavmainhed skilprod-nav1" aria-labelledby="dropdown01">
-                                <ul class="dropdown-listnav">
-                                    @foreach($course_types as $type)
-                                    <li>
-                                        <a class="dropdown-item" href="{{ url('course_by_type') }}<?= '/' . $type->id ?>">
-                                            <h3>{{ $type->title }}</h3>
-                                        </a>
-                                    </li>
-                                    <hr>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item {{ (request()->segment(1) == 'video_classes') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ url('video_classes') }}">Live class</a>
-                        </li>
-                        @foreach($delivery_modes as $mode)
-                        <li class="nav-item {{ (request()->segment(1) == $mode->title) ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ url('course_by_type') }}<?= '/' . $mode->id ?>/delivery_mode">{{ $mode->title }}</a>
-                        </li>
-                        @endforeach
-                        <!-- <li class="nav-item dropdown d-menu {{ (request()->segment(1) == 'course_by_type') ? 'active' : '' }}">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Delivery Mode<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="6 9 12 15 18 9"></polyline>
-                                </svg>
-                            </a>
-                            <div class="dropdown-menu shadow-sm sm-menu classesnavmainhed skilprod-nav1" aria-labelledby="dropdown01">
-                                <ul class="dropdown-listnav">
-                                    @foreach($delivery_modes as $type)
-                                    <li>
-                                        <a class="dropdown-item" href="{{ url('course_by_type') }}<?= '/' . $type->id ?>">
-                                            <h3>{{ $type->title }}</h3>
-                                        </a>
-                                    </li>
-                                    <hr>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </li> -->
-                        <li class="nav-item {{ (request()->segment(1) == 'book_store') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ url('book_store') }}">Resources</a>
-                        </li>
-                    </ul>
-                    <!-- <form class="d-flex">
-						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success" type="submit">Search</button>
-						</form> -->
-                </div>
                 @guest
                 <div class="loginbtn-nav">
                     <a href="{{ url('login') }}">Login</a>

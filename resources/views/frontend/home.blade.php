@@ -254,7 +254,7 @@
                                     </div>
                                     <div class="retclassgif">
                                         @if(\Carbon\Carbon::parse($course->created_at)->diffInDays(\Carbon\Carbon::now()) <= 20)
-                                            <img style="height:20px;width:40px !important" src="{{ asset('public/frontend/images/new.gif') }}">
+                                            <img style="height:20px;width:40px !important" src="{{ asset('public/frontend/images/new.png') }}">
                                             @endif
                                     </div>
                                     <div class="retclassdate">

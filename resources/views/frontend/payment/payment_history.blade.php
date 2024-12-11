@@ -37,7 +37,7 @@
                                     <span>{{ $course->name }}</span>
                                 </td>
                                 <td class="tblrowset2">${{ $course->special_price ? $course->special_price : $course->price }}</td>
-                                <td class="tblrowset3">{{ $course->course->class->name }}</td>
+                                <td class="tblrowset3">{{ $course->course?->class?->name }}</td>
                                 <td class="tblrowset3">{{ date("m-d-Y", strtotime($course->created_at)) }}</td>
                                 <!-- <td class="tblrowset4">
                                     <a href="javascript:void(0);">
