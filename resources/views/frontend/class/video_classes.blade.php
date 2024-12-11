@@ -7,7 +7,7 @@
         <div class="classalldatitand-cls">
             <div class="classalldata-title">
                 <!-- <p>Skill</p> -->
-                <h3>Video</h3>
+                <h3>Live Class</h3>
             </div>
             <div class="classalldata-topiner">
                 <!-- <h6>Class Change</h6>

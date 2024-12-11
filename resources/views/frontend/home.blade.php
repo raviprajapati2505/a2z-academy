@@ -192,7 +192,7 @@
                                         <!-- <h6><i class="bx bx-time-five"></i> 2 hr</h6> -->
                                     </div>
                                     <p class="read-more" data-full-text="{{ $newsdata->description }}">{{ $newsdata->description }}</p>
-                                    <!-- <a href="javascript:void(0);" class="toggle-text-btn">Read More</a> -->
+                                    <a href="https://www.gord.qa/category/news/" class="toggle-text-btn">Read More</a>
                                     <!-- <div class="popucours-sldin">
                                         <h5>(460 Free Videos)</h5>
                                         <a href="javascript:void(0);">Enroll Now</a>

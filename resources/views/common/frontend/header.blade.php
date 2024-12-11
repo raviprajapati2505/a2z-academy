@@ -119,7 +119,14 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         @foreach($notifications as $notify)
-                        <li><a href="<?= url('') ?>/readnotification/<?= $notify->nid ?>">Notification: {{ $notify->description }}</a></li>
+                        <li>
+                            @if(@empty($notify->event_id))
+                                <a href="<?= url('') ?>/readnotification/<?= $notify->nid ?>">Notification: {{ $notify->desc }}</a>
+                            @else
+                                <a href="<?= url('') ?>/readnotification/<?= $notify->nid ?>">Notification: {{ $notify->description }}</a>
+                            @endif
+                            
+                        </li>
                         @endforeach
                     </ul>
                     <div class="menu-items">

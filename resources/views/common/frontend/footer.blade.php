@@ -24,9 +24,9 @@
             </div>
             <div class="footerdata-right">
                 <ul class="fotcomdisnav-cov">
-                    <li>
+                    <!-- <li>
                         <h3>Disclaimer</h3>
-                    </li>
+                    </li> -->
                     <!-- <li><a href="{{ url('pages/privacy') }}">Privacy Policy</a></li>
                     <li><a href="{{ url('pages/terms') }}">Terms of Services</a></li>
                     <li><a href="{{ url('pages/sitemap') }}">Sitemap</a></li> -->

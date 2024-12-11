@@ -47,13 +47,13 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('course_types', CourseType::where("is_delivery_mode", 0)->get());
                 $view->with('delivery_modes', CourseType::where("is_delivery_mode", 1)->get());
                 $view->with('classes', ClassList::all());
-                $notifications = Auth::check() ? Notification::select('notifications.id as nid','events.*')->leftJoin('events', 'notifications.event_id', '=', 'events.id')->where('notifications.user_id', Auth::user()->id)->where('is_read', '0')->get() : collect();
+                $notifications = Auth::check() ? Notification::select('notifications.id as nid','notifications.description as desc','notifications.event_id as event_id','events.*')->leftJoin('events', 'notifications.event_id', '=', 'events.id')->where('notifications.user_id', Auth::user()->id)->where('is_read', '0')->get() : collect();
                 $view->with('notifications', $notifications);
             }
         );
 
         view()->composer('common.admin.navigation', function ($view) {
-            $notifications = Auth::check() ? Notification::select('notifications.id as nid','events.*')->leftJoin('events', 'notifications.event_id', '=', 'events.id')->where('notifications.user_id', Auth::user()->id)->where('is_read', '0')->get() : collect();
+            $notifications = Auth::check() ? Notification::select('notifications.id as nid','notifications.description as desc','notifications.event_id as event_id','events.*')->leftJoin('events', 'notifications.event_id', '=', 'events.id')->where('notifications.user_id', Auth::user()->id)->where('is_read', '0')->get() : collect();
             $view->with('notifications', $notifications);
         });
     }

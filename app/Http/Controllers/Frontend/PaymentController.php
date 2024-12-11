@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Notification;
 use App\Models\StudentCourseHistory;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use PayPal\Api\Payer;
 use PayPal\Api\Amount;
@@ -39,6 +41,20 @@ class PaymentController extends Controller
                     'student_id' => Auth::user()->id,
                     'course_id' => $is_enroll_course_id
                 ]);
+
+                $username = User::find(Auth::user()->id);
+                $course = User::find($is_enroll_course_id);
+
+                $query = User::whereIn('role', ['Admin', 'Credentials']);
+                $users = $query->get();
+
+                foreach ($users as $user) {
+                    Notification::create([
+                        'user_id' => $user->id,
+                        'description' => $user->email . ' enrolled in the course ' . $course->name,
+                        'is_read' => false,
+                    ]);
+                }
             } else {
                 if ($is_already_enroll[0]->is_paid == 1) {
                     return redirect()->route('manage_payment')->withErrors(['error' => 'Course is already purchased, please check in payment history section']);

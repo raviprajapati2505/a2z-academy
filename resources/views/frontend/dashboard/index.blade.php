@@ -13,7 +13,7 @@
             <p>Under Maintenance</p>
             <img src="{{ asset('public/images/title-background-dashboard.png') }}" alt="Welcome to Gord Academy">
         </div>
-        <!-- <div class="fullpageinerdata_cover">
+        <div class="fullpageinerdata_cover">
             <div class="fullpageinerdata_iner">
                 <div class="row">
                     <?php if (isset($dashboardDetails['classes']) && !empty($dashboardDetails['classes'])) { ?>
@@ -72,7 +72,7 @@
                     <?php } ?>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
 </div>
 <script src="{{ asset('public/js/chart.js') }}"></script>

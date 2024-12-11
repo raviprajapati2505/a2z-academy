@@ -107,7 +107,7 @@
                                 <p>$<?= $total ?></p>
                             </div>
                         </div> -->
-            <h4><b>Note :</b> The payment gateway is currently under development. For any payment-related inquiries, please contact info@gord.qa .”</h3>
+            <h4><b>Note :</b> The payment gateway is currently under development. For any payment-related inquiries, please contact info@gord.qa.</h3>
             <!-- <div class="paymecorcdatapric">
               <a href="{{ url('/pay_for_courses') }}" class="amount_to_be_paid">Proceed To Payment $<?= $total ?></a><br><br>
               <a href="{{ url('/pay_for_courses') }}" class="amount_to_be_paid">Hold Payment $<?= $total ?></a>
