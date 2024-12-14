@@ -73,7 +73,8 @@ a:hover {
 }
 @font-face {
     font-family: "Gilroy-SemiBold";
-    src: url("../fonts/Gilroy-SemiBold.ttf"), url("../fonts/Gilroy-SemiBold.ttf");
+    src: url("../fonts/Gilroy-SemiBold.ttf"),
+        url("../fonts/Gilroy-SemiBold.ttf");
     font-weight: normal;
     font-style: normal;
 }
@@ -948,7 +949,7 @@ padding-right: 15px; */
 .dowmobiapp-min {
     display: inline-block;
     width: 100%;
-    background: #384e56 url('../images/dots.png') top left repeat;
+    background: #384e56 url("../images/dots.png") top left repeat;
     background-size: 60px;
 }
 .dowmobiapp-mcover {
@@ -1189,7 +1190,7 @@ padding-right: 15px; */
 }
 .feedbackmain-slider::after {
     content: "";
-    background: url('../images/feedback-image-right-1.png') top center no-repeat;
+    background: url("../images/feedback-image-right-1.png") top center no-repeat;
     background-size: contain;
     position: absolute;
     right: 0;
@@ -1766,11 +1767,7 @@ img.footer-logo {
         rgba(22, 24, 115, 1) 0%,
         rgba(255, 15, 99, 1) 100%
     );
-    background: linear-gradient(
-        to right,
-        rgba(22, 24, 115, 1) 0%,
-        rgba(255, 15, 99, 1) 100%
-    );
+    background: linear-gradient(to right, #3b3647, #41374a, #47394c, #4e3a4e, #553b4f, #623d54, #6f3f58, #7d415b, #964360, #af4462, #c74561, #df475c);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#161873', endColorstr='#ff0f63', GradientType=1 );
     padding-top: 12px;
     padding-bottom: 12px;
@@ -2581,7 +2578,7 @@ img.footer-logo {
 
 .accordion-button::after {
     content: "";
-    background-image: url('../svg/bx-plus.svg');
+    background-image: url("../svg/bx-plus.svg");
     transform: inherit;
     background-position-y: -5px;
     width: 25px;
@@ -2590,7 +2587,7 @@ img.footer-logo {
 }
 .accordion-button:not(.collapsed)::after {
     content: "";
-    background-image: url('../svg/bx-minus.svg');
+    background-image: url("../svg/bx-minus.svg");
     transform: inherit;
 }
 
@@ -2801,7 +2798,7 @@ img.footer-logo {
 .classformcon-inermain {
     display: inline-block;
     width: 100%;
-    background: url('../images/bg-img-3.jpg') top center no-repeat;
+    background: url("../images/bg-img-3.jpg") top center no-repeat;
     background-size: cover;
     text-align: center;
     position: relative;
@@ -3198,7 +3195,7 @@ img.footer-logo {
 
 .loginformbox button.btn-primary {
     width: 100%;
-    background: url('../images/btn-bg.png') top center no-repeat;
+    background: url("../images/btn-bg.png") top center no-repeat;
     background-size: cover;
     display: inline-block;
     border: 0;
@@ -5639,7 +5636,8 @@ margin: -225px 0 0 -225px; */
     display: inline-block;
     width: 100%;
     border-radius: 21px;
-    background: url('../images/title-background.png') top center no-repeat #b8d2ff;
+    background: url("../images/title-background.png") top center no-repeat
+        #b8d2ff;
     padding-left: 30px;
     padding-right: 24px;
     padding-top: 28px;

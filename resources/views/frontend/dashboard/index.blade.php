@@ -10,66 +10,93 @@
         </div>
         <div class="col comtitledata-cover">
             <h1>Dashboard</h1>
-            <p>Under Maintenance</p>
+            <p>Welcome to Gord Academy</p>
             <img src="{{ asset('public/images/title-background-dashboard.png') }}" alt="Welcome to Gord Academy">
         </div>
         <div class="fullpageinerdata_cover">
             <div class="fullpageinerdata_iner">
                 <div class="row">
-                    <?php if (isset($dashboardDetails['classes']) && !empty($dashboardDetails['classes'])) { ?>
-                        <div class="col-sm smcoldatrispo">
-                            <div class="todayclass-cover">
-                                <h2 class="todayclass-title">Today Classes</h2>
-                                <div class="classlistofall">
-                                    <?php foreach ($dashboardDetails['classes'] as $class) { ?>
-                                        <div class="classlistof_cover">
-                                            <img src="<?php echo $class['image']; ?>" alt="<?php echo $class['title']; ?>">
-                                            <h4><?php echo $class['title']; ?></h4>
-                                            <div class="progress progcolor1" data-percentage="<?php echo $class['percentage']; ?>">
-                                                <span class="progress-left">
-                                                    <span class="progress-bar"></span>
-                                                </span>
-                                                <span class="progress-right">
-                                                    <span class="progress-bar"></span>
-                                                </span>
-                                                <div class="progress-value">
-                                                    <div><?php echo $class['percentage']; ?>%</div>
-                                                </div>
-                                            </div>
+                    <div class="col-sm smcoldatrispo">
+                        <div class="todayclass-cover">
+                            <h2 class="todayclass-title">Video Courses</h2>
+                            <div class="classlistofall">
+                                @if(count($purchased_course) > 0)
+                                @foreach($purchased_course as $course)
+                                <div class="classlistof_cover" >
+                                    @if($course->cover_image)
+                                    <a href="{{ url('course_detail') }}<?= '/' . $course->id ?>"><img src="<?= url('/') . '/public/' . $course->cover_image ?>"></a>
+                                    @else
+                                    <!-- default image course -->
+                                    <a href="{{ url('course_detail') }}<?= '/' . $course->id ?>"><img src="{{ asset('public/images/my-courses-img9.jpg') }}" alt="Allie Grater"></a>
+                                    @endif
+                                    <h4>{{ $course->name }}</h4>
+                                    <?php
+                                    $total_course_duration = 0;
+                                    $pp = \App\Models\Course::where('id', $course->id)->first();
+                                    if ($pp && $pp->curriculam_lecture) {
+                                        foreach ($pp->curriculam_lecture as $lc) {
+                                            $total_course_duration += $lc->duration_in_seconds;
+                                        }
+                                    }
+                                    //$time = $total_course_duration . ':00:00';
+                                    //$seconds = strtotime("1970-01-01 $time UTC");
+                                    $total_time_in_seconds = 0;
+                                    foreach ($track_lecture as $track_lc) {
+                                        if ($track_lc->course_id == $course->id) {
+                                            $total_time_in_seconds += $track_lc->time_in_seconds;
+                                        }
+                                    }
+                                    if ($total_course_duration > 0 && $total_time_in_seconds > 0) {
+                                        $total = (int)$total_time_in_seconds / (int)$total_course_duration * 100;
+                                        $total_course_completed = (int)$total;
+                                    } else {
+                                        $total_course_completed = 0;
+                                    }
+                                    ?>
+                                    <div class="progress progcolor3" data-percentage="{{ $total_course_completed }}">
+                                        <span class="progress-left">
+                                            <span class="progress-bar"></span>
+                                        </span>
+                                        <span class="progress-right">
+                                            <span class="progress-bar"></span>
+                                        </span>
+                                        <div class="progress-value">
+                                            <div>{{ $total_course_completed }}%</div>
                                         </div>
-                                    <?php } ?>
+                                    </div>
                                 </div>
+                                @endforeach
+                    @else
+                    <p>No courses available</p>
+                    @endif
                             </div>
                         </div>
-                    <?php } ?>
-                    <?php if (isset($dashboardDetails['time_spent']) && !empty($dashboardDetails['time_spent'])) { ?>
-                        <div class="col-sm smcoldatrispo">
-                            <div class="timespentchartset">
-                                <h2 class="todayclass-title">Time Spent</h2>
-                                <div class="timespentchart-cover">
-                                    <div class="timespentchart-top">
-                                        <img src="{{ asset('public/images/time-spent-img.png') }}" alt="Time Spent">
-                                        <h4>Good job, keep going!</h4>
-                                    </div>
+                    </div>
+                    
+                    <!--  -->
+                    <div class="col-sm smcoldatrispo">
+                        <div class="timespentchartset">
+                            <h2 class="todayclass-title">Time Spent</h2>
+                            <div class="timespentchart-cover">
+                                <div class="timespentchart-top">
+                                    <img src="{{ asset('public/images/time-spent-img.png') }}" alt="Time Spent">
+                                    <h4>Under Maintenance</h4>
+                                </div>
 
-                                    <div class="comcharttimedata">
-                                        <h5><?php echo $dashboardDetails['time_spent']['total']; ?></h5>
-                                        <?php if (isset($dashboardDetails['time_spent']['items']) && !empty($dashboardDetails['time_spent']['items'])) { ?>
-                                            <div id="doughnutChart" class="chart"></div>
-                                            <div class="chartinerdata-com">
-                                                <?php foreach ($dashboardDetails['time_spent']['items'] as $item) { ?>
-                                                    <div class="allcomdatacover">
-                                                        <span style="background: <?php echo $item['color']; ?>;"></span>
-                                                        <p><?php echo $item['title']; ?></p>
-                                                    </div>
-                                                <?php } ?>
-                                            </div>
-                                        <?php } ?>
+                                <div class="comcharttimedata">
+                                    <h5>10</h5>
+                                    <div id="doughnutChart" class="chart"></div>
+                                    <div class="chartinerdata-com">
+
+                                        <div class="allcomdatacover">
+                                            <span style="background: blue;"></span>
+                                            <p>test</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <?php } ?>
+                    </div>
                 </div>
             </div>
         </div>
