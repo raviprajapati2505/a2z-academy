@@ -51,7 +51,7 @@ class PaymentController extends Controller
                 foreach ($users as $user) {
                     Notification::create([
                         'user_id' => $user->id,
-                        'description' => $user->email . ' enrolled in the course ' . $course->name
+                        'description' => $user->email . ' has enrolled in the course ' . $course->name
                     ]);
                 }
             } else {

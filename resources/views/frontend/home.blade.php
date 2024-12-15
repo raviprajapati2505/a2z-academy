@@ -205,7 +205,7 @@
                                     : $newsdata->description;
                                     @endphp
                                     <p class="read-more" data-full-text="{{ $newsdata->description }}">{{ $truncatedText }}</p>
-                                    <a href="https://www.gord.qa/category/news/" class="toggle-text-btn">Read More</a>
+                                    <div class="popucours-sldin"><a href="https://www.gord.qa/category/news/" class="toggle-text-btn">Read More</a></div>
                                     <!-- <div class="popucours-sldin">
                                         <h5>(460 Free Videos)</h5>
                                         <a href="javascript:void(0);">Enroll Now</a>
