@@ -63,7 +63,8 @@
                     <img src="{{ asset('public/frontend/images/icon-2.png') }}" alt="Icon">
                 </div>
                 <div class="onvioustiner-rig">
-                    <h3>{{ $video_tutorials_count }}+</h3>
+                    <!-- <h3>{{ $video_tutorials_count }}+</h3> -->
+                    <h3>24+</h3>
                     <p>Video Tutorials</p>
                 </div>
             </div>
@@ -74,7 +75,8 @@
                     <img src="{{ asset('public/frontend/images/icon-3.png') }}" alt="Icon">
                 </div>
                 <div class="onvioustiner-rig">
-                    <h3>{{ $adviser_count }}+</h3>
+                    <!-- <h3>{{ $adviser_count }}+</h3> -->
+                    <h3>17+</h3>
                     <p>Our Advisors</p>
                 </div>
             </div>
@@ -85,7 +87,8 @@
                     <img src="{{ asset('public/frontend/images/icon-4.png') }}" alt="Icon">
                 </div>
                 <div class="onvioustiner-rig">
-                    <h3>{{ $all_review_count }}+</h3>
+                    <!-- <h3>{{ $all_review_count }}+</h3> -->
+                    <h3>5000+</h3>
                     <p>Learner Reviews</p>
                 </div>
             </div>
@@ -191,7 +194,16 @@
                                         <h3>{{ $newsdata->title }}</h3>
                                         <!-- <h6><i class="bx bx-time-five"></i> 2 hr</h6> -->
                                     </div>
-                                    <p class="read-more" data-full-text="{{ $newsdata->description }}">{{ $newsdata->description }}</p>
+                                    @php
+                                    $maxLines = 10;
+                                    $lineLength = 100; // Average number of characters per line
+                                    $maxChars = $maxLines * $lineLength;
+
+                                    $truncatedText = strlen($newsdata->description) > $maxChars
+                                    ? substr($newsdata->description, 0, $maxChars) . '...'
+                                    : $newsdata->description;
+                                    @endphp
+                                    <p class="read-more" data-full-text="{{ $newsdata->description }}">{{ $truncatedText }}</p>
                                     <a href="https://www.gord.qa/category/news/" class="toggle-text-btn">Read More</a>
                                     <!-- <div class="popucours-sldin">
                                         <h5>(460 Free Videos)</h5>
@@ -308,49 +320,6 @@
             </div>
         </div>
 
-    </div>
-</div>
-
-<div class="dowmobiapp-min">
-    <div class="container">
-        <div class="dowmobiapp-mcover">
-            <div class="dowmobiapp-left">
-                <h2>Access Anytime, Anywhere, <br>
-                    <span>on Any Device!</span>
-                </h2>
-                <div class="dowmobiapp-vilicocov">
-                    <div class="dowmobiapvilico-lef">
-                        <img src="{{ asset('public/frontend/images/icon-01.png') }}" alt="">
-                    </div>
-                    <div class="dowmobiapvilico-rig">
-                        <h4>Video lectures</h4>
-                        <p>Learn as you wish, get more than 20,000 video lectures</p>
-                    </div>
-                </div>
-                <div class="dowmobiapp-vilicocov">
-                    <div class="dowmobiapvilico-lef">
-                        <img src="{{ asset('public/frontend/images/icon-01.png') }}" alt="">
-                    </div>
-                    <div class="dowmobiapvilico-rig">
-                        <h4>Live class</h4>
-                        <p>Take part in daily live classes and keep up the routine reading</p>
-                    </div>
-                </div>
-                <div class="dowmobiapp-vilicocov">
-                    <div class="dowmobiapvilico-lef">
-                        <img src="{{ asset('public/frontend/images/icon-03.png') }}" alt="">
-                    </div>
-                    <div class="dowmobiapvilico-rig">
-                        <h4>Convenient practice</h4>
-                        <p>Practice at a convenient time, check your score right now</p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="dowmobiapp-right">
-                <img src="{{ asset('public/frontend/images/mobile-image-1.png') }}" alt="">
-            </div>
-        </div>
     </div>
 </div>
 <?php /*
@@ -504,6 +473,96 @@
             </div>
         </div>
 
+    </div>
+</div>
+
+<div class="container">
+    <div class="myclsstudy-maincov">
+        <div class="myclsstudy-maintitle">
+            <!-- <p>P</p> -->
+            <h3>Our Stackholders</h3>
+        </div>
+        <div class="myclsstudy-slider">
+            <div class="row">
+                <div class="owl-carousel owl-theme owlnavslider-nav" id="stackholderslider">
+                    <div class="item">
+                        <img style="width:200px" src="{{ asset('public/frontend/images/clients/client11.jpg') }}">
+                    </div>
+                    <div class="item">
+                        <img style="width:200px" src="{{ asset('public/frontend/images/clients/client9.jpg') }}">
+                    </div>
+                    <div class="item">
+                        <img style="width:200px" src="{{ asset('public/frontend/images/clients/client8.jpg') }}">
+                    </div>
+                    <div class="item">
+                        <img style="width:200px" src="{{ asset('public/frontend/images/clients/client7.jpg') }}">
+                    </div>
+                    <div class="item">
+                        <img style="width:200px" src="{{ asset('public/frontend/images/clients/client6.jpg') }}">
+                    </div>
+                    <div class="item">
+                        <img style="width:200px" src="{{ asset('public/frontend/images/clients/client4.jpg') }}">
+                    </div>
+                    <div class="item">
+                        <img style="width:200px" src="{{ asset('public/frontend/images/clients/client2.jpg') }}">
+                    </div>
+                    <div class="item">
+                        <img style="width:200px" src="{{ asset('public/frontend/images/clients/client10.jpg') }}">
+                    </div>
+                    <div class="item">
+                        <img style="width:200px" src="{{ asset('public/frontend/images/clients/client5.jpg') }}">
+                    </div>
+                    <div class="item">
+                        <img style="width:200px" src="{{ asset('public/frontend/images/clients/client3.jpg') }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dowmobiapp-min">
+    <div class="container">
+        <div class="dowmobiapp-mcover">
+            <div class="dowmobiapp-left">
+                <h2>Why GORD Academy? <br>
+                    <!-- <span>on Any Device!</span> -->
+                </h2>
+
+                <p style="text-align:justify;color:white">For entities across the globe, sustainability is fast becoming a strategic imperative. The global construction industry is shifting towards green building practices, energy giants are transitioning to renewables, hospitality sector is exploring ways to be in sync with rapidly growing green tourism… sustainability is increasingly gaining traction across the global socioeconomic spectrum.</p>
+                <p style="text-align:justify;color:white"> With global warming on the rise, the fight against climate change has led to a remarkable momentum for materializing Paris Agreement to limit the earth’s temperature below 2oC. Governments, businesses and societies at large are all looking for trusted avenues that provide high-quality capacity building programs targeting multiple dimensions of climate and environment tailored to meet the specific needs of different industries.</p>
+                <!-- <div class="dowmobiapp-vilicocov">
+                    <div class="dowmobiapvilico-lef">
+                        <img src="{{ asset('public/frontend/images/icon-01.png') }}" alt="">
+                    </div>
+                    <div class="dowmobiapvilico-rig">
+                        <h4>Video lectures</h4>
+                        <p>Learn as you wish, get more than 20,000 video lectures</p>
+                    </div>
+                </div>
+                <div class="dowmobiapp-vilicocov">
+                    <div class="dowmobiapvilico-lef">
+                        <img src="{{ asset('public/frontend/images/icon-01.png') }}" alt="">
+                    </div>
+                    <div class="dowmobiapvilico-rig">
+                        <h4>Live class</h4>
+                        <p>Take part in daily live classes and keep up the routine reading</p>
+                    </div>
+                </div>
+                <div class="dowmobiapp-vilicocov">
+                    <div class="dowmobiapvilico-lef">
+                        <img src="{{ asset('public/frontend/images/icon-03.png') }}" alt="">
+                    </div>
+                    <div class="dowmobiapvilico-rig">
+                        <h4>Convenient practice</h4>
+                        <p>Practice at a convenient time, check your score right now</p>
+                    </div>
+                </div> -->
+
+            </div>
+            <div class="dowmobiapp-right">
+                <img src="{{ asset('public/frontend/images/home-about-img3.jpg') }}" alt="">
+            </div>
+        </div>
     </div>
 </div>
 <script type="text/javascript">

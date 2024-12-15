@@ -92,7 +92,7 @@ a:hover {
 }
 @font-face {
     font-family: "Gilroy-ExtraBold";
-    src: url("fonts/Gilroy-ExtraBold.ttf"), url("../fonts/Gilroy-ExtraBold.ttf");
+    src: url("../fonts/Gilroy-ExtraBold.ttf"), url("../fonts/Gilroy-ExtraBold.ttf");
     font-weight: normal;
     font-style: normal;
 }
