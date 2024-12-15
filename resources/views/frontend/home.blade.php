@@ -480,7 +480,7 @@
     <div class="myclsstudy-maincov">
         <div class="myclsstudy-maintitle">
             <!-- <p>P</p> -->
-            <h3>Our Stackholders</h3>
+            <h3>TRUSTED BY</h3>
         </div>
         <div class="myclsstudy-slider">
             <div class="row">
