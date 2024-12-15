@@ -52,7 +52,8 @@
                     <img src="{{ asset('public/frontend/images/icon-1.png') }}" alt="Icon">
                 </div>
                 <div class="onvioustiner-rig">
-                    <h3>{{ count($all_courses) }}+</h3>
+                    <!-- <h3>{{ count($all_courses) }}+</h3> -->
+                    <h3>75+</h3>
                     <p>Online Courses</p>
                 </div>
             </div>
@@ -269,13 +270,11 @@
                                             <img style="height:20px;width:40px !important" src="{{ asset('public/frontend/images/new.png') }}">
                                             @endif
                                     </div>
+                                    @if(!empty($course->date) && isset($course->date))
                                     <div class="retclassdate">
-                                        @if(!empty($course->date) && isset($course->date))
                                         <h5>{{ date('F d, Y', strtotime($course->date)) }}</h5>
-                                        @else
-                                        <h5>{{ $course->created_at->format('F d, Y') }}</h5>
-                                        @endif
                                     </div>
+                                    @endif
                                     @if($course->cover_image)
                                     <a href="{{ url('course_detail') }}<?= '/' . $course->id ?>"><img src="<?= url('/') . '/public/' . $course->cover_image ?>"></a>
                                     @else
@@ -286,8 +285,8 @@
                                 <div class="coursesdata-text">
                                     <h3>{{ $course->name }}</h3>
                                     @php
-                                    $maxLines = 10;
-                                    $lineLength = 100; // Average number of characters per line
+                                    $maxLines = 1;
+                                    $lineLength = 50; // Average number of characters per line
                                     $maxChars = $maxLines * $lineLength;
 
                                     $truncatedText = strlen($course->description) > $maxChars
@@ -449,13 +448,11 @@
                         <div class="coursesdata-cover">
                             <div class="coursesdata-iner">
                                 <div class="coursesdata-img">
+                                    @if(!empty($course->date) && isset($course->date))
                                     <div class="retclassdate">
-                                        @if(!empty($course->date) && isset($course->date))
                                         <h5>{{ date('F d, Y', strtotime($course->date)) }}</h5>
-                                        @else
-                                        <h5>{{ $course->created_at->format('F d, Y') }}</h5>
-                                        @endif
                                     </div>
+                                    @endif
                                     @if($course->cover_image)
                                     <a href="{{ url('course_detail') }}<?= '/' . $course->id ?>"><img src="<?= url('/') . '/public/' . $course->cover_image ?>"></a>
                                     @else
