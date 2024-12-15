@@ -294,7 +294,7 @@
                                     ? substr($course->description, 0, $maxChars) . '...'
                                     : $course->description;
                                     @endphp
-                                    <p>{{ $course->description }}</p>
+                                    <p>{{ $truncatedText }}</p>
                                     <a href="{{ url('course_detail') }}<?= '/' . $course->id ?>" class="toggle-text-btn">Read More</a>
                                     <div class="popucours-sldin">
                                         <!-- <h5>
