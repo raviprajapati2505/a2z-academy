@@ -285,7 +285,17 @@
                                 </div>
                                 <div class="coursesdata-text">
                                     <h3>{{ $course->name }}</h3>
+                                    @php
+                                    $maxLines = 10;
+                                    $lineLength = 100; // Average number of characters per line
+                                    $maxChars = $maxLines * $lineLength;
+
+                                    $truncatedText = strlen($course->description) > $maxChars
+                                    ? substr($course->description, 0, $maxChars) . '...'
+                                    : $course->description;
+                                    @endphp
                                     <p>{{ $course->description }}</p>
+                                    <a href="{{ url('course_detail') }}<?= '/' . $course->id ?>" class="toggle-text-btn">Read More</a>
                                     <div class="popucours-sldin">
                                         <!-- <h5>
                                             <?php
