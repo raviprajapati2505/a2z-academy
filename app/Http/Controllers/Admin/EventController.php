@@ -88,8 +88,7 @@ class EventController extends Controller
             foreach ($users as $user) {
                 Notification::create([
                     'user_id' => $user->id,
-                    'event_id' => $lastInsertId,
-                    'is_read' => false,
+                    'event_id' => $lastInsertId
                 ]);
             }
 

@@ -5,7 +5,7 @@
 <div class="container">
     <div class="loginsighup-main">
         <div class="loginsighup-left">
-            <img src="{{ asset('public/images/login-img1.png') }}" alt="">
+            <img src="{{ asset('public/frontend/images/image-banner-1.png') }}" alt="">
         </div>
         <div class="loginsighup-right">
             <div class="loginsighuptitle">

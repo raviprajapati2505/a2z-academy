@@ -285,7 +285,7 @@
                                 <div class="coursesdata-text">
                                     <h3>{{ $course->name }}</h3>
                                     @php
-                                    $maxLines = 1;
+                                    $maxLines = 10;
                                     $lineLength = 50; // Average number of characters per line
                                     $maxChars = $maxLines * $lineLength;
 

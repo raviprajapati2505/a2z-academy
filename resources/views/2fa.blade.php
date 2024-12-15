@@ -38,7 +38,7 @@
                 @enderror
             </div>
 
-            <div class="keepacoutextset">
+            <div class="keepacoutextset" style="display:none">
                 <p><b>Your OTP for login is : {{ $user ? $user[0]->code : '' }}</b></p>
             </div>
 
