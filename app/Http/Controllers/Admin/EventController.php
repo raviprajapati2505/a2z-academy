@@ -160,9 +160,18 @@ class EventController extends Controller
         $notification->save();
 
         if (Auth::user()->role == 'Superadmin' || Auth::user()->role == 'Admin') {
-            return redirect('/admin/event');
+            if(empty(!$notification->event_id)){
+              return redirect('/admin/report/total_enrollment_report');
+            }else{
+              return redirect('/admin/event');
+            }
+            
         } else if (Auth::user()->role == 'Credentials') {
-            return redirect('/admin/event');
+            if(empty(!$notification->event_id)){
+                return redirect('/admin/report/total_enrollment_report');
+              }else{
+                return redirect('/admin/event');
+              }
         } else if (Auth::user()->role == 'Teacher') {
             return redirect('/teacher/events');
         } else {
