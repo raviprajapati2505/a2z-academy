@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Notification;
 use App\Models\StudentCourseHistory;
 use App\Models\User;
+use App\Models\Course;
 use Illuminate\Support\Facades\Auth;
 use PayPal\Api\Payer;
 use PayPal\Api\Amount;
@@ -43,7 +44,7 @@ class PaymentController extends Controller
                 ]);
 
                 $username = User::find(Auth::user()->id);
-                $course = User::find($is_enroll_course_id);
+                $course = Course::find($is_enroll_course_id);
 
                 $query = User::whereIn('role', ['Superadmin', 'Admin', 'Credentials']);
                 $users = $query->get();
