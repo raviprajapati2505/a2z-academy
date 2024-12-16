@@ -130,10 +130,10 @@
                 required: true,
             },
             "teacher": {
-                required: true,
+                required: false,
             },
             "description": {
-                required: true,
+                required: false,
             },
             "duration_in_hour": {
                 required: true,

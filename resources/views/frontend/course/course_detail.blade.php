@@ -79,6 +79,12 @@
                         </div>
                     </div>
                     <div class="holestunen-main">
+                        @if(!empty($course->date) && isset($course->date))
+                        <div class="holestunen-iner">
+                            <img src="{{ asset('public/frontend/svg/holestunen-icon-1.svg') }}" alt="">
+                            <p>Date: {{ date('F d, Y', strtotime($course->date)) }}</p>
+                        </div>  
+                        @endif
                         <div class="holestunen-iner">
                             <img src="{{ asset('public/frontend/svg/holestunen-icon-1.svg') }}" alt="">
                             <?php
@@ -96,12 +102,13 @@
                             <!-- <p>{{ $total_course_duration }} hours</p> -->
                             <p>Time: {{ $course->time }}</p>
                         </div>
+               
                         <div class="holestunen-iner">
                             <img src="{{ asset('public/frontend/svg/holestunen-icon-2.svg') }}" alt="">
                             <!-- <p>{{ count($course->curriculam_lecture) }} Lectures</p> -->
                             <p>Location: {{ $course->location }}</p>
                         </div>
-                        <div class="holestunen-iner">
+                        <div class="holestunen-iner" style="margin-top: 10px">
                             <img src="{{ asset('public/frontend/svg/holestunen-icon-3.svg') }}" alt="">
                             <!-- <p>{{ $total_student_enroll }} Learner Enrolled</p> -->
                             <p>Fees: {{ $course->price }} USD</p>

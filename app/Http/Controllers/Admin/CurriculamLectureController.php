@@ -72,10 +72,10 @@ class CurriculamLectureController extends Controller
 			$validator = Validator::make($request->all(), [
 				'title' => 'required',
 				'video' => 'mimes:mov,mp4,mkv,flv,avi',
-				'description' => 'required',
+				//'description' => 'required',
 				'duration_in_hour' => 'required',
 				'status' => 'required',
-				'teacher' => 'required'
+				//'teacher' => 'required'
 			]);
 
 			if ($validator->fails()) {

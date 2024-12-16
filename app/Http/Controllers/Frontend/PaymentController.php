@@ -45,13 +45,13 @@ class PaymentController extends Controller
                 $username = User::find(Auth::user()->id);
                 $course = User::find($is_enroll_course_id);
 
-                $query = User::whereIn('role', ['Admin', 'Credentials']);
+                $query = User::whereIn('role', ['Superadmin', 'Admin', 'Credentials']);
                 $users = $query->get();
 
                 foreach ($users as $user) {
                     Notification::create([
                         'user_id' => $user->id,
-                        'description' => $user->email . ' has enrolled in the course ' . $course->name
+                        'description' => Auth::user()->email . ' has enrolled in the course ' . $course->name
                     ]);
                 }
             } else {

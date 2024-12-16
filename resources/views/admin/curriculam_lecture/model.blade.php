@@ -35,7 +35,7 @@
               <div class="row">
                 <div class="col-sm">
                   <div class="form-group">
-                    <label for="status">Description *</label>
+                    <label for="status">Description</label>
                     <textarea name="description" id="description" class="form-control"></textarea>
                   </div>
                 </div>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="col-sm">
                   <div class="form-group">
-                    <label for="teacher">Select Instructor *</label>
+                    <label for="teacher">Select Instructor</label>
                     <select class="js-example-basic-single form-control" name="teacher" id="teacher">
                       @foreach($teachers as $teacher)
                       <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="col-sm">
                   <div class="form-group">
-                    <label for="video">Lecture Video *</label>
+                    <label for="video">Lecture Video</label>
                     <input type="file" class="form-control" id="video" name="video" placeholder="">
                     <a href="#" download class="download">Download</a>
                   </div>

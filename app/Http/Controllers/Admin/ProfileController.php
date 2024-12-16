@@ -55,8 +55,8 @@ class ProfileController extends Controller
 		try {
 			$validator = Validator::make($request->all(), [
 				'name' => 'required|regex:/^[a-zA-Z ]+$/u|min:1|max:20',
-				'email' => 'required|email|' . Rule::unique('users', 'email')->ignore($request->admin_id),
-				'username' => 'required|' . Rule::unique('users', 'username')->ignore($request->admin_id),
+				'email' => 'required|email|' . Rule::unique('users', 'email')->ignore($request->admin_id)->whereNull('deleted_at'),
+				'username' => 'required|' . Rule::unique('users', 'username')->ignore($request->admin_id)->whereNull('deleted_at'),
 				'contact' => 'required|numeric|digits:10',
 				'photo' => 'mimes:png,jpg,jpeg'
 			]);
