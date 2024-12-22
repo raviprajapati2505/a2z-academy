@@ -61,6 +61,6 @@ class TwoFAController extends Controller
     {
         User::generateCode();
 
-        return back()->with('success', 'We have send the code again to your registered email address and phone number.');
+        return back()->with('success', 'We have send the code again to your registered email address');
     }
 }

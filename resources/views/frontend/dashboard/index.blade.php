@@ -22,7 +22,7 @@
                             <div class="classlistofall">
                                 @if(count($purchased_course) > 0)
                                 @foreach($purchased_course as $course)
-                                <div class="classlistof_cover" >
+                                <div class="classlistof_cover">
                                     @if($course->cover_image)
                                     <a href="{{ url('course_detail') }}<?= '/' . $course->id ?>"><img src="<?= url('/') . '/public/' . $course->cover_image ?>"></a>
                                     @else
@@ -66,32 +66,46 @@
                                     </div>
                                 </div>
                                 @endforeach
-                    @else
-                    <p>No courses available</p>
-                    @endif
+                                @else
+                                <p>No courses available</p>
+                                @endif
                             </div>
                         </div>
                     </div>
-                    
+
                     <!--  -->
                     <div class="col-sm smcoldatrispo">
                         <div class="timespentchartset">
-                            <h2 class="todayclass-title">Time Spent</h2>
+                            <h2 class="todayclass-title">Events</h2>
                             <div class="timespentchart-cover">
                                 <div class="timespentchart-top">
                                     <img src="{{ asset('public/images/time-spent-img.png') }}" alt="Time Spent">
-                                    <h4>Under Maintenance</h4>
+                                    <h4>Upcoming Events</h4>
                                 </div>
 
                                 <div class="comcharttimedata">
                                     <h5>10</h5>
-                                    <div id="doughnutChart" class="chart"></div>
+                                    <!-- <div id="doughnutChart" class="chart"></div> -->
                                     <div class="chartinerdata-com">
-
+                                        @foreach($events as $event)
+                                        @php
+                                            if ($event->type == 'Event') {
+                                                $color = '#211C77';
+                                            } else if ($event->type == 'Exam') {
+                                                $color = '#F3E500';
+                                            } else if ($event->type == 'Other') {
+                                                $color = '#096C04';
+                                            } else if ($event->type == 'Workshop') {
+                                                $color = 'gray';
+                                            } else if ($event->type == 'Wrapup') {
+                                                $color = '#6b2956';
+                                            }
+                                        @endphp
                                         <div class="allcomdatacover">
-                                            <span style="background: blue;"></span>
-                                            <p>test</p>
+                                            <span style="background: <?= $color ?>"></span>
+                                            <p>{{$event->description}}</p>
                                         </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>

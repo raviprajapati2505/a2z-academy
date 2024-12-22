@@ -19,7 +19,7 @@
             @endif
 
             <div class="entrveriftextset">
-                <p>Enter the verification code sent to you on your registered phone and email address.</p>
+                <p>Enter the verification code sent to you on your email address.</p>
                 <!-- <p class="text-center">We sent code to email : {{ substr(auth()->user()->email, 0, 5) . '******' . substr(auth()->user()->email,  -2) }}</p> -->
             </div>
             <!-- <div class="form-group @error('email') errorsetcl @enderror">
