@@ -11,7 +11,7 @@
 
           <div class="userprofalldata-iner model-form">
             <h3>Book Information</h3><br><br>
-            <form method="POST" enctype="multipart/form-data" id="bookform" action="javascript:void(0)">
+            <form method="POST" enctype="multipart/form-data"> id="bookform" action="javascript:void(0)">
               <div class="alert alert-danger" id="alert-danger-form">
               </div>
               <div class="alert alert-success" id="alert-success-form">
@@ -35,7 +35,7 @@
                 <div class="form-group">
                   <label for="video">Book Preview File *</label>
                   <input type="file" class="form-control" id="book_file" name="book_file" placeholder="">
-                  <a href="#" download class="download">Download</a>
+                  <a href="#" download class="downloadfile">Download</a>
                 </div>
                 <div class="col-sm">
                   <div class="form-group">

@@ -144,12 +144,12 @@
                 },
                 extension: "jpg|jpeg|png"
             },
-            "book_file": {
-                required: function(element) {
-                    return $('#book_id').val() == '';
-                },
-                extension: "pdf|dox|ppt|pptx|xls"
-            }
+            // "book_file": {
+            //     required: function(element) {
+            //         return $('#book_id').val() == '';
+            //     },
+            //     extension: "pdf|dox|ppt|pptx|xls"
+            // }
         },
         messages: {
             "cover_image": {
@@ -227,8 +227,8 @@
                 $('.download').attr('href', base_url + '/public/' + data.data.cover_image)
             }
             if (data.data.book_file) {
-                $('.download').show();
-                $('.download').attr('href', base_url + '/public/' + data.data.book_file)
+                $('.downloadfile').show();
+                $('.downloadfile').attr('href', base_url + '/public/' + data.data.book_file)
             }
         })
     });
