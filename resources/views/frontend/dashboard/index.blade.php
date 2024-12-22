@@ -84,21 +84,22 @@
                                 </div>
 
                                 <div class="comcharttimedata">
-                                    <h5>10</h5>
+                                    <!-- <h5>10</h5> -->
                                     <!-- <div id="doughnutChart" class="chart"></div> -->
                                     <div class="chartinerdata-com">
+                                        @if(count($events) > 0)
                                         @foreach($events as $event)
                                         @php
                                             if ($event->type == 'Event') {
-                                                $color = '#211C77';
+                                            $color = '#211C77';
                                             } else if ($event->type == 'Exam') {
-                                                $color = '#F3E500';
+                                            $color = '#F3E500';
                                             } else if ($event->type == 'Other') {
-                                                $color = '#096C04';
+                                            $color = '#096C04';
                                             } else if ($event->type == 'Workshop') {
-                                                $color = 'gray';
+                                            $color = 'gray';
                                             } else if ($event->type == 'Wrapup') {
-                                                $color = '#6b2956';
+                                            $color = '#6b2956';
                                             }
                                         @endphp
                                         <div class="allcomdatacover">
@@ -106,6 +107,9 @@
                                             <p>{{$event->description}}</p>
                                         </div>
                                         @endforeach
+                                        @else
+                                        <p style="text-align:center">There are no upcoming events</p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

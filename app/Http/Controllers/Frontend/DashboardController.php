@@ -21,10 +21,13 @@ class DashboardController extends Controller
             ->where('student_course_history.student_id', Auth::user()->id)
             ->where('student_course_history.is_paid', '1')
             ->get();
-        $events = Event::select(array('datetime', 'description', 'type'))
-            ->whereNull('user_id')
-            ->orWhere('user_id', '=', Auth::user()->id)
-            ->get();
+        $events = Event::select(['datetime', 'description', 'type'])
+        ->where(function ($query) {
+            $query->whereNull('user_id')
+                  ->orWhere('user_id', '=', Auth::user()->id);
+        })
+        ->whereDate('datetime', '>=', today()) // Include today and future dates
+        ->get();
 
         return view('frontend.dashboard.index', compact('purchased_course', 'track_lecture', 'events'));
     }
