@@ -11,7 +11,7 @@
 
           <div class="userprofalldata-iner model-form">
             <h3>Book Information</h3><br><br>
-            <form method="POST" enctype="multipart/form-data"> id="bookform" action="javascript:void(0)">
+            <form method="POST" enctype="multipart/form-data" id="bookform" action="javascript:void(0)">
               <div class="alert alert-danger" id="alert-danger-form">
               </div>
               <div class="alert alert-success" id="alert-success-form">
