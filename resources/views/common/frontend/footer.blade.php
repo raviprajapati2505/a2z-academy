@@ -35,6 +35,6 @@
         </div>
     </div>
     <div class="copyreciveddata">
-        <p>© 2024, Gord Academy. All rights reserved.</p>
+        <p>© 2024, GORD Academy. All rights reserved.</p>
     </div>
 </footer>

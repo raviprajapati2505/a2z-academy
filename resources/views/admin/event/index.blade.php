@@ -5,7 +5,7 @@
     <div class="calendarpage-cover">
         <div class="profset-title">
             <h1>Calendar</h1>
-            <p>Welcome to Gord Academy Calendar</p>
+            <p>Welcome to GORD Academy Calendar</p>
         </div>
         <div class="leftright-calendar">
             <div class="left-calendar">

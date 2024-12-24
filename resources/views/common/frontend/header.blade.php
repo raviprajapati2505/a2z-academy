@@ -121,16 +121,23 @@
                         @foreach($notifications as $notify)
                         <li>
                             @if(@empty($notify->event_id))
-                                <a href="<?= url('') ?>/readnotification/<?= $notify->nid ?>">Notification: {{ $notify->desc }}</a>
+                            <a href="<?= url('') ?>/readnotification/<?= $notify->nid ?>">Notification: {{ $notify->desc }}</a>
                             @else
-                                <a href="<?= url('') ?>/readnotification/<?= $notify->nid ?>">Notification: {{ $notify->description }}</a>
+                            <a href="<?= url('') ?>/readnotification/<?= $notify->nid ?>">Notification: {{ $notify->description }}</a>
                             @endif
-                            
+
                         </li>
                         @endforeach
                     </ul>
                     <div class="menu-items">
                         <ul>
+                            <li>
+                                <a href="{{ url('my_account') }}">
+                                    <img class="activ" src="{{ asset('public/frontend/svg/my-accounts-icon.svg') }}" alt="">
+                                    <img class="activno" src="{{ asset('public/frontend/svg/my-accounts-icon-active.svg') }}" alt="">
+                                    <span>Profile</span>
+                                </a>
+                            </li>
                             <li>
                                 <a href="{{ url('dashboard') }}">
                                     <img class="activ" src="{{ asset('public/frontend/svg/my-accounts-icon.svg') }}" alt="">
@@ -138,13 +145,7 @@
                                     <span>Dashboard</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ url('my_account') }}">
-                                    <img class="activ" src="{{ asset('public/frontend/svg/my-accounts-icon.svg') }}" alt="">
-                                    <img class="activno" src="{{ asset('public/frontend/svg/my-accounts-icon-active.svg') }}" alt="">
-                                    <span>Account</span>
-                                </a>
-                            </li>
+
                             <li>
                                 <a href="{{ url('purchased_courses') }}">
                                     <img class="activ" src="{{ asset('public/frontend/svg/my-courses-icon.svg') }}" alt="">

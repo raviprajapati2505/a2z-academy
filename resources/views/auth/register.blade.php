@@ -27,17 +27,33 @@
         <div class="loginsighup-left">
             <img src="{{ asset('public/images/login-img1.png') }}" alt="">
         </div>
-        <div class="loginsighup-right">
+        <div class="loginsighup-right" style="overflow: scroll;height: 713px;">
             <div class="loginsighuptitle">
                 <h1>{{ __('Sign up') }}</h1>
             </div>
             <form method="POST" action="{{ route('register') }}">
                 <div class="loginformbox">
                     @csrf
+                    <div class="form-group">
+                        <label for="appellations">{{ __('Select Appellation *') }}</label>
+                        <select id="appellations" class="form-control" name="appellations" required>
+                            <option value="Mr.">Mr.</option>
+                            <option value="Ms.">Ms.</option>
+                            <option value="Mrs.">Mrs.</option>
+                            <option value="Dr.">Dr.</option>
+                        </select>
+                    </div>
                     <div class="form-group @error('name') errorsetcl @enderror">
-                        <label for="name">Full Name *</label>
+                        <label for="name">First Name *</label>
                         <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                         @error('name')
+                        <p class="errortext">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="form-group @error('last_name') errorsetcl @enderror">
+                        <label for="last_name">Last Name *</label>
+                        <input id="last_name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus>
+                        @error('last_name')
                         <p class="errortext">{{ $message }}</p>
                         @enderror
                     </div>
@@ -50,14 +66,14 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">{{ __('Mobile Number *') }}</label>
-                        <input id="phone" type="text" class="form-control" name="phone" required style="width:557px" value="{{ old('phone') }}"> 
+                        <input id="phone" type="text" class="form-control" name="phone" required style="width:557px" value="{{ old('phone') }}">
                         @error('phone')
                         <p class="errortext">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="membership">{{ __('Membership *') }}</label>
-                        <select id="membership" class="form-control" name="membership" required >
+                        <select id="membership" class="form-control" name="membership" required>
                             <option value="">Select </option>
                             <option value="AEE">AEE</option>
                             <option value="GSAS Operations">GSAS Operations</option>
@@ -89,6 +105,23 @@
                         <p class="errortext">{{ $message }}</p>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label for="dob">{{ __('DOB *') }}</label>
+                        <input id="dob" type="text" class="form-control datepicker" name="dob" required value="{{ old('dob') }}">
+                        @error('dob')
+                        <p class="errortext">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">{{ __('Gender *') }}</label>
+                        <select name="gender" id="gender" class="form-control">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        @error('gender')
+                        <p class="errortext">{{ $message }}</p>
+                        @enderror
+                    </div>
                     <div class="form-group @error('password') errorsetcl @enderror">
                         <label for="password">Password *</label>
                         <div class="position-relative">
@@ -114,8 +147,8 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="membership">{{ __('Are you ?') }}</label>
-                        <select id="membership" class="form-control" name="role" required>
+                        <label for="role">{{ __('Are you ?') }}</label>
+                        <select id="role" class="form-control" name="role" required>
                             <option value="Student">Learner</option>
                             <option value="Teacher">Instructor</option>
                         </select>
@@ -184,6 +217,14 @@
                 target.attr('type', 'password'); // Change back to password
                 icon.removeClass('fa-eye').addClass('fa-eye-slash'); // Change icon to eye
             }
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".datepicker").datepicker({
+            format: 'yyyy-mm-dd',
+            todayHighlight: true,
         });
     });
 </script>

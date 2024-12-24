@@ -41,7 +41,7 @@ class ProfileController extends Controller
         $user = User::where('id', Auth::user()->id)->first(); // change here id
         $user->name = $request->name;
         $user->lastname = $request->lastname;
-        $user->father_name = $request->father_name;
+        //$user->father_name = $request->father_name;
         $user->mother_name = $request->mother_name;
         $user->gender = $request->gender;
         $user->dob = $request->dob;
@@ -49,8 +49,13 @@ class ProfileController extends Controller
         $user->phone = $request->contact;
         //$user->religion = $request->religion;
         //$user->nationality = $request->nationality;
-        $user->present_address = $request->present_address;
-        $user->permananat_address = $request->permanant_address;
+        // $user->present_address = $request->present_address;
+        $user->permananat_address = $request->permanant_address ?? '';
+        $user->email = $request->email ?? '';
+        $user->membership = $request->membership ?? '';
+        $user->prefession = $request->prefession ?? '';
+        $user->company_name = $request->company_name ?? '';
+        $user->appellations = $request->appellations ?? '';
         $user->country_code = $request->country_code;
         if ($request->hasFile('photo')) {
             $user->photo = Helper::uploadDocuments($request, 'photo', 'uploads/profile/images');

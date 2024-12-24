@@ -5,7 +5,7 @@
 <div class="proprofimaincov">
 	<div class="profset-title">
 		<h1>Profile</h1>
-		<p>Welcome to Newness Profile</p>
+		<p>Welcome to Profile</p>
 	</div>
 	<div class="userprofalldata-main">
 

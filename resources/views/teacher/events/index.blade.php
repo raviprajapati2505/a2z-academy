@@ -8,7 +8,7 @@
             <div class="quizmaindata-cover">
                 <div class="profset-title">
                     <h1>Calendar</h1>
-                    <p>Welcome to Newness Calendar</p>
+                    <p>Welcome to Calendar</p>
                 </div>
                 <div class="addadmsupbtnright">
                     <a href="javascript:void(0);" id="create-event"><i class='bx bx-plus'></i>New Event</a>

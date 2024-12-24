@@ -226,13 +226,13 @@
                 <div class="classdetails-teachers">
                     <h2>Course Features</h2>
                     <div class="coursefeatures-list">
-                        <p>Learner enrolled:</p>
+                        <p>Learners Enrolled:</p>
                         <h3>{{ $total_student_enroll }}</h3>
                     </div>
-                    <div class="coursefeatures-list">
+                    <!-- <div class="coursefeatures-list">
                         <p>Lectures:</p>
                         <h3>{{ count($course->curriculam_lecture) }}</h3>
-                    </div>
+                    </div> -->
                     <div class="coursefeatures-list">
                         <p>Duration:</p>
                         <h3>{{ $total_course_duration }} hours</h3>
@@ -298,7 +298,7 @@
         <div class="classformcon-left">
             <div class="classdetails-covlr cocimainboxset1">
                 <div class="classdetails-titlemn">
-                    <h3>Submit Reviews</h3>
+                    <h3>Submit Review</h3>
                 </div>
                 <div class="classformcon-inerform">
                     <form method="POST" enctype="multipart/form-data" id="userform" action="{{ route('submit_student_review') }}">
@@ -341,7 +341,7 @@
                         </div>
                         <input type="hidden" name="course_id" id="course_id" value="{{ $course->id }}">
                         <div class="saveprofdata">
-                            <button type="submit">Save</button>
+                            <button type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

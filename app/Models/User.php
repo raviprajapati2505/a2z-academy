@@ -52,7 +52,8 @@ class User extends Authenticatable
         'permananat_address',
         'country_code',
         'external_id',
-        'last_login'
+        'last_login',
+        'appellations'
     ];
 
     /**

@@ -29,6 +29,6 @@ class CertificateGeneratedMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Certificate Generated - Gord Academy')->view('emails.certificate');
+        return $this->subject('Certificate Generated - GORD Academy')->view('emails.certificate');
     }
 }

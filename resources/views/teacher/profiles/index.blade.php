@@ -6,7 +6,7 @@
 		<div class="leftdatamain_cover">
 			<div class="profset-title">
 				<h1>Profile</h1>
-				<p>Welcome to Gord Academy Profile</p>
+				<p>Welcome to GORD Academy Profile</p>
 			</div>
 			<div class="userprofalldata-main">
 

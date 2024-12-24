@@ -210,13 +210,13 @@
                 <div class="classdetails-teachers">
                     <h2>Course Features</h2>
                     <div class="coursefeatures-list">
-                        <p>Learner Enrolled:</p>
+                        <p>Learners Enrolled:</p>
                         <h3>{{ $total_student_enroll }}</h3>
                     </div>
-                    <div class="coursefeatures-list">
+                    <!-- <div class="coursefeatures-list">
                         <p>lectures:</p>
                         <h3>{{ count($course->curriculam_lecture) }}</h3>
-                    </div>
+                    </div> -->
                     <div class="coursefeatures-list">
                         <p>Duration:</p>
                         <h3>{{ $total_course_duration }} hours</h3>
@@ -237,7 +237,7 @@
         <div class="classformcon-left">
             <div class="classdetails-covlr cocimainboxset1">
                 <div class="classdetails-titlemn">
-                    <h3>Submit Reviews</h3>
+                    <h3>Submit Review</h3>
                 </div>
                 <div class="classformcon-inerform">
                     <form method="POST" enctype="multipart/form-data" id="userform" action="{{ route('submit_student_review') }}">
@@ -267,7 +267,7 @@
                         <div class="row">
                             <div class="col-sm">
                                 <div class="form-group formdatamiancov">
-                                    <label for="">Star</label>
+                                    <label for="">Rating Star</label>
                                     <select class="js-example-basic-single" name="star_rating" id="star_rating">
                                         <option value="1">1 Star</option>
                                         <option value="2">2 Star</option>
@@ -282,7 +282,7 @@
                         <input type="hidden" name="lecture_id" id="lecture_id" value="{{ $lecture->id }}">
                         <input type="hidden" name="current_time" id="current_time" value="{{ $track_lecture->time_in_seconds }}">
                         <div class="saveprofdata">
-                            <button type="submit">Save</button>
+                            <button type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

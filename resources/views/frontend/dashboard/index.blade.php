@@ -10,8 +10,8 @@
         </div>
         <div class="col comtitledata-cover">
             <h1>Dashboard</h1>
-            <p>Welcome to Gord Academy</p>
-            <img src="{{ asset('public/images/title-background-dashboard.png') }}" alt="Welcome to Gord Academy">
+            <p>Welcome to GORD Academy</p>
+            <img src="{{ asset('public/images/title-background-dashboard.png') }}" alt="Welcome to GORD Academy">
         </div>
         <div class="fullpageinerdata_cover">
             <div class="fullpageinerdata_iner">
