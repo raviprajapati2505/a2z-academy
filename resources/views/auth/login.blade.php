@@ -1,7 +1,27 @@
 @extends('layouts.app_front')
 
 @section('content')
+<style>
+    .position-relative {
+        position: relative;
+    }
 
+    .toggle-password {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        /* Adjust position */
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #6c757d;
+        /* Optional: Gray color */
+    }
+
+    .form-control {
+        padding-right: 30px;
+        /* Add space for the icon */
+    }
+</style>
 <div class="container">
     <div class="loginsighup-main">
         <div class="loginsighup-left">
@@ -29,7 +49,12 @@
                     </div>
                     <div class="form-group @error('password') errorsetcl @enderror">
                         <label for="password">Password</label>
-                        <input id="password" type="password" class="form-control" name="password" required autocomplete="email" autocomplete="current-password">
+                        <div class="position-relative">
+                            <input id="password" type="password" class="form-control pr-4" name="password" required autocomplete="new-password">
+                            <span class="toggle-password position-absolute" data-target="#password">
+                                <i class="fa fa-eye-slash"></i>
+                            </span>
+                        </div>
                         @error('password')
                         <p class="errortext">{{ $message }}</p>
                         @enderror
@@ -69,5 +94,20 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.toggle-password').on('click', function() {
+            const target = $($(this).data('target')); // Get target input field
+            const icon = $(this).find('i'); // Get the icon inside the clicked element
 
+            if (target.attr('type') === 'password') {
+                target.attr('type', 'text'); // Change to text
+                icon.removeClass('fa-eye-slash').addClass('fa-eye'); // Change icon to eye-slash
+            } else {
+                target.attr('type', 'password'); // Change back to password
+                icon.removeClass('fa-eye').addClass('fa-eye-slash'); // Change icon to eye
+            }
+        });
+    });
+</script>
 @endsection
