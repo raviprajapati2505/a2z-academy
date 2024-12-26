@@ -33,7 +33,7 @@ class ReportController extends Controller
             ->leftJoin('courses', 'courses.id', '=', 'student_course_history.course_id')
             ->join('curriculam_lectures', 'curriculam_lectures.course_id', '=', 'courses.id')
             ->leftJoin('users', 'users.id', '=', 'student_course_history.student_id')
-                ->where('student_course_history.is_paid', '1');
+                ->where('student_course_history.is_paid', '0');
 
             if (!empty($request->from_date) && !empty($request->to_date)) {
                 $query->whereBetween(DB::raw('DATE(student_course_history.created_at)'), [$request->from_date, $request->to_date]);

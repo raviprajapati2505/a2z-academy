@@ -44,12 +44,14 @@
                             <div class="dropdown-menu shadow-sm sm-menu classesnavmainhed skilprod-nav1" aria-labelledby="dropdown01">
                                 <ul class="dropdown-listnav">
                                     @foreach($course_types as $type)
-                                    <li>
-                                        <a class="dropdown-item" href="{{ url('course_by_type') }}<?= '/' . $type->id ?>">
-                                            <h3>{{ $type->title }}</h3>
-                                        </a>
-                                    </li>
-                                    <hr>
+                                        @if(count($type->course) > 0)
+                                            <li>
+                                                <a class="dropdown-item" href="{{ url('course_by_type') }}<?= '/' . $type->id ?>">
+                                                    <h3>{{ $type->title }}</h3>
+                                                </a>
+                                            </li>
+                                        <hr>
+                                        @endif
                                     @endforeach
                                 </ul>
                             </div>

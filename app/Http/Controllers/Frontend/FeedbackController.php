@@ -43,10 +43,12 @@ class FeedbackController extends Controller
         try {
             $already = StudentFavourite::where('student_id', Auth::user()->id)->where('course_id', $request->course_id)->get();
             if (count($already) <= 0) {
-                $review = new StudentFavourite();
-                $review->student_id = Auth::user()->id;
-                $review->course_id = $request->course_id;
-                $review->save();
+                $favourite = new StudentFavourite();
+                $favourite->student_id = Auth::user()->id;
+                $favourite->course_id = $request->course_id;
+                $favourite->save();
+            }else{
+              $already[0]->delete();
             }
             return response()->json(
                 [

@@ -87,7 +87,7 @@
 											<label for="contact">Contact *</label>
 											<div class="contnumbset-cov">
 												<h6>+91</h6>
-												<input type="text" class="form-control" id="contact" name="contact" maxlength="10" placeholder="">
+												<input type="text" class="form-control" id="contact" name="contact" placeholder="">
 											</div>
 										</div>
 									</div>
@@ -181,8 +181,7 @@
 				},
 				"contact": {
 					required: true,
-					digits: true,
-					minlength: 10,
+					digits: true
 				},
 				"experience": {
 					number: true

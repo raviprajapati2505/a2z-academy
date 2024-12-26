@@ -57,12 +57,12 @@ class StudentController extends Controller
                             <img src="' . asset("public/images/delete-icon.png") . '" alt=""> <span>Delete</span>
                         </a>
                         
-                        <a href="' . url('') . '/admin/manage_student/' . $row->id . '/certificate" title="certificate" class="delete-tbl" data-id=' . $row->id . '">
-                            <img src="' . asset("public/images/delete-icon.png") . '" alt=""> <span>Certificates</span>
+                        <a href="' . url('') . '/admin/manage_student/' . $row->id . '/certificate" title="Certificates" class="delete-tbl" data-id=' . $row->id . '">
+                            <img src="' . asset("public/images/edit-icon.png") . '" alt=""> <span>Certificates</span>
                         </a>
 
-                        <a href="' . url('') . '/admin/manage_student/' . $row->id . '/purchased_courses" title="certificate" class="delete-tbl" data-id=' . $row->id . '">
-                        <img src="' . asset("public/images/delete-icon.png") . '" alt=""> <span>Track Courses</span>
+                        <a href="' . url('') . '/admin/manage_student/' . $row->id . '/purchased_courses" title="Track Courses" class="delete-tbl" data-id=' . $row->id . '">
+                        <img src="' . asset("public/images/edit-icon.png") . '" alt=""> <span>Track Courses</span>
                         </a>
                         ';
                     return $btn;

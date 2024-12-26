@@ -22,7 +22,7 @@ class MainController extends Controller
         $all_courses = Course::orderBy('created_at', 'desc')->get();
         $class_list = ClassList::all();
         $news = News::orderBy('created_at', 'desc')->get();
-        $student_review = StudentReview::orderBy('created_at')->skip(0)->take(10)->get();
+        $student_review = StudentReview::leftJoin('courses', 'courses.id', '=', 'student_reviews.course_id')->orderBy('student_reviews.created_at')->skip(0)->take(10)->get();
 
         $query = NewnessClassStudent::with('newness_class')->whereHas('newness_class', function ($q) {
             $q->where('is_live', '1');

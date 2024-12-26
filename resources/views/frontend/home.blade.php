@@ -412,7 +412,8 @@
                                 <img src="{{ asset('public/images/user-icon.png') }}" alt="Allie Grater">
                                 @endif
                                 <h3>{{ $review->student->name }}</h3>
-                                <h6>Learner </h6>
+                                <h6>Learner</h6>
+                                <h6>( {{ $review->name }} )</h6>
                             </div>
                         </div>
                     </div>

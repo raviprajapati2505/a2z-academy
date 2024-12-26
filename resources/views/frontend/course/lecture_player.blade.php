@@ -214,7 +214,7 @@
                         <h3>{{ $total_student_enroll }}</h3>
                     </div>
                     <!-- <div class="coursefeatures-list">
-                        <p>lectures:</p>
+                        <p>Lectures:</p>
                         <h3>{{ count($course->curriculam_lecture) }}</h3>
                     </div> -->
                     <div class="coursefeatures-list">
@@ -222,8 +222,32 @@
                         <h3>{{ $total_course_duration }} hours</h3>
                     </div>
                     <div class="coursefeatures-list">
+                        <p>Fees:</p>
+                        <h3>USD {{ $course->price }}</h3>
+                    </div>
+                    <div class="coursefeatures-list">
                         <p>Language:</p>
                         <h3>{{ $course->language }}</h3>
+                    </div>
+                    <div class="coursefeatures-list">
+                        <p>Experience Level:</p>
+                        <h3>{{ $course->experience_level }}</h3>
+                    </div>
+                    <div class="coursefeatures-list">
+                        <p>Accreditation:</p>
+                        <h3>{{ $course->accreditation }}</h3>
+                    </div>
+                    <div class="coursefeatures-list">
+                        <p>Course Type:</p>
+                        <h3>{{ $course->course_type->title }}</h3>
+                    </div>
+                    <div class="coursefeatures-list">
+                        <p>Status</p>
+                        <h3>{{ $course->status }}</h3>
+                    </div>
+                    <div class="coursefeatures-list">
+                        <p>More Info:</p>
+                        <p>{{ $course->short_description }}</p>
                     </div>
                 </div>
             </div>
@@ -259,7 +283,7 @@
                         <div class="row">
                             <div class="col-sm">
                                 <div class="form-group">
-                                    <label for="">Review</label>
+                                    <label for="">Review *</label>
                                     <textarea class="form-control" id="feedback_text" name="feedback_text" rows="3"></textarea>
                                 </div>
                             </div>
@@ -267,7 +291,7 @@
                         <div class="row">
                             <div class="col-sm">
                                 <div class="form-group formdatamiancov">
-                                    <label for="">Rating Star</label>
+                                    <label for="">Rating Star *</label>
                                     <select class="js-example-basic-single" name="star_rating" id="star_rating">
                                         <option value="1">1 Star</option>
                                         <option value="2">2 Star</option>

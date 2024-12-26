@@ -55,7 +55,7 @@
 									<label for="contact">Contact *</label>
 									<div class="contnumbset-cov">
 										<h6>+91</h6>
-										<input type="text" class="form-control" id="contact" name="contact" placeholder="" maxlength="10">
+										<input type="text" class="form-control" id="contact" name="contact" placeholder="">
 									</div>
 								</div>
 							</div>
@@ -63,13 +63,13 @@
 						<div class="row">
 							<div class="col-sm">
 								<div class="form-group">
-									<label for="password">Password *</label>
+									<label for="password">Password</label>
 									<input type="password" class="form-control" id="password" name="password" placeholder="">
 								</div>
 							</div>
 							<div class="col-sm">
 								<div class="form-group">
-									<label for="confirm_password">Confirm Password *</label>
+									<label for="confirm_password">Confirm Password</label>
 									<input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="">
 								</div>
 							</div>
@@ -117,8 +117,7 @@
 			},
 			"contact": {
 				required: true,
-				digits: true,
-				minlength: 10,
+				digits: true
 			},
 			"password": {
 				required: function(element) {

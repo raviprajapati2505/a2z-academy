@@ -9,6 +9,7 @@ use App\Models\CourseType;
 use App\Models\CourseCurriculam;
 use App\Models\CurriculamLecture;
 use App\Models\StudentCourseHistory;
+use App\Models\StudentFavourite;
 use App\Models\TrackLecture;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -23,11 +24,12 @@ class CoursesController extends Controller
         $curriculams = CourseCurriculam::where('course_id', $course_id)->orderby('display_order', 'asc')->get();
         $course_teachers = CurriculamLecture::select('teacher_id')->where('course_id', $course_id)->distinct()->get();
         $check_student_paid = StudentCourseHistory::where('student_id', Auth::user()->id)->where('course_id', $course_id)->get();
+        $check_mark_favourite = StudentFavourite::where('student_id',Auth::user()->id)->where('course_id', $course_id)->count();
         $is_purchased = 0;
         if (count($check_student_paid) > 0) {
             $is_purchased = 1;
         }
-        return view('frontend.course.course_detail', compact('course', 'curriculams', 'course_teachers', 'is_purchased'));
+        return view('frontend.course.course_detail', compact('course', 'curriculams', 'course_teachers', 'is_purchased','check_mark_favourite'));
     }
 
     public function lecture_player()

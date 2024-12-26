@@ -66,15 +66,15 @@
                             </p>
                         </div>
                         <div class="classvideodet-right">
-                            <a href="javascript:void(0);">
+                            <!-- <a href="javascript:void(0);">
                                 <i class="bx bx-time-five"></i>
-                            </a>
-                            <a href="javascript:void(0);" class="active mark_favrouite">
+                            </a> -->
+                            <a href="javascript:void(0);" class="<?= $check_mark_favourite > 0 ? 'active': ''?> mark_favrouite">
                                 <i class="bx bxs-heart"></i>
                             </a>
-                            <a href="javascript:void(0);">
+                            <!-- <a href="javascript:void(0);">
                                 <i class="bx bxs-share-alt"></i>
-                            </a>
+                            </a> -->
                             <p class="msg" style="color:green"></p>
                         </div>
                     </div>
@@ -195,12 +195,12 @@
                     </div>
                 </div>
             </div>
-            <div class="classdetails-covlr cocimainboxset1">
+            <!-- <div class="classdetails-covlr cocimainboxset1">
                 <div class="classdetails-titlemn">
                     <h3>What you wil Learn</h3>
                 </div>
                 {!! $course->what_you_learn !!}
-            </div>
+            </div> -->
         </div>
         <div class="classdetails-right">
             <div class="classdetails-covright">
@@ -320,7 +320,7 @@
                         <div class="row">
                             <div class="col-sm">
                                 <div class="form-group">
-                                    <label for="">Review</label>
+                                    <label for="">Review *</label>
                                     <textarea class="form-control" id="feedback_text" name="feedback_text" rows="3"></textarea>
                                 </div>
                             </div>
@@ -328,7 +328,7 @@
                         <div class="row">
                             <div class="col-sm">
                                 <div class="form-group formdatamiancov">
-                                    <label for="">Star</label>
+                                    <label for="">Rating Star *</label>
                                     <select class="js-example-basic-single" name="star_rating" id="star_rating">
                                         <option value="1">1 Star</option>
                                         <option value="2">2 Star</option>
@@ -388,10 +388,11 @@
             dataType: 'json',
             success: function(data) {
                 if (data.success) {
-                    $('.msg').text(data.message);
-                    setTimeout(function() {
-                        $('.msg').text('')
-                    }, 2000);
+                    window.location.reload();
+                    // $('.msg').text(data.message);
+                    // setTimeout(function() {
+                    //     $('.msg').text('')
+                    // }, 2000);
                 } else if (data.message == 'Error validation') {
                     for (var key in data.data) {
                         var value = data.data[key];

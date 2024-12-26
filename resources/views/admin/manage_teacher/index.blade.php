@@ -159,8 +159,7 @@
             },
             "contact": {
                 required: false,
-                digits: true,
-                minlength: 10,
+                digits: true
             },
             "password": {
                 required: function(element) {

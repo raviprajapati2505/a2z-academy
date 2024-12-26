@@ -102,8 +102,8 @@
                                 <div class="form-group formdatamiancov">
                                     <label for="gender">Gender</label>
                                     <select name="gender" id="gender" class="js-example-basic-single form-control">
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
+                                        <option value="Male" <?= $user->gender == 'Male' ? 'selected' : '' ?>>Male</option>
+                                        <option value="Female" <?= $user->gender == 'Female' ? 'selected' : '' ?>>Female</option>
                                     </select>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@
                                     <label for="">Mobile Number *</label>
                                     <div class="contnumbset-cov">
                                         <h6>+91</h6>
-                                        <input type="text" class="form-control" id="contact" name="contact" placeholder="" maxlength="10" value="{{ $user->phone }}">
+                                        <input type="text" class="form-control" id="contact" name="contact" placeholder="" value="{{ $user->phone }}">
                                     </div>
                                 </div>
                             </div>
@@ -241,8 +241,7 @@
             },
             "contact": {
                 required: true,
-                digits: true,
-                minlength: 10,
+                digits: true
             },
             "photo": {
                 extension: "jpg|jpeg|png"
