@@ -135,8 +135,8 @@
                     name: 'name'
                 },
                 {
-                    data: 'special_price',
-                    name: 'special_price'
+                    data: 'price',
+                    name: 'price'
                 },
                 {
                     data: 'purchased_date',

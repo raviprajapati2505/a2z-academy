@@ -31,7 +31,7 @@ class ReportController extends Controller
         if ($request->ajax()) {
             $query = StudentCourseHistory::select('courses.*', 
             'student_course_history.*', 
-            'users.firstname as firstname', 
+            'users.name as firstname', 
             'student_course_history.created_at as purchased_date', 
             'curriculam_lectures.teacher_id as course_teacher')
             ->distinct() // Ensure distinct courses
