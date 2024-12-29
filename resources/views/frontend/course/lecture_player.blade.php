@@ -20,7 +20,7 @@
                 <div class="class-mainvideo">
 
                   @if($lecture->link)
-                    <video id="lecture-video" controls controlsList="nodownload" width="auto" height="360">
+                    <video id="my-video" class="video-js vjs-big-play-centered" controls controlsList="nodownload" width="auto" height="360">
                         <source src="{{ $lecture->link }}">
                         Your browser does not support the video tag.
                     </video>

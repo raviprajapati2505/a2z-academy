@@ -177,8 +177,8 @@
             "teacher_class":{
                 required: true,
             },
-            "teacher_subject":{
-                required: true,
+            "type":{
+                required: false,
             }
         },
         messages: {
@@ -255,6 +255,7 @@
             $('#username').val(data.data.username);
             $('#email').val(data.data.email);
             $('#contact').val(data.data.phone);
+            $('#type').val(data.data.course_type_id).trigger('change');
             $('#status').val(data.data.status).trigger('change');
             $('#teacher_class').val(data.data.class_id).trigger('change');
             $('#teacher_subject').val(data.data.subject_id).trigger('change');

@@ -53,7 +53,8 @@ class User extends Authenticatable
         'country_code',
         'external_id',
         'last_login',
-        'appellations'
+        'appellations',
+        'course_type_id'
     ];
 
     /**

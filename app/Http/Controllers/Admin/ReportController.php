@@ -29,16 +29,19 @@ class ReportController extends Controller
     public function totalEnrollmentReport(Request $request)
     {
         if ($request->ajax()) {
-            $query = StudentCourseHistory::select('courses.*', 
-            'student_course_history.*', 
-            'users.name as firstname', 
-            'student_course_history.created_at as purchased_date', 
-            'curriculam_lectures.teacher_id as course_teacher')
-            ->distinct() // Ensure distinct courses
-            ->leftJoin('courses', 'courses.id', '=', 'student_course_history.course_id')
-            ->leftJoin('curriculam_lectures', 'curriculam_lectures.course_id', '=', 'courses.id')
-            ->leftJoin('users', 'users.id', '=', 'student_course_history.student_id')
-                ->where('student_course_history.is_paid', '0');
+            $query = StudentCourseHistory::select(
+                'courses.*',
+                'student_course_history.*',
+                'users.name as firstname',
+                'student_course_history.created_at as purchased_date',
+                DB::raw('MAX(curriculam_lectures.teacher_id) as course_teacher'),
+            )
+                ->distinct() // Ensure distinct courses
+                ->leftJoin('courses', 'courses.id', '=', 'student_course_history.course_id')
+                ->leftJoin('curriculam_lectures', 'curriculam_lectures.course_id', '=', 'courses.id')
+                ->leftJoin('users', 'users.id', '=', 'student_course_history.student_id')
+                ->where('student_course_history.is_paid', '1')
+                ->groupBy('courses.id')->groupBy('student_course_history.id');
 
             if (!empty($request->from_date) && !empty($request->to_date)) {
                 $query->whereBetween(DB::raw('DATE(student_course_history.created_at)'), [$request->from_date, $request->to_date]);
@@ -77,6 +80,9 @@ class ReportController extends Controller
             return Datatables::of($data)->addIndexColumn()->addColumn('purchased_date', function ($row) {
                 return $row->purchased_date;
             })
+                ->addColumn('price', function ($row) {
+                    return '$'.$row->price;
+                })
                 ->rawColumns(['purchased_date'])
                 ->make(true);
         }
@@ -93,10 +99,16 @@ class ReportController extends Controller
     public function certificateReport(Request $request)
     {
         if ($request->ajax()) {
-            $query = Certificate::select('courses.*', 'certificates.*', 'users.firstname as firstname', 'certificates.created_at as generated_date', 'curriculam_lectures.teacher_id as course_teacher')
-            ->leftJoin('courses', 'courses.id', '=', 'certificates.course_id')
-            ->leftJoin('curriculam_lectures', 'curriculam_lectures.course_id', '=', 'courses.id')
-            ->leftJoin('users', 'users.id', '=', 'certificates.student_id');
+            $query = Certificate::select(
+                'courses.*',
+                'certificates.*',
+                'users.name as firstname',
+                'certificates.created_at as generated_date',
+                'curriculam_lectures.teacher_id as course_teacher'
+            )
+                ->leftJoin('courses', 'courses.id', '=', 'certificates.course_id')
+                ->leftJoin('curriculam_lectures', 'curriculam_lectures.course_id', '=', 'courses.id')
+                ->leftJoin('users', 'users.id', '=', 'certificates.student_id');
 
             if (!empty($request->from_date) && !empty($request->to_date)) {
                 $query->whereBetween(DB::raw('DATE(certificates.created_at)'), [$request->from_date, $request->to_date]);
@@ -133,13 +145,13 @@ class ReportController extends Controller
             $data = $query->get();
 
             return Datatables::of($data)->addIndexColumn()
-            ->addColumn('course_name', function ($row) {
-                $course_name = $row->course ? $row->course->name : '';
-                return $course_name;
-            })
-            ->addColumn('generated_date', function ($row) {
-                return $row->generated_date;
-            })
+                ->addColumn('course_name', function ($row) {
+                    $course_name = $row->course ? $row->course->name : '';
+                    return $course_name;
+                })
+                ->addColumn('generated_date', function ($row) {
+                    return $row->generated_date;
+                })
                 ->rawColumns(['action'])
                 ->make(true);
         }

@@ -7,12 +7,12 @@ use App\Models\Subject;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\ClassList;
+use App\Models\CourseType;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Yajra\DataTables\Facades\DataTables;
-
 class TeacherController extends Controller
 {
     private $urlSlugs, $titles;
@@ -67,7 +67,8 @@ class TeacherController extends Controller
         $title = $this->titles;
         $classes = ClassList::all();
         $subjects = Subject::all();
-        return view('admin.' . $urlSlug . '.index', compact('urlSlug', 'title', 'classes', 'subjects'));
+        $course_type = CourseType::where("is_delivery_mode", 0)->get();
+        return view('admin.' . $urlSlug . '.index', compact('urlSlug', 'title', 'classes', 'subjects', 'course_type'));
     }
 
     /**
@@ -95,7 +96,7 @@ class TeacherController extends Controller
                     'username' => 'required|' . Rule::unique('users', 'username')->ignore($request->teacher_id)->whereNull('deleted_at'),
                     //'contact' => 'required|numeric|digits:10',
                     'teacher_class' => 'required',
-                    'teacher_subject' => 'required'
+                    'type' => 'required'
                 ]);
             } else {
                 $validator = Validator::make($request->all(), [
@@ -106,7 +107,7 @@ class TeacherController extends Controller
                     'password' => 'required|min:8',
                     'confirm_password' => 'required|same:password',
                     'teacher_class' => 'required',
-                    'teacher_subject' => 'required'
+                    'type' => 'required'
                 ]);
             }
 
@@ -129,7 +130,8 @@ class TeacherController extends Controller
                     'status' => $request->status,
                     'class_id' => $request->teacher_class,
                     'subject_id' => $request->teacher_subject,
-                    'role' => 'Teacher'
+                    'role' => 'Teacher',
+                    'course_type_id' => $request->type
                 ];
                 if ($request->teacher_id && empty($request->password)) {
                     unset($data['password']);
