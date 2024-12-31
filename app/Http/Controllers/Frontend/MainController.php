@@ -18,7 +18,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $course_types = CourseType::where("is_delivery_mode", 0)->get();
+        $course_types = CourseType::where("is_delivery_mode", 0)->orderby('title', 'asc')->get();
         $all_courses = Course::orderBy('created_at', 'desc')->get();
         $class_list = ClassList::all();
         $news = News::orderBy('created_at', 'desc')->get();

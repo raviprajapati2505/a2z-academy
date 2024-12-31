@@ -6,11 +6,11 @@
 
     <div class="col comtitledata-cover">
       <h1>Dashboard</h1>
-      <p>Welcome to GORD Academy</p>
+      <p>Under the Maintenance</p>
       <img src="{{ asset('public/images/title-background-dashboard.png') }}" alt="Welcome to GORD Academy">
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
       <?php if (isset($dashboardDetails['classes']) && !empty($dashboardDetails['classes'])) { ?>
         <div class="col-sm smcoldatrispo">
           <div class="todayclass-cover">
@@ -65,7 +65,7 @@
           </div>
         </div>
       <?php } ?>
-    </div>
+    </div> -->
   </div>
   <div class="rightdatamain_cover">
     @include('user.profile_sidebar')
