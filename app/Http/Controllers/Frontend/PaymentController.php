@@ -9,15 +9,6 @@ use App\Models\StudentCourseHistory;
 use App\Models\User;
 use App\Models\Course;
 use Illuminate\Support\Facades\Auth;
-use PayPal\Api\Payer;
-use PayPal\Api\Amount;
-use PayPal\Api\Payment;
-use PayPal\Api\Transaction;
-use PayPal\Rest\ApiContext;
-use PayPal\Api\RedirectUrls;
-use PayPal\Api\PaymentExecution;
-use PayPal\Auth\OAuthTokenCredential;
-use PayPal\Exception\PayPalConnectionException;
 
 class PaymentController extends Controller
 {
@@ -80,46 +71,66 @@ class PaymentController extends Controller
 
     public function pay_for_courses()
     {
-        $sum = 500;
-        $apiContext = new ApiContext(
-            new OAuthTokenCredential('ClientID',  'ClientSecret')
-        );
-        $payer = new Payer();
-        $payer->setPaymentMethod("paypal");
+        $courses_to_paid = StudentCourseHistory::where('student_id', Auth::user()->id)
+            ->where('is_paid', '0')
+            ->get();
+        $price_sum = 0;
+        if (!empty($courses_to_paid)) {
+            foreach ($courses_to_paid as $course) {
+                $price_sum += $course->price;
+            }
+        }
+        $user_data = User::find(Auth::user()->id);
+        $prefix = "GA";
+        $number = substr(str_shuffle("0123456789"), 0, 12);
+        $order_number = $prefix . $number;
 
-        $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl(route('paypal_success'))
-            ->setCancelUrl(route('paypal_cancel'));
+        $curl = curl_init();
 
-        $amount = new Amount();
-        $amount->setCurrency("USD")
-            ->setTotal($sum);
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://api.fatora.io/v1/payments/checkout',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type: application/json',
+                'api_key:  E4B73FEE-F492-4607-A38D-852B0EBC91C9'
+            ),
+            CURLOPT_POSTFIELDS => '{
+                "amount": ' . $price_sum . ',
+                "currency": "QAR",
+                "order_id": "' . $order_number . '",
+                "client" : {
+                    "name" : "' . $user_data->name . '",
+                    "phone" : "' . $user_data->phone . '",
+                    "email" : "' . $user_data->email . '"
+                },
+                "language":"en",
+                "success_url" : "' . url('') . '/fatora_success",
+                "failure_url" : "' . url('') . '/fatora_cancel",
+                "fcm_token" : "XXXXXXXXX",
+                "save_token" : true,
+                "note": ""
+                }'
+        ));
 
-        // Set transaction object
-        $transaction = new Transaction();
-        $transaction->setAmount($amount)
-            ->setDescription(" Hello ");
+        $response = curl_exec($curl);
+        curl_close($curl);
 
-        $payment = new Payment();
-        $payment->setIntent('sale')
-            ->setPayer($payer)
-            ->setRedirectUrls($redirectUrls)
-            ->setTransactions(array($transaction));
+        $result = json_decode($response, true);
 
-        try {
-            $payment->create($apiContext);
-
-            return redirect($payment->getApprovalLink());
-        } catch (PayPalConnectionException $ex) {
-            echo $ex->getCode();
-            echo $ex->getData();
-            die($ex);
-        } catch (\Exception $ex) {
-            die($ex);
+        if (isset($result['checkout_url'])) {
+            return redirect()->away($result['checkout_url']);
+        } else {
+            return redirect()->back()->with('error', 'Unable to process payment. Please try again.');
         }
     }
 
-    public function cancel()
+    public function fatora_cancel()
     {
         return redirect('/my_account');
     }
@@ -129,29 +140,14 @@ class PaymentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function success(Request $request)
+    public function fatora_success(Request $request)
     {
-        $apiContext = new ApiContext(
-            new OAuthTokenCredential('ClientID', 'ClientSecret')
-        );
-        $paymentId = $_GET['paymentId'];
-        $payment = Payment::get($paymentId, $apiContext);
-        $payerId = $_GET['PayerID'];
-
-        // Execute payment with payer ID
-        $execution = new PaymentExecution();
-        $execution->setPayerId($payerId);
-
         try {
             StudentCourseHistory::where('student_id', Auth::user()->id)
                 ->where('is_paid', '0')
                 ->update(['is_paid' => '1']);
 
-            return redirect('/my_account');
-        } catch (PayPalConnectionException $ex) {
-            echo $ex->getCode();
-            echo $ex->getData();
-            die($ex);
+            return redirect('/my_account')->with('success', 'Payment successful for course');
         } catch (\Exception $ex) {
             die($ex);
         }

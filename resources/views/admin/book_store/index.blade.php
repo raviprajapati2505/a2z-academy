@@ -221,6 +221,7 @@
             $('#name').val(data.data.name);
             $('#author').val(data.data.author);
             $('#external_link').val(data.data.external_link);
+            $('#price').val(data.data.price);
             $('#status').val(data.data.status).trigger('change');
             if (data.data.cover_image) {
                 $('.download').show();

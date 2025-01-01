@@ -21,6 +21,7 @@ class Book extends Model
         'author',
         'book_file',
         'created_by',
-        'status'
+        'status',
+        'price'
     ];
 }

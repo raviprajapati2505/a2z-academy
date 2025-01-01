@@ -92,8 +92,8 @@ Route::middleware(['auth', '2fa', 'student'])->group(function () {
     Route::get('remove_course_enroll/{id}', [PaymentController::class, 'remove_course_enroll'])->name('remove_course_enroll');
     Route::post('submit_student_review', [FeedbackController::class, 'submit_student_review'])->name('submit_student_review');
     Route::get('pay_for_courses', [PaymentController::class, 'pay_for_courses'])->name('pay_for_courses');
-    Route::get('paypal_success', [PaymentController::class, 'paypal_success'])->name('paypal_success');
-    Route::get('paypal_cancel', [PaymentController::class, 'paypal_cancel'])->name('paypal_cancel');
+    Route::get('fatora_success', [PaymentController::class, 'fatora_success'])->name('fatora_success');
+    Route::get('fatora_cancel', [PaymentController::class, 'fatora_cancel'])->name('fatora_cancel');
     Route::post('mark_as_favourite', [FeedbackController::class, 'mark_as_favourite'])->name('mark_as_favourite');
     Route::post('apply_promo', [FeedbackController::class, 'apply_promo'])->name('apply_promo');
     Route::post('track_lecture', [CoursesController::class, 'track_lecture'])->name('track_lecture');
@@ -101,6 +101,10 @@ Route::middleware(['auth', '2fa', 'student'])->group(function () {
     Route::get('/meeting', [ClassesController::class, 'meeting']);
     Route::get('/events', [SEventController::class, 'events']);
     Route::get('/dashboard', [SDashboardController::class, 'index']);
+
+    Route::get('pay_for_book/{id}', [BookController::class, 'pay_for_book'])->name('pay_for_book');
+    Route::get('fatora_success_book', [BookController::class, 'fatora_success_book'])->name('fatora_success_book');
+    Route::get('fatora_cancel_book', [BookController::class, 'fatora_cancel'])->name('fatora_cancel_book');
 });
 
 Route::middleware(['auth'])->group(function () {

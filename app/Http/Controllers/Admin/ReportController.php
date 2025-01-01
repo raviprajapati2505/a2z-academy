@@ -40,7 +40,7 @@ class ReportController extends Controller
                 ->leftJoin('courses', 'courses.id', '=', 'student_course_history.course_id')
                 ->leftJoin('curriculam_lectures', 'curriculam_lectures.course_id', '=', 'courses.id')
                 ->leftJoin('users', 'users.id', '=', 'student_course_history.student_id')
-                ->where('student_course_history.is_paid', '1')
+                ->where('student_course_history.is_paid', '0')
                 ->groupBy('courses.id')->groupBy('student_course_history.id');
 
             if (!empty($request->from_date) && !empty($request->to_date)) {

@@ -102,6 +102,7 @@ class BookStoreController extends Controller
                 'external_link' => $request->external_link,
                 'author' => $request->author,
                 'status' => $request->status,
+                'price' => $request->price
             ];
 
             if ($request->hasFile('cover_image')) {

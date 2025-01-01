@@ -32,11 +32,18 @@
                                 <h3>{{ $book->name }}</h3>
                                 <h5>By {{ $book->author }}</h5><br><br><br>
                                 <div class="book-readmorebtn">
-                                    @if($book->external_link)
+                                    @php
+                                    $hasPaid = \App\Models\StudentBookHistory::where('student_id', Auth::user()->id)
+                                    ->where('book_id', $book->id)
+                                    ->where('is_paid', 1)
+                                    ->exists();
+                                    @endphp
+
+                                    @if($hasPaid)
                                     <a style="width:100px" href="<?= $book->external_link ?>" target="_blank">View Book</a>
                                     <!-- <a style="width:90px" href="<?= $book->external_link ?>" target="_blank">Preview</a> -->
                                     @else
-                                    <a style="width:100px" href="<?= url('/') . '/public/' . $book->book_file ?>" target="_blank">Buy Now</a>
+                                    <a style="width:100px" href="<?= route('pay_for_book', $book->id) ?>">Buy Now</a>
                                     <a style="width:90px" href="<?= url('/') . '/public/' . $book->book_file ?>" target="_blank">Preview</a>
                                     @endif
 
