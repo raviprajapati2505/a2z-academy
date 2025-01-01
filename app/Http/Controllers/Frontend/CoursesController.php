@@ -72,9 +72,15 @@ class CoursesController extends Controller
     public function course_by_type()
     {
         if (request()->segment(2) == 'all') {
-            $all_course_types = CourseType::where("is_delivery_mode", 0)->get();
+            $all_course_types = CourseType::where("is_delivery_mode", 0)
+                ->with(['course' => function ($query) {
+                    $query->orderBy('date', 'desc'); // Sort courses by 'date' in descending order
+                }])->get();
         } else {
-            $all_course_types = CourseType::where('id', request()->segment(2))->get();
+            $all_course_types = CourseType::where('id', request()->segment(2))
+                ->with(['course' => function ($query) {
+                    $query->orderBy('date', 'desc'); // Sort courses by 'date' in descending order
+                }])->get();
         }
         return view('frontend.course.course_by_type', compact('all_course_types'));
     }

@@ -33,10 +33,15 @@
                                 <h5>By {{ $book->author }}</h5><br><br><br>
                                 <div class="book-readmorebtn">
                                     @php
-                                    $hasPaid = \App\Models\StudentBookHistory::where('student_id', Auth::user()->id)
+                                    $hasPaid = false; // Default value
+
+                                    // Check if the user is authenticated
+                                    if (Auth::check()) {
+                                    $hasPaid = \App\Models\StudentBookHistory::where('student_id', Auth::id())
                                     ->where('book_id', $book->id)
                                     ->where('is_paid', 1)
                                     ->exists();
+                                    }
                                     @endphp
 
                                     @if($hasPaid)

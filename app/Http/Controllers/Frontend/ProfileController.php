@@ -28,7 +28,7 @@ class ProfileController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|regex:/^[a-zA-Z ]+$/u|min:1|max:20',
             'lastname' => 'required|regex:/^[a-zA-Z ]+$/u|min:1|max:20',
-            'contact' => 'required|numeric|digits:10',
+            'contact' => 'required|numeric',
             'photo' => 'mimes:png,jpg,jpeg'
         ]);
 

@@ -94,7 +94,7 @@ class TeacherController extends Controller
                     'name' => 'required|regex:/^[a-zA-Z ]+$/u|min:1|max:20',
                     'email' => 'required|email|' . Rule::unique('users', 'email')->ignore($request->teacher_id)->whereNull('deleted_at'),
                     'username' => 'required|' . Rule::unique('users', 'username')->ignore($request->teacher_id)->whereNull('deleted_at'),
-                    //'contact' => 'required|numeric|digits:10',
+                    //'contact' => 'required|numeric',
                     'teacher_class' => 'required',
                     'type' => 'required'
                 ]);
@@ -103,7 +103,7 @@ class TeacherController extends Controller
                     'name' => 'required|regex:/^[a-zA-Z ]+$/u|min:1|max:20',
                     'email' => 'required|email|unique:users,email',
                     'username' => 'required|unique:users,username|min:5|max:15',
-                    //'contact' => 'required|numeric|digits:10',
+                    //'contact' => 'required|numeric',
                     'password' => 'required|min:8',
                     'confirm_password' => 'required|same:password',
                     'teacher_class' => 'required',

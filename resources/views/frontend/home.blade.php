@@ -236,7 +236,7 @@
                 <h3>Recent Course</h3>
             </div>
             <div class="popucourtitle-right">
-                <a href="{{ url('/course_by_type/all')}}">All Course</a>
+                <a href="{{ url('/course_by_type/all')}}">All Courses</a>
             </div>
         </div>
 
@@ -476,7 +476,7 @@
                 </div>
                 <div id="projects-copy" class="hide"></div>
                 <div class="allcoursebtnmaincov1">
-                    <a href="{{ url('/course_by_type/all')}}">All Course</a>
+                    <a href="{{ url('/course_by_type/all')}}">All Courses</a>
                 </div>
             </div>
         </div>
