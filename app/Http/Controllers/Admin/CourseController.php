@@ -148,6 +148,7 @@ class CourseController extends Controller
                 'location' => $request->location,
                 'time' => $request->course_time,
                 'date' => $request->course_date,
+                'sort_order' => $request->sort_order
             ];
 
             if ($request->hasFile('cover_image')) {

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Book;
 use App\Models\StudentBookHistory;
 use App\Models\User;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
@@ -63,8 +63,8 @@ class BookController extends Controller
 
         $result = json_decode($response, true);
 
-        if (isset($result['checkout_url'])) {
-            return redirect()->away($result['checkout_url']);
+        if (isset($result['result']['checkout_url'])) {
+            return redirect()->away($result['result']['checkout_url']);
         } else {
             return redirect()->back()->with('error', 'Unable to process payment. Please try again.');
         }
@@ -72,7 +72,7 @@ class BookController extends Controller
 
     public function fatora_cancel_book()
     {
-        return redirect('/my_account');
+        return redirect('/my_account')->with('error', 'Payment failed for book');
     }
 
     /**

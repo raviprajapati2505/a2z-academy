@@ -57,20 +57,26 @@
                         </div>
                         @endif
                         <br>
+                        @if(session()->has('error'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session()->get('error') }}
+                        </div>
+                        @endif
+                        <br>
                         <h3>Personal Information</h3>
                         <div class="row">
                             <div class="col-sm">
-                            <div class="col-sm">
-                                <div class="form-group formdatamiancov">
-                                    <label for="appellations">Select Appellations *</label>
-                                    <select id="appellations" class="form-control" name="appellations" required>
-                                        <option value="Mr." <?= $user->appellations == 'Mr.' ? 'selected' : '' ?>>Mr.</option>
-                                        <option value="Ms." <?= $user->appellations == 'Ms.' ? 'selected' : '' ?>>Ms.</option>
-                                        <option value="Mrs." <?= $user->appellations == 'Mrs.' ? 'selected' : '' ?>>Mrs.</option>
-                                        <option value="Dr." <?= $user->appellations == 'Dr.' ? 'selected' : '' ?>>Dr.</option>
-                                    </select>
+                                <div class="col-sm">
+                                    <div class="form-group formdatamiancov">
+                                        <label for="appellations">Select Appellations *</label>
+                                        <select id="appellations" class="form-control" name="appellations" required>
+                                            <option value="Mr." <?= $user->appellations == 'Mr.' ? 'selected' : '' ?>>Mr.</option>
+                                            <option value="Ms." <?= $user->appellations == 'Ms.' ? 'selected' : '' ?>>Ms.</option>
+                                            <option value="Mrs." <?= $user->appellations == 'Mrs.' ? 'selected' : '' ?>>Mrs.</option>
+                                            <option value="Dr." <?= $user->appellations == 'Dr.' ? 'selected' : '' ?>>Dr.</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                             <div class="col-sm">
                                 <div class="form-group formdatamiancov">

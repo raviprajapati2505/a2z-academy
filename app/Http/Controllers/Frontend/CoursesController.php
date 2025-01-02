@@ -74,12 +74,12 @@ class CoursesController extends Controller
         if (request()->segment(2) == 'all') {
             $all_course_types = CourseType::where("is_delivery_mode", 0)
                 ->with(['course' => function ($query) {
-                    $query->orderBy('date', 'desc'); // Sort courses by 'date' in descending order
+                    $query->orderBy('sort_order', 'asc');
                 }])->get();
         } else {
             $all_course_types = CourseType::where('id', request()->segment(2))
                 ->with(['course' => function ($query) {
-                    $query->orderBy('date', 'desc'); // Sort courses by 'date' in descending order
+                    $query->orderBy('sort_order', 'asc');
                 }])->get();
         }
         return view('frontend.course.course_by_type', compact('all_course_types'));

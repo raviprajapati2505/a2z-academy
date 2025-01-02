@@ -191,6 +191,12 @@
                                         <input type="text" class="form-control" id="location" name="location" placeholder="">
                                     </div>
                                 </div>
+                                <div class="col-sm">
+                                    <div class="form-group">
+                                        <label for="sort_order">Sort Order</label>
+                                        <input type="number" class="form-control" id="sort_order" name="sort_order" placeholder="">
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="row">

@@ -31,6 +31,7 @@
                             <th>Batch</th>
                             <th>Sub-Category</th>
                             <th>Price</th>
+                            <th>Sort Order</th>
                             <th>Status</th>
                             <th width="200">Actions</th>
                         </tr>
@@ -79,6 +80,10 @@
                 {
                     data: 'price',
                     name: 'price'
+                },
+                {
+                    data: 'sort_order',
+                    name: 'sort_order'
                 },
                 {
                     data: 'status',
@@ -277,6 +282,7 @@
             $('#link').val(data.data.link);
             $('#type').val(data.data.course_type_id).trigger('change');
             $('#price').val(data.data.price);
+            $('#sort_order').val(data.data.sort_order);
             $('#special_price').val(data.data.special_price);
             $('#language').val(data.data.language);
             $('#ceu_points').val(data.data.ceu_points);

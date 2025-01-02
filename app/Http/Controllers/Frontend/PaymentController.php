@@ -123,8 +123,8 @@ class PaymentController extends Controller
 
         $result = json_decode($response, true);
 
-        if (isset($result['checkout_url'])) {
-            return redirect()->away($result['checkout_url']);
+        if (isset($result['result']['checkout_url'])) {
+            return redirect()->away($result['result']['checkout_url']);
         } else {
             return redirect()->back()->with('error', 'Unable to process payment. Please try again.');
         }
@@ -132,7 +132,7 @@ class PaymentController extends Controller
 
     public function fatora_cancel()
     {
-        return redirect('/my_account');
+        return redirect('/my_account')->with('error', 'Payment failed for course');
     }
 
     /**

@@ -42,7 +42,8 @@ class Course extends Model
         'accreditation',
         'date',
         'time',
-        'location'
+        'location',
+        'sort_order'
     ];
 
     public function class(): BelongsTo
